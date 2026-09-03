@@ -1,0 +1,2148 @@
+{
+  "schema_version": 1,
+  "documents": {
+    ".agents/AGENTS.md": {
+      "id": "8b818cfe-b250-4ce7-94cf-832f6b84bdbc",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237879Z",
+      "updated_at": "2026-08-31T01:40:20.237879Z"
+    },
+    ".idea/README.md": {
+      "id": "91008082-a361-4415-a060-f5d4d749dd53",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237881Z",
+      "updated_at": "2026-08-31T01:40:20.237881Z"
+    },
+    "01_Inbox/01-Mysql/01-基础和原理/01-SQL基础与语法.md": {
+      "id": "8529034f-6977-4dd1-a5f8-6715b45d4c64",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237883Z",
+      "updated_at": "2026-08-31T01:40:20.237883Z"
+    },
+    "01_Inbox/01-Mysql/01-基础和原理/02-MySQL架构设计.md": {
+      "id": "1a386698-f8e3-4e77-8278-94dac41b79c8",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237884Z",
+      "updated_at": "2026-08-31T01:40:20.237884Z"
+    },
+    "01_Inbox/01-Mysql/01-基础和原理/README.md": {
+      "id": "4c8a0ca6-428d-4799-ae46-5ef24cc0f703",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237886Z",
+      "updated_at": "2026-08-31T01:40:20.237886Z"
+    },
+    "01_Inbox/01-Mysql/02-进阶特性/01-存储引擎与InnoDB.md": {
+      "id": "6f2b34da-7254-404b-9d96-1e82a47385dc",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237888Z",
+      "updated_at": "2026-08-31T01:40:20.237888Z"
+    },
+    "01_Inbox/01-Mysql/02-进阶特性/02-索引原理与优化.md": {
+      "id": "fabf5aa9-c6cd-4f7d-9cbb-0fa4e37cb8e9",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237889Z",
+      "updated_at": "2026-08-31T01:40:20.237889Z"
+    },
+    "01_Inbox/01-Mysql/02-进阶特性/03-事务与锁机制.md": {
+      "id": "5bd60e8e-126f-4545-9aed-323760ca9098",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237891Z",
+      "updated_at": "2026-08-31T01:40:20.237891Z"
+    },
+    "01_Inbox/01-Mysql/02-进阶特性/04-性能分析与优化.md": {
+      "id": "39430084-5fae-4cb6-b821-e010dd1afe01",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237893Z",
+      "updated_at": "2026-08-31T01:40:20.237893Z"
+    },
+    "01_Inbox/01-Mysql/02-进阶特性/05-视图_存储过程_触发器.md": {
+      "id": "62c5359d-f44f-4ccb-8765-e94d8d4d27ff",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237895Z",
+      "updated_at": "2026-08-31T01:40:20.237895Z"
+    },
+    "01_Inbox/01-Mysql/02-进阶特性/README.md": {
+      "id": "f4693f87-a3ca-4b18-86d0-7e8a791141eb",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237897Z",
+      "updated_at": "2026-08-31T01:40:20.237897Z"
+    },
+    "01_Inbox/01-Mysql/03-运维与管理/01-日志管理.md": {
+      "id": "a37872a0-a33b-4e3b-99d6-6d7a2e1bed11",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237899Z",
+      "updated_at": "2026-08-31T01:40:20.237899Z"
+    },
+    "01_Inbox/01-Mysql/03-运维与管理/02-主从复制与高可用.md": {
+      "id": "1c5b5d40-d6af-4422-8f2a-d5adf146e80f",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237901Z",
+      "updated_at": "2026-08-31T01:40:20.237901Z"
+    },
+    "01_Inbox/01-Mysql/03-运维与管理/03-日常运维与工具.md": {
+      "id": "b36dcd5e-5d8a-4370-b035-57be1b6af3e8",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237903Z",
+      "updated_at": "2026-08-31T01:40:20.237903Z"
+    },
+    "01_Inbox/01-Mysql/03-运维与管理/04-数据备份与恢复.md": {
+      "id": "c3373da0-f1f5-4a82-b2cb-214582c15d78",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237905Z",
+      "updated_at": "2026-08-31T01:40:20.237905Z"
+    },
+    "01_Inbox/01-Mysql/03-运维与管理/05-用户与权限管理.md": {
+      "id": "d830d954-d287-4a79-acdd-02404516486f",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237907Z",
+      "updated_at": "2026-08-31T01:40:20.237907Z"
+    },
+    "01_Inbox/01-Mysql/03-运维与管理/06-参数调优与配置.md": {
+      "id": "f2bc327c-be1a-4d94-89da-65e6f89be4d9",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237910Z",
+      "updated_at": "2026-08-31T01:40:20.237910Z"
+    },
+    "01_Inbox/01-Mysql/03-运维与管理/07-巡检报告与规范.md": {
+      "id": "5be6a0ef-63c9-49c9-9621-aa521d86f5f4",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237912Z",
+      "updated_at": "2026-08-31T01:40:20.237912Z"
+    },
+    "01_Inbox/01-Mysql/03-运维与管理/08-常见问题与故障排查.md": {
+      "id": "cbcc3307-5745-404e-95ee-2f2ebf169a3a",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237914Z",
+      "updated_at": "2026-08-31T01:40:20.237914Z"
+    },
+    "01_Inbox/01-Mysql/03-运维与管理/09-生产环境主从迁移实战.md": {
+      "id": "8b6af922-a481-46d7-ad75-9698617ccef9",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237916Z",
+      "updated_at": "2026-08-31T01:40:20.237916Z"
+    },
+    "01_Inbox/01-Mysql/03-运维与管理/README.md": {
+      "id": "e5e1c2ee-1e73-486b-b9f0-b2015245086b",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237918Z",
+      "updated_at": "2026-08-31T01:40:20.237918Z"
+    },
+    "01_Inbox/01-Mysql/04-OCP认证/README.md": {
+      "id": "cb8fb8ff-87a8-4d28-b81a-a02aec5de928",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237920Z",
+      "updated_at": "2026-08-31T01:40:20.237920Z"
+    },
+    "01_Inbox/01-Mysql/04-OCP认证/mysql_ocp.md": {
+      "id": "169ee6d6-37d1-4660-9cce-311cb42b7bb0",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237922Z",
+      "updated_at": "2026-08-31T01:40:20.237922Z"
+    },
+    "01_Inbox/01-Mysql/05-参考资源/README.md": {
+      "id": "e16f1869-923e-4643-aca2-f7fff81bf4b6",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237924Z",
+      "updated_at": "2026-08-31T01:40:20.237924Z"
+    },
+    "01_Inbox/01-Mysql/05-参考资源/Top10_优质学习网站.md": {
+      "id": "c1d0a4f6-7696-4d1a-aa77-f41325f3c884",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237927Z",
+      "updated_at": "2026-08-31T01:40:20.237927Z"
+    },
+    "01_Inbox/01-Mysql/05-参考资源/链接.md": {
+      "id": "a388edf7-2006-4daf-9b65-c93d67c6b680",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237928Z",
+      "updated_at": "2026-08-31T01:40:20.237928Z"
+    },
+    "01_Inbox/01-Mysql/06-高级DBA面试与进阶指南/README.md": {
+      "id": "d6886558-bd19-46c4-9574-8943d6d9e8ec",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237931Z",
+      "updated_at": "2026-08-31T01:40:20.237931Z"
+    },
+    "01_Inbox/01-Mysql/06-高级DBA面试与进阶指南/高级数据库工程师面试指南.md": {
+      "id": "29379233-b97c-49d3-9777-845fdf20ae72",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237933Z",
+      "updated_at": "2026-08-31T01:40:20.237933Z"
+    },
+    "01_Inbox/01-Mysql/README.md": {
+      "id": "0c63cb34-7d56-4885-bf27-2da80c3f187e",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237935Z",
+      "updated_at": "2026-08-31T01:40:20.237935Z"
+    },
+    "01_Inbox/02-Linux/01-基础与自动化/01-Linux基础与核心命令行指南.md": {
+      "id": "6ed6df69-8092-46f3-b6fb-f9f7967320ae",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237937Z",
+      "updated_at": "2026-08-31T01:40:20.237937Z"
+    },
+    "01_Inbox/02-Linux/01-基础与自动化/02-Linux_Shell脚本编程与自动化深度指南.md": {
+      "id": "936abcd0-d4d8-423f-9303-a0d8fbbc5c80",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237939Z",
+      "updated_at": "2026-08-31T01:40:20.237939Z"
+    },
+    "01_Inbox/02-Linux/01-基础与自动化/03-Linux编译链接与动态库原理指南.md": {
+      "id": "ffac9463-bfe9-4c49-be35-c6f0e175931f",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237941Z",
+      "updated_at": "2026-08-31T01:40:20.237941Z"
+    },
+    "01_Inbox/02-Linux/01-基础与自动化/README.md": {
+      "id": "60d582f1-1809-4756-b41a-47297ce3e26b",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237944Z",
+      "updated_at": "2026-08-31T01:40:20.237944Z"
+    },
+    "01_Inbox/02-Linux/02-网络与流量架构/01-Linux网络协议栈与排错指南.md": {
+      "id": "1bab7b01-a039-43e4-82cd-1976f2f50223",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237945Z",
+      "updated_at": "2026-08-31T01:40:20.237945Z"
+    },
+    "01_Inbox/02-Linux/02-网络与流量架构/02-Linux高级网络架构与流量控制(TC_BPF)指南.md": {
+      "id": "b70f278c-5327-4706-9ef0-d510e00ff382",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237947Z",
+      "updated_at": "2026-08-31T01:40:20.237947Z"
+    },
+    "01_Inbox/02-Linux/02-网络与流量架构/README.md": {
+      "id": "3c18952c-bf7e-42ce-9511-3eb13829e591",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237950Z",
+      "updated_at": "2026-08-31T01:40:20.237950Z"
+    },
+    "01_Inbox/02-Linux/03-系统性能与调优/01-Linux进程与CPU性能调优指南.md": {
+      "id": "1f85ffa7-ebf3-4ac3-8809-4224c79e2efb",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237952Z",
+      "updated_at": "2026-08-31T01:40:20.237952Z"
+    },
+    "01_Inbox/02-Linux/03-系统性能与调优/02-Linux内存管理与OOM故障诊断指南.md": {
+      "id": "f44cb840-b3f2-4c01-b4d2-cf1177ddcc7b",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237954Z",
+      "updated_at": "2026-08-31T01:40:20.237954Z"
+    },
+    "01_Inbox/02-Linux/03-系统性能与调优/03-Linux_IO子系统与存储调优指南.md": {
+      "id": "9705dc37-b2eb-4ebc-8e47-2d6a910641bc",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237957Z",
+      "updated_at": "2026-08-31T01:40:20.237957Z"
+    },
+    "01_Inbox/02-Linux/03-系统性能与调优/04-Linux内核参数调优与sysctl实战指南.md": {
+      "id": "8551545f-06e2-42da-b08b-dda6a32cdb9f",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237959Z",
+      "updated_at": "2026-08-31T01:40:20.237959Z"
+    },
+    "01_Inbox/02-Linux/03-系统性能与调优/README.md": {
+      "id": "c94f6919-fa4a-4f76-b327-975c3efc0e9e",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237962Z",
+      "updated_at": "2026-08-31T01:40:20.237962Z"
+    },
+    "01_Inbox/02-Linux/04-存储与文件系统/01-Linux文件系统VFS与Ext4_XFS底层剖析指南.md": {
+      "id": "da821d31-c0fb-4350-9ff4-8674b6367582",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237964Z",
+      "updated_at": "2026-08-31T01:40:20.237964Z"
+    },
+    "01_Inbox/02-Linux/04-存储与文件系统/02-Linux文件系统深度技术指南.md": {
+      "id": "a0222f3d-bdbf-4149-a849-fd296a6e2192",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237966Z",
+      "updated_at": "2026-08-31T01:40:20.237966Z"
+    },
+    "01_Inbox/02-Linux/04-存储与文件系统/03-Linux数据盘挂载技术指南.md": {
+      "id": "a2c6ae63-ab5e-4407-a184-7f35191cb0bc",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237968Z",
+      "updated_at": "2026-08-31T01:40:20.237968Z"
+    },
+    "01_Inbox/02-Linux/04-存储与文件系统/README.md": {
+      "id": "cadd3b9b-bf96-4b95-8d2d-af058276904c",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237971Z",
+      "updated_at": "2026-08-31T01:40:20.237971Z"
+    },
+    "01_Inbox/02-Linux/05-系统启动与安全加固/01-Linux_Boot与Systemd深度指南.md": {
+      "id": "b67e6e60-5c0e-45cf-9ff7-e3f9fae5673f",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237974Z",
+      "updated_at": "2026-08-31T01:40:20.237974Z"
+    },
+    "01_Inbox/02-Linux/05-系统启动与安全加固/02-Linux安全加固与SELinux实战指南.md": {
+      "id": "3633dad9-c2b3-467d-a19d-4a7a4bbbac01",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237976Z",
+      "updated_at": "2026-08-31T01:40:20.237976Z"
+    },
+    "01_Inbox/02-Linux/05-系统启动与安全加固/03-Linux时间同步、时钟源与PTP指南.md": {
+      "id": "7b77b2c2-c6f8-4bad-a851-e28a36c833d1",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237978Z",
+      "updated_at": "2026-08-31T01:40:20.237978Z"
+    },
+    "01_Inbox/02-Linux/05-系统启动与安全加固/README.md": {
+      "id": "2168dc58-2495-40a1-8747-5aae142f35de",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237980Z",
+      "updated_at": "2026-08-31T01:40:20.237980Z"
+    },
+    "01_Inbox/02-Linux/06-虚拟化与内核底座/01-Linux虚拟化与KVM_QEMU深度指南.md": {
+      "id": "a8d20f56-d452-479f-9338-c0b85eb6cd99",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237983Z",
+      "updated_at": "2026-08-31T01:40:20.237983Z"
+    },
+    "01_Inbox/02-Linux/06-虚拟化与内核底座/02-Linux容器底层原理与Namespace_Cgroups指南.md": {
+      "id": "159ee3cc-fa2f-47d3-a15e-72927ce30899",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237985Z",
+      "updated_at": "2026-08-31T01:40:20.237985Z"
+    },
+    "01_Inbox/02-Linux/06-虚拟化与内核底座/03-Linux内核模块开发与调试指南.md": {
+      "id": "9aa47f03-bf8e-42c3-b139-c76dfaa56298",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237988Z",
+      "updated_at": "2026-08-31T01:40:20.237988Z"
+    },
+    "01_Inbox/02-Linux/06-虚拟化与内核底座/04-eBPF与现代Linux系统可观测性指南.md": {
+      "id": "986c57bf-8c43-4b2d-847b-c201e1885111",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237991Z",
+      "updated_at": "2026-08-31T01:40:20.237991Z"
+    },
+    "01_Inbox/02-Linux/06-虚拟化与内核底座/README.md": {
+      "id": "387810ed-84de-4f2f-bbb4-165e8112f31e",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237993Z",
+      "updated_at": "2026-08-31T01:40:20.237993Z"
+    },
+    "01_Inbox/02-Linux/07-高可用与生产排错/01-Linux高可用集群与Keepalived_Corosync指南.md": {
+      "id": "11e16284-9730-41f4-a6de-7c488d832c38",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237995Z",
+      "updated_at": "2026-08-31T01:40:20.237995Z"
+    },
+    "01_Inbox/02-Linux/07-高可用与生产排错/02-高级运维生产高频故障排查手册.md": {
+      "id": "78cc3471-8dc9-40cf-931f-5c9579a11ff5",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.237998Z",
+      "updated_at": "2026-08-31T01:40:20.237998Z"
+    },
+    "01_Inbox/02-Linux/07-高可用与生产排错/03-高级运维生产复杂故障深度案例集(Case_Study).md": {
+      "id": "ddbbad65-80c6-4b8f-9469-5c9121088423",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238Z",
+      "updated_at": "2026-08-31T01:40:20.238Z"
+    },
+    "01_Inbox/02-Linux/07-高可用与生产排错/README.md": {
+      "id": "82424183-933f-42f6-b9e1-3a24b1ce69fe",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238003Z",
+      "updated_at": "2026-08-31T01:40:20.238003Z"
+    },
+    "01_Inbox/02-Linux/README.md": {
+      "id": "b97c7886-eb9c-4be5-a634-2e68433b6f21",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238006Z",
+      "updated_at": "2026-08-31T01:40:20.238006Z"
+    },
+    "01_Inbox/03-K8S/01-组件原理/00-生态概览.md": {
+      "id": "ddf9833d-a4d3-4eb2-bbbc-7c08300413f2",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238008Z",
+      "updated_at": "2026-08-31T01:40:20.238008Z"
+    },
+    "01_Inbox/03-K8S/01-组件原理/00-组件通信与原理概述.md": {
+      "id": "e1d9f3ae-66c8-423d-82f5-ccf452562306",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238010Z",
+      "updated_at": "2026-08-31T01:40:20.238010Z"
+    },
+    "01_Inbox/03-K8S/01-组件原理/01-API_Server/README.md": {
+      "id": "52ee036d-9282-4075-8487-ec8bc0224059",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238012Z",
+      "updated_at": "2026-08-31T01:40:20.238012Z"
+    },
+    "01_Inbox/03-K8S/01-组件原理/01-API_Server/源码解析.md": {
+      "id": "65a33b4c-e032-42fe-9b61-ad43128c56eb",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238015Z",
+      "updated_at": "2026-08-31T01:40:20.238015Z"
+    },
+    "01_Inbox/03-K8S/01-组件原理/01-API_Server.md": {
+      "id": "ff0f59ef-a8ff-4b74-a5b7-e5ac7f5e0e0c",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238017Z",
+      "updated_at": "2026-08-31T01:40:20.238017Z"
+    },
+    "01_Inbox/03-K8S/01-组件原理/02-Controller_Manager.md": {
+      "id": "83b2b185-88da-43b0-b77d-f75fc40be3d1",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238020Z",
+      "updated_at": "2026-08-31T01:40:20.238020Z"
+    },
+    "01_Inbox/03-K8S/01-组件原理/03-Scheduler/README.md": {
+      "id": "d9f90bb4-a374-448e-9915-e58f405f1a15",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238022Z",
+      "updated_at": "2026-08-31T01:40:20.238022Z"
+    },
+    "01_Inbox/03-K8S/01-组件原理/03-Scheduler/调度策略(污点、亲和、驱逐、抢占).md": {
+      "id": "ca3ff442-b28d-411a-8a65-edcfb2414281",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238025Z",
+      "updated_at": "2026-08-31T01:40:20.238025Z"
+    },
+    "01_Inbox/03-K8S/01-组件原理/03-Scheduler.md": {
+      "id": "06c828b2-2370-4364-b34a-53e86cbccefb",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238027Z",
+      "updated_at": "2026-08-31T01:40:20.238027Z"
+    },
+    "01_Inbox/03-K8S/01-组件原理/04-Kubelet/03-Docker与Containerd底层实现及Pause通信深度解析.md": {
+      "id": "0564852d-dc39-458d-8ff2-414fdbbbccf1",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238030Z",
+      "updated_at": "2026-08-31T01:40:20.238030Z"
+    },
+    "01_Inbox/03-K8S/01-组件原理/04-Kubelet/04-Kubelet_PLEG与节点死锁故障深度解析.md": {
+      "id": "cd1d1332-046a-4cd4-af4d-f8e0e63143eb",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238032Z",
+      "updated_at": "2026-08-31T01:40:20.238032Z"
+    },
+    "01_Inbox/03-K8S/01-组件原理/04-Kubelet/CNI.md": {
+      "id": "b805c4f2-7899-4cc1-9a76-e9fa4f1bcba4",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238035Z",
+      "updated_at": "2026-08-31T01:40:20.238035Z"
+    },
+    "01_Inbox/03-K8S/01-组件原理/04-Kubelet/CRI.md": {
+      "id": "5631e651-259b-4137-919e-b1830fb48666",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238037Z",
+      "updated_at": "2026-08-31T01:40:20.238037Z"
+    },
+    "01_Inbox/03-K8S/01-组件原理/04-Kubelet/README.md": {
+      "id": "a4f5b2e5-7438-4958-986e-bc2b732d22c8",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238040Z",
+      "updated_at": "2026-08-31T01:40:20.238040Z"
+    },
+    "01_Inbox/03-K8S/01-组件原理/04-Kubelet.md": {
+      "id": "92330b7d-0184-44c3-913b-f63753ff5e48",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238043Z",
+      "updated_at": "2026-08-31T01:40:20.238043Z"
+    },
+    "01_Inbox/03-K8S/01-组件原理/05-Kube_Proxy.md": {
+      "id": "213ab74f-0266-4500-97b5-89696f255858",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238045Z",
+      "updated_at": "2026-08-31T01:40:20.238045Z"
+    },
+    "01_Inbox/03-K8S/01-组件原理/06-Kubectl.md": {
+      "id": "4f29b761-7cd2-4b8a-ba39-3af87badd882",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238048Z",
+      "updated_at": "2026-08-31T01:40:20.238048Z"
+    },
+    "01_Inbox/03-K8S/01-组件原理/07-请求在各组件间的流转详细流程.md": {
+      "id": "8964dcf0-662a-4333-bd3d-b61f7207f565",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238050Z",
+      "updated_at": "2026-08-31T01:40:20.238050Z"
+    },
+    "01_Inbox/03-K8S/01-组件原理/08-etcd底层架构MVCC与高可用运维.md": {
+      "id": "94664173-07fa-41f6-a51b-6e682dc89391",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238053Z",
+      "updated_at": "2026-08-31T01:40:20.238053Z"
+    },
+    "01_Inbox/03-K8S/01-组件原理/09-Metrics_Server与API聚合层原理.md": {
+      "id": "13b13e65-28a6-4364-bfe1-44626729a854",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238056Z",
+      "updated_at": "2026-08-31T01:40:20.238056Z"
+    },
+    "01_Inbox/03-K8S/01-组件原理/README.md": {
+      "id": "a338aace-abed-4284-b54c-1e8953d88b68",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238059Z",
+      "updated_at": "2026-08-31T01:40:20.238059Z"
+    },
+    "01_Inbox/03-K8S/02-集群负载/01-Pod/Lifecycle.md": {
+      "id": "e8a5c40c-0eac-48e0-9bb6-7c0b1bd2c4b9",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238061Z",
+      "updated_at": "2026-08-31T01:40:20.238061Z"
+    },
+    "01_Inbox/03-K8S/02-集群负载/01-Pod/Pod调度.md": {
+      "id": "a18ea626-0504-406c-bbaa-ad7fc7c2514d",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238064Z",
+      "updated_at": "2026-08-31T01:40:20.238064Z"
+    },
+    "01_Inbox/03-K8S/02-集群负载/01-Pod/README.md": {
+      "id": "2c97bc5a-73a5-47da-af89-75accef1cc08",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238066Z",
+      "updated_at": "2026-08-31T01:40:20.238066Z"
+    },
+    "01_Inbox/03-K8S/02-集群负载/01-Pod/健康检查与可用性检查.md": {
+      "id": "b458e1f0-53de-4b46-a9ac-bc645e81f770",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238069Z",
+      "updated_at": "2026-08-31T01:40:20.238069Z"
+    },
+    "01_Inbox/03-K8S/02-集群负载/01-Pod.md": {
+      "id": "737083a5-c97d-444c-8465-cdeb24c9d5c9",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238071Z",
+      "updated_at": "2026-08-31T01:40:20.238071Z"
+    },
+    "01_Inbox/03-K8S/02-集群负载/02-ReplicaSet.md": {
+      "id": "25aa8d94-0f34-4880-8cef-373b0e3c989d",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238074Z",
+      "updated_at": "2026-08-31T01:40:20.238074Z"
+    },
+    "01_Inbox/03-K8S/02-集群负载/03-Deployment/README.md": {
+      "id": "9675ad7c-2d47-4d42-b027-13401a74a0ea",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238077Z",
+      "updated_at": "2026-08-31T01:40:20.238077Z"
+    },
+    "01_Inbox/03-K8S/02-集群负载/03-Deployment/yaml注解.md": {
+      "id": "3e902c49-759a-485c-a319-61488f8487ea",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238079Z",
+      "updated_at": "2026-08-31T01:40:20.238079Z"
+    },
+    "01_Inbox/03-K8S/02-集群负载/03-Deployment/高级用法.md": {
+      "id": "a873a7dd-a46b-43b1-b299-5afd69418368",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238082Z",
+      "updated_at": "2026-08-31T01:40:20.238082Z"
+    },
+    "01_Inbox/03-K8S/02-集群负载/03-Deployment.md": {
+      "id": "471e86aa-d96b-4c44-8a7f-0658435410f6",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238084Z",
+      "updated_at": "2026-08-31T01:40:20.238084Z"
+    },
+    "01_Inbox/03-K8S/02-集群负载/04-StatefulSet/README.md": {
+      "id": "ae4f276a-406f-46d2-b7c7-184c34525fef",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238087Z",
+      "updated_at": "2026-08-31T01:40:20.238087Z"
+    },
+    "01_Inbox/03-K8S/02-集群负载/04-StatefulSet/基础.md": {
+      "id": "a577662c-a652-4ea4-a2fb-3b8496c4198d",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238089Z",
+      "updated_at": "2026-08-31T01:40:20.238089Z"
+    },
+    "01_Inbox/03-K8S/02-集群负载/04-StatefulSet.md": {
+      "id": "7c761e96-d54c-497c-a273-cac10ec2dbdc",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238092Z",
+      "updated_at": "2026-08-31T01:40:20.238092Z"
+    },
+    "01_Inbox/03-K8S/02-集群负载/05-其他负载类型.md": {
+      "id": "3d413bb5-7a69-421f-b301-e9b0e78f939f",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238094Z",
+      "updated_at": "2026-08-31T01:40:20.238094Z"
+    },
+    "01_Inbox/03-K8S/02-集群负载/06-资源更新/README.md": {
+      "id": "f0db4bf5-6144-49ba-ab9d-b0f2cdc697b2",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238097Z",
+      "updated_at": "2026-08-31T01:40:20.238097Z"
+    },
+    "01_Inbox/03-K8S/02-集群负载/06-资源更新/conditions资源状态.md": {
+      "id": "57b64657-f38e-4aae-bb27-14ceb58fdddf",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238099Z",
+      "updated_at": "2026-08-31T01:40:20.238099Z"
+    },
+    "01_Inbox/03-K8S/02-集群负载/06-资源更新/优雅关闭服务.md": {
+      "id": "1fee3af2-77e6-4620-b8ed-ed6daccadfbf",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238102Z",
+      "updated_at": "2026-08-31T01:40:20.238102Z"
+    },
+    "01_Inbox/03-K8S/02-集群负载/06-资源更新与优雅关闭.md": {
+      "id": "b0429682-5ba9-480e-b111-648efdbc7eef",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238105Z",
+      "updated_at": "2026-08-31T01:40:20.238105Z"
+    },
+    "01_Inbox/03-K8S/02-集群负载/07-HPA与VPA弹性扩缩容底层算法与指标管道.md": {
+      "id": "2c0779c6-72a7-4af1-8010-8de925cdb26e",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238107Z",
+      "updated_at": "2026-08-31T01:40:20.238107Z"
+    },
+    "01_Inbox/03-K8S/02-集群负载/README.md": {
+      "id": "0fb3f880-0d24-45a6-9fe4-ee5f664ea499",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238110Z",
+      "updated_at": "2026-08-31T01:40:20.238110Z"
+    },
+    "01_Inbox/03-K8S/03-安全与资源/01-集群资源.md": {
+      "id": "b699a1ed-a6de-44e8-b1b2-491d6162c82f",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238112Z",
+      "updated_at": "2026-08-31T01:40:20.238112Z"
+    },
+    "01_Inbox/03-K8S/03-安全与资源/02-安全认证与准入控制.md": {
+      "id": "acd557e4-c497-42ad-89f3-5964d7a50915",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238115Z",
+      "updated_at": "2026-08-31T01:40:20.238115Z"
+    },
+    "01_Inbox/03-K8S/03-安全与资源/03-OPA_Kyverno策略引擎与AdmissionWebhook开发实战.md": {
+      "id": "dd448d24-013c-433e-8773-568b53d9f230",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238117Z",
+      "updated_at": "2026-08-31T01:40:20.238117Z"
+    },
+    "01_Inbox/03-K8S/03-安全与资源/04-RBAC权限控制实战指南.md": {
+      "id": "5d6bf00f-2903-4ec3-b8e4-38481a46a53f",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238120Z",
+      "updated_at": "2026-08-31T01:40:20.238120Z"
+    },
+    "01_Inbox/03-K8S/03-安全与资源/README.md": {
+      "id": "d9d6619b-3322-43ed-96a5-04e18a8f8428",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238122Z",
+      "updated_at": "2026-08-31T01:40:20.238122Z"
+    },
+    "01_Inbox/03-K8S/04-集群网络/01-Docker容器网络.md": {
+      "id": "300e3c6f-6baa-4d94-a600-97e113a03bc6",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238124Z",
+      "updated_at": "2026-08-31T01:40:20.238124Z"
+    },
+    "01_Inbox/03-K8S/04-集群网络/02-1-Calico架构与calico-node及kube-controllers深度剖析.md": {
+      "id": "694d9b04-dc09-48c2-b47f-49a5203b12b6",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238127Z",
+      "updated_at": "2026-08-31T01:40:20.238127Z"
+    },
+    "01_Inbox/03-K8S/04-集群网络/02-Kubernetes集群网络.md": {
+      "id": "034030dc-2d11-489a-bfbf-5ebc7b79e893",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238130Z",
+      "updated_at": "2026-08-31T01:40:20.238130Z"
+    },
+    "01_Inbox/03-K8S/04-集群网络/03-集群网络访问详细流程.md": {
+      "id": "a199dd2e-ef40-4538-9151-f5862c251c13",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238133Z",
+      "updated_at": "2026-08-31T01:40:20.238133Z"
+    },
+    "01_Inbox/03-K8S/04-集群网络/04-eBPF与Cilium下一代网络架构原理.md": {
+      "id": "ea163ae0-cf04-429d-949e-5a7ddf04eccf",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238135Z",
+      "updated_at": "2026-08-31T01:40:20.238135Z"
+    },
+    "01_Inbox/03-K8S/04-集群网络/05-1-Ingress基础全景与进化延伸指南.md": {
+      "id": "ca25fc8c-6966-419b-b13f-cfdbe48bcd28",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238138Z",
+      "updated_at": "2026-08-31T01:40:20.238138Z"
+    },
+    "01_Inbox/03-K8S/04-集群网络/05-Ingress_Nginx高并发内核调优指南.md": {
+      "id": "03e0d021-94cb-467e-9d5a-fba3f3c28c1b",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238140Z",
+      "updated_at": "2026-08-31T01:40:20.238140Z"
+    },
+    "01_Inbox/03-K8S/04-集群网络/06-K8s集群网络故障诊断与抓包实战指南.md": {
+      "id": "11e9bd1e-6332-4141-a42f-facfb26512e7",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238143Z",
+      "updated_at": "2026-08-31T01:40:20.238143Z"
+    },
+    "01_Inbox/03-K8S/04-集群网络/07-Flannel网络模式深度解析与对比.md": {
+      "id": "c6896439-df1f-456b-9801-d55faf7e5118",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238146Z",
+      "updated_at": "2026-08-31T01:40:20.238146Z"
+    },
+    "01_Inbox/03-K8S/04-集群网络/08-CoreDNS底层架构与服务发现技术深度指南.md": {
+      "id": "2452f431-2c51-480d-9d5f-379f669ee44e",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238150Z",
+      "updated_at": "2026-08-31T01:40:20.238150Z"
+    },
+    "01_Inbox/03-K8S/04-集群网络/README.md": {
+      "id": "4535a981-4624-4e1f-8130-2c77d67ce132",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238153Z",
+      "updated_at": "2026-08-31T01:40:20.238153Z"
+    },
+    "01_Inbox/03-K8S/05-集群存储/01-CSI架构与存储挂载全链路机制.md": {
+      "id": "203a79fd-1499-4eac-8d8f-16ecfd8ee468",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238155Z",
+      "updated_at": "2026-08-31T01:40:20.238155Z"
+    },
+    "01_Inbox/03-K8S/05-集群存储/01-存储基础与持久化.md": {
+      "id": "b8dab712-e1dd-43aa-8563-060759680f17",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238157Z",
+      "updated_at": "2026-08-31T01:40:20.238157Z"
+    },
+    "01_Inbox/03-K8S/05-集群存储/02-Ceph_RBD与CephFS在K8s的高性能挂载与IOPS调优.md": {
+      "id": "37938ebf-e1f2-4938-9274-ed0a8adec78c",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238160Z",
+      "updated_at": "2026-08-31T01:40:20.238160Z"
+    },
+    "01_Inbox/03-K8S/05-集群存储/02-存储配置与认证.md": {
+      "id": "5f82d50c-672c-4217-8244-25780a2f29e3",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238163Z",
+      "updated_at": "2026-08-31T01:40:20.238163Z"
+    },
+    "01_Inbox/03-K8S/05-集群存储/README.md": {
+      "id": "f92ff720-a3de-4389-b380-c38949a7d75e",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238165Z",
+      "updated_at": "2026-08-31T01:40:20.238165Z"
+    },
+    "01_Inbox/03-K8S/06-集群运维/01-EFK/01-Elasticsearch.md": {
+      "id": "bd9b5ae0-dc91-4154-9584-ae10f1d9b23d",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238168Z",
+      "updated_at": "2026-08-31T01:40:20.238168Z"
+    },
+    "01_Inbox/03-K8S/06-集群运维/01-EFK/02-FluentBit.md": {
+      "id": "5f945c6a-dd83-4134-9b44-7d945d330e6e",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238171Z",
+      "updated_at": "2026-08-31T01:40:20.238171Z"
+    },
+    "01_Inbox/03-K8S/06-集群运维/01-EFK/03-Fluentd.md": {
+      "id": "39d510bc-5878-468c-8c03-0290449b6ef5",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238173Z",
+      "updated_at": "2026-08-31T01:40:20.238173Z"
+    },
+    "01_Inbox/03-K8S/06-集群运维/01-EFK/04-Kibana.md": {
+      "id": "a22ec5cb-1240-4588-91db-f1746089366e",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238176Z",
+      "updated_at": "2026-08-31T01:40:20.238176Z"
+    },
+    "01_Inbox/03-K8S/06-集群运维/01-EFK/README.md": {
+      "id": "0bc1b036-a89d-4b27-9d63-c0c9f5e1b6f3",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238179Z",
+      "updated_at": "2026-08-31T01:40:20.238179Z"
+    },
+    "01_Inbox/03-K8S/06-集群运维/01-K8S集群部署安装指南.md": {
+      "id": "65b3d5a4-13f8-4350-9776-840c13e775fd",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238181Z",
+      "updated_at": "2026-08-31T01:40:20.238181Z"
+    },
+    "01_Inbox/03-K8S/06-集群运维/02-MetricsServer安装与x509证书排障.md": {
+      "id": "634ce96f-9568-4c61-894e-f05619f60a3d",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238184Z",
+      "updated_at": "2026-08-31T01:40:20.238184Z"
+    },
+    "01_Inbox/03-K8S/06-集群运维/03-kube-state-metrics配置与监控架构.md": {
+      "id": "ffcd13a5-1f7c-42f0-b1db-02d15386ab91",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238187Z",
+      "updated_at": "2026-08-31T01:40:20.238187Z"
+    },
+    "01_Inbox/03-K8S/06-集群运维/04-K8S跨集群命名空间资源迁移脚本.md": {
+      "id": "1df1a944-3c45-4bcd-9077-8e26c98e2c48",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238190Z",
+      "updated_at": "2026-08-31T01:40:20.238190Z"
+    },
+    "01_Inbox/03-K8S/06-集群运维/05-清理PaaS平台LVM存储脚本.md": {
+      "id": "ef5f80b7-e07b-4ac1-a9c5-78fb3e6bd147",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238193Z",
+      "updated_at": "2026-08-31T01:40:20.238193Z"
+    },
+    "01_Inbox/03-K8S/06-集群运维/06-生产级高难故障排查与实战方案.md": {
+      "id": "a56ea12e-96c5-4c29-a068-6d817867c99b",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238196Z",
+      "updated_at": "2026-08-31T01:40:20.238196Z"
+    },
+    "01_Inbox/03-K8S/06-集群运维/07-万级节点与十万级Pod大规模集群调优指南.md": {
+      "id": "cccf1fa4-9041-4415-a5bb-98ee966f4fcb",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238199Z",
+      "updated_at": "2026-08-31T01:40:20.238199Z"
+    },
+    "01_Inbox/03-K8S/06-集群运维/08-云原生可观测性架构Prometheus_Thanos_Tempo与eBPF链路追踪.md": {
+      "id": "902b055e-d8fd-4463-97b1-4a83003e5fba",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238202Z",
+      "updated_at": "2026-08-31T01:40:20.238202Z"
+    },
+    "01_Inbox/03-K8S/06-集群运维/09-Kubernetes集群日志管理全景指南_ELK_EFK与Loki对比选型与生产实战.md": {
+      "id": "8bde6c3a-19c2-44b6-9a3d-f0d024ce1b23",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238205Z",
+      "updated_at": "2026-08-31T01:40:20.238205Z"
+    },
+    "01_Inbox/03-K8S/06-集群运维/10-Kubernetes生产级EFK(Elasticsearch+Fluentd+Fluentbit+Kibana)企业级架构、高可用集群部署与底层原理深度实战指南.md": {
+      "id": "2cba4697-149b-464b-89a6-56a1c836dc18",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238210Z",
+      "updated_at": "2026-08-31T01:40:20.238210Z"
+    },
+    "01_Inbox/03-K8S/06-集群运维/11-etcd备份与恢复实战指南.md": {
+      "id": "d157fe33-90de-49c1-8680-394928ea1c19",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238213Z",
+      "updated_at": "2026-08-31T01:40:20.238213Z"
+    },
+    "01_Inbox/03-K8S/06-集群运维/12-Kubernetes生产级Nacos2.x高可用集群部署与重启故障深度剖析指南.md": {
+      "id": "576f9fb8-b2e7-46de-b238-6bbb7a0fb576",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238216Z",
+      "updated_at": "2026-08-31T01:40:20.238216Z"
+    },
+    "01_Inbox/03-K8S/06-集群运维/README.md": {
+      "id": "1d962430-8392-433c-ae59-172749fb3427",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238219Z",
+      "updated_at": "2026-08-31T01:40:20.238219Z"
+    },
+    "01_Inbox/03-K8S/07-集群扩展/01-Argo概述与Rollouts金丝雀发布.md": {
+      "id": "9675c778-ec49-4a16-8e5d-d6e76e988c52",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238221Z",
+      "updated_at": "2026-08-31T01:40:20.238221Z"
+    },
+    "01_Inbox/03-K8S/07-集群扩展/02-Docker与Containerd容器运行时底座.md": {
+      "id": "6278925a-fe60-4129-9d0e-1936d03ad2b1",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238223Z",
+      "updated_at": "2026-08-31T01:40:20.238223Z"
+    },
+    "01_Inbox/03-K8S/07-集群扩展/03-Ceph分布式存储架构与部署实战.md": {
+      "id": "68209d1b-d197-42d4-b05c-701a84248220",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238226Z",
+      "updated_at": "2026-08-31T01:40:20.238226Z"
+    },
+    "01_Inbox/03-K8S/07-集群扩展/04-Ceph存储应用与高可用运维.md": {
+      "id": "3bbcf7be-47a8-439c-a7f0-8af81bc44d50",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238229Z",
+      "updated_at": "2026-08-31T01:40:20.238229Z"
+    },
+    "01_Inbox/03-K8S/07-集群扩展/05-Helm包制作与高级模版语法.md": {
+      "id": "1e0f9e54-e0aa-42de-9e69-285252a560db",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238231Z",
+      "updated_at": "2026-08-31T01:40:20.238231Z"
+    },
+    "01_Inbox/03-K8S/07-集群扩展/06-CKA模拟考试核心实战指南.md": {
+      "id": "2499fc85-10fa-4618-b216-a240fbb9b085",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238235Z",
+      "updated_at": "2026-08-31T01:40:20.238235Z"
+    },
+    "01_Inbox/03-K8S/07-集群扩展/07-Operator开发与Controller-Runtime原理.md": {
+      "id": "52d881b3-dd5c-42a2-ade9-ebe69485d29a",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238238Z",
+      "updated_at": "2026-08-31T01:40:20.238238Z"
+    },
+    "01_Inbox/03-K8S/07-集群扩展/08-Karmada与Submariner多集群编排与跨集群网络实战.md": {
+      "id": "259a52ce-5eeb-4fd5-b4b7-461978bcf3df",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238240Z",
+      "updated_at": "2026-08-31T01:40:20.238240Z"
+    },
+    "01_Inbox/03-K8S/07-集群扩展/README.md": {
+      "id": "d8e87fd0-2685-4ec6-90f2-ff16d6ce34ad",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238243Z",
+      "updated_at": "2026-08-31T01:40:20.238243Z"
+    },
+    "01_Inbox/03-K8S/08-应用与实战/01-集群健康巡检与脚本自动化.md": {
+      "id": "cdaefae0-8020-4b54-b2e3-10f177ba3fd0",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238246Z",
+      "updated_at": "2026-08-31T01:40:20.238246Z"
+    },
+    "01_Inbox/03-K8S/08-应用与实战/01-高级K8s工程师面试全景复习计划与冲刺指南.md": {
+      "id": "1f5ef016-f7a4-46a9-9258-f7a9cc8ff254",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238248Z",
+      "updated_at": "2026-08-31T01:40:20.238248Z"
+    },
+    "01_Inbox/03-K8S/08-应用与实战/02-云原生应用无损上下线实践.md": {
+      "id": "089df838-6224-4c1b-b610-a25f6984c5b2",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238251Z",
+      "updated_at": "2026-08-31T01:40:20.238251Z"
+    },
+    "01_Inbox/03-K8S/08-应用与实战/03-CRD与Kubebuilder开发流程.md": {
+      "id": "af6e0aee-4f72-4dc3-b132-aaec1154721e",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238254Z",
+      "updated_at": "2026-08-31T01:40:20.238254Z"
+    },
+    "01_Inbox/03-K8S/08-应用与实战/04-Kubectl效率调优与K9s实战.md": {
+      "id": "7664e05e-7959-433c-8848-9416658f6a6b",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238256Z",
+      "updated_at": "2026-08-31T01:40:20.238256Z"
+    },
+    "01_Inbox/03-K8S/08-应用与实战/README.md": {
+      "id": "9bc3759a-6d3a-4c90-b7d8-30ab61c27c3c",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238259Z",
+      "updated_at": "2026-08-31T01:40:20.238259Z"
+    },
+    "01_Inbox/03-K8S/README.md": {
+      "id": "92219694-0294-40ca-aff2-f05b3602e50a",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238261Z",
+      "updated_at": "2026-08-31T01:40:20.238261Z"
+    },
+    "01_Inbox/04-AI/28-大模型微调概述与整体流程.md": {
+      "id": "29fc905f-4b38-4f5b-bb8a-0432d34d15d9",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238264Z",
+      "updated_at": "2026-08-31T01:40:20.238264Z"
+    },
+    "01_Inbox/04-AI/AI学习方向全景图.md": {
+      "id": "a4fe2b9b-97e0-4332-95d2-567f01a1a67f",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238266Z",
+      "updated_at": "2026-08-31T01:40:20.238266Z"
+    },
+    "01_Inbox/04-AI/AI应用后端学习计划_Agent与RAG方向.md": {
+      "id": "4be8f311-1f9e-4a5c-81e2-81b03352c2c8",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238269Z",
+      "updated_at": "2026-08-31T01:40:20.238269Z"
+    },
+    "01_Inbox/04-AI/PromptEngineeringGuide_重点精读笔记.md": {
+      "id": "f89e69e6-271d-47a4-85f8-5c456e904777",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238271Z",
+      "updated_at": "2026-08-31T01:40:20.238271Z"
+    },
+    "01_Inbox/04-AI/README.md": {
+      "id": "6e0ab596-2e86-4b7e-88fe-9c6e86086c3b",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238273Z",
+      "updated_at": "2026-08-31T01:40:20.238273Z"
+    },
+    "01_Inbox/04-AI/assets/28/README.md": {
+      "id": "bd44fc2d-5f74-4b0c-98df-0336defa315b",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238276Z",
+      "updated_at": "2026-08-31T01:40:20.238276Z"
+    },
+    "01_Inbox/04-AI/assets/README.md": {
+      "id": "4e161f09-5a1f-45ad-a538-28bb5a544061",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238278Z",
+      "updated_at": "2026-08-31T01:40:20.238278Z"
+    },
+    "01_Inbox/04-AI/直播课程/01-InfoQ与QCon/01-大模型企业级工程落地与LLMOps架构演进.md": {
+      "id": "19cb9392-9eb5-43d5-a19f-eade68c346ff",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238281Z",
+      "updated_at": "2026-08-31T01:40:20.238281Z"
+    },
+    "01_Inbox/04-AI/直播课程/01-InfoQ与QCon/02-企业私有化大模型微调与高效推理架构实践.md": {
+      "id": "97791cd2-2b58-4947-af99-e5b3fd902f17",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238284Z",
+      "updated_at": "2026-08-31T01:40:20.238284Z"
+    },
+    "01_Inbox/04-AI/直播课程/01-InfoQ与QCon/03-AICon2026世界模型与Agent长期记忆演进.md": {
+      "id": "6d1815f2-7283-485a-8fd7-a8a7227ed6fe",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238286Z",
+      "updated_at": "2026-08-31T01:40:20.238286Z"
+    },
+    "01_Inbox/04-AI/直播课程/01-InfoQ与QCon/04-QCon2026代码智能体与研发效能重塑.md": {
+      "id": "0356a97c-f9e1-4e67-bae2-a6dbb245b60f",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238289Z",
+      "updated_at": "2026-08-31T01:40:20.238289Z"
+    },
+    "01_Inbox/04-AI/直播课程/01-InfoQ与QCon/05-DeepSeek-R1强化学习与企业低成本落地实战.md": {
+      "id": "6515c75a-1dcf-4e70-95dc-01a9f42b9bde",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238292Z",
+      "updated_at": "2026-08-31T01:40:20.238292Z"
+    },
+    "01_Inbox/04-AI/直播课程/01-InfoQ与QCon/06-大模型推理PD分离架构与KV缓存极速传输.md": {
+      "id": "a506e60d-17d2-4d91-80bf-5547a3afc831",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238294Z",
+      "updated_at": "2026-08-31T01:40:20.238294Z"
+    },
+    "01_Inbox/04-AI/直播课程/01-InfoQ与QCon/07-大模型时代向量检索与GraphRAG融合演进.md": {
+      "id": "d3bba68c-2fb1-40ff-ab99-2a3dba2f7cb5",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238297Z",
+      "updated_at": "2026-08-31T01:40:20.238297Z"
+    },
+    "01_Inbox/04-AI/直播课程/01-InfoQ与QCon/README.md": {
+      "id": "9a009930-e847-49bd-a5e0-66490935b74d",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238300Z",
+      "updated_at": "2026-08-31T01:40:20.238300Z"
+    },
+    "01_Inbox/04-AI/直播课程/01-InfoQ与QCon/近一年历史直播与公开课全景清单.md": {
+      "id": "5d1925b7-68ea-4814-8a94-b2e273df578b",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238303Z",
+      "updated_at": "2026-08-31T01:40:20.238303Z"
+    },
+    "01_Inbox/04-AI/直播课程/02-智东西公开课/01-大模型训练加速与分布式算力优化.md": {
+      "id": "75be8289-7d0d-4484-af41-dadd85ce51a9",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238306Z",
+      "updated_at": "2026-08-31T01:40:20.238306Z"
+    },
+    "01_Inbox/04-AI/直播课程/02-智东西公开课/02-2026超节点智算集群与AI芯片互联架构.md": {
+      "id": "1f042271-38f4-43b9-9f81-d673830052da",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238308Z",
+      "updated_at": "2026-08-31T01:40:20.238308Z"
+    },
+    "01_Inbox/04-AI/直播课程/02-智东西公开课/03-具身智能通用大脑RoboBrain2.0与物理世界建模.md": {
+      "id": "74ce55bf-c794-4e4d-956e-83424b4c84cf",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238311Z",
+      "updated_at": "2026-08-31T01:40:20.238311Z"
+    },
+    "01_Inbox/04-AI/直播课程/02-智东西公开课/04-DeepSeek软硬件协同优化与FlashMLA算子实战.md": {
+      "id": "87737971-fe37-414a-bf77-c6b1d6487e61",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238314Z",
+      "updated_at": "2026-08-31T01:40:20.238314Z"
+    },
+    "01_Inbox/04-AI/直播课程/02-智东西公开课/05-英伟达Blackwell架构与GB200集群算力解析.md": {
+      "id": "f21bf45e-f722-474a-891f-1f16cf356337",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238317Z",
+      "updated_at": "2026-08-31T01:40:20.238317Z"
+    },
+    "01_Inbox/04-AI/直播课程/02-智东西公开课/06-多模态大模型端侧部署与量化推理优化.md": {
+      "id": "9b6bc811-a7b9-46d3-895d-9b1eb4cc4ccc",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238321Z",
+      "updated_at": "2026-08-31T01:40:20.238321Z"
+    },
+    "01_Inbox/04-AI/直播课程/02-智东西公开课/README.md": {
+      "id": "f9102207-900c-4250-a1f3-21ebe4a4e30c",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238324Z",
+      "updated_at": "2026-08-31T01:40:20.238324Z"
+    },
+    "01_Inbox/04-AI/直播课程/02-智东西公开课/近一年历史直播与公开课全景清单.md": {
+      "id": "80f7786e-e05d-4dc7-aa63-96ea0b0f18f1",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238327Z",
+      "updated_at": "2026-08-31T01:40:20.238327Z"
+    },
+    "01_Inbox/04-AI/直播课程/03-机器之心Synced/01-WAIC2026具身世界模型与通用智能突破.md": {
+      "id": "e2029e4e-0753-4613-ae7b-0d5334d9d693",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238330Z",
+      "updated_at": "2026-08-31T01:40:20.238330Z"
+    },
+    "01_Inbox/04-AI/直播课程/03-机器之心Synced/02-DeepSeek-R1强化学习长思维链推理深度剖析.md": {
+      "id": "eb16f7b1-270f-4c81-b114-27f5b2f40806",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238332Z",
+      "updated_at": "2026-08-31T01:40:20.238332Z"
+    },
+    "01_Inbox/04-AI/直播课程/03-机器之心Synced/03-MoE混合专家模型架构与MLA多头潜变量注意力.md": {
+      "id": "b44ae160-43a9-443d-8d2b-c26d47faf663",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238335Z",
+      "updated_at": "2026-08-31T01:40:20.238335Z"
+    },
+    "01_Inbox/04-AI/直播课程/03-机器之心Synced/README.md": {
+      "id": "404e1f81-f23e-4f31-85fa-76c70966b556",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238338Z",
+      "updated_at": "2026-08-31T01:40:20.238338Z"
+    },
+    "01_Inbox/04-AI/直播课程/03-机器之心Synced/近一年历史直播与公开课全景清单.md": {
+      "id": "1df5c577-ad57-48fc-aed1-4d37de6f7080",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238341Z",
+      "updated_at": "2026-08-31T01:40:20.238341Z"
+    },
+    "01_Inbox/04-AI/直播课程/04-Datawhale开源实战营/01-开源大模型微调与企业RAG全流程落地.md": {
+      "id": "14a16db7-7cd6-4e55-8cfd-416c2382397e",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238344Z",
+      "updated_at": "2026-08-31T01:40:20.238344Z"
+    },
+    "01_Inbox/04-AI/直播课程/04-Datawhale开源实战营/02-开源推理模型与本地小型化部署实战.md": {
+      "id": "870597a8-15c1-4153-a6e0-f7145c1ef105",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238347Z",
+      "updated_at": "2026-08-31T01:40:20.238347Z"
+    },
+    "01_Inbox/04-AI/直播课程/04-Datawhale开源实战营/03-多Agent编排LangGraph与AutoGen2.0实战.md": {
+      "id": "d8b73180-9f95-40d8-8792-1a9dca02be34",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238349Z",
+      "updated_at": "2026-08-31T01:40:20.238349Z"
+    },
+    "01_Inbox/04-AI/直播课程/04-Datawhale开源实战营/04-大模型高效微调QLoRA与Unsloth极速加速.md": {
+      "id": "d156bb29-f7e2-421f-b8f9-9520b332a805",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238352Z",
+      "updated_at": "2026-08-31T01:40:20.238352Z"
+    },
+    "01_Inbox/04-AI/直播课程/04-Datawhale开源实战营/README.md": {
+      "id": "f8104918-4300-4f7f-a3ec-758bb25a40dd",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238355Z",
+      "updated_at": "2026-08-31T01:40:20.238355Z"
+    },
+    "01_Inbox/04-AI/直播课程/04-Datawhale开源实战营/近一年历史直播与公开课全景清单.md": {
+      "id": "d2c22e4f-7250-4a75-800b-521899580c38",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238357Z",
+      "updated_at": "2026-08-31T01:40:20.238357Z"
+    },
+    "01_Inbox/04-AI/直播课程/05-Zilliz与Milvus社区/01-高精度混合检索与企业私有知识库优化实战.md": {
+      "id": "c525c50e-d42b-46b6-85b8-eed998f8ac7c",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238360Z",
+      "updated_at": "2026-08-31T01:40:20.238360Z"
+    },
+    "01_Inbox/04-AI/直播课程/05-Zilliz与Milvus社区/02-Milvus2.6超大规模检索与智能冷热分层.md": {
+      "id": "89ff60b6-48b6-44e9-aee3-2a3f6ca906e1",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238363Z",
+      "updated_at": "2026-08-31T01:40:20.238363Z"
+    },
+    "01_Inbox/04-AI/直播课程/05-Zilliz与Milvus社区/03-向量加图谱混合GraphRAG企业知识中台.md": {
+      "id": "da935211-ea49-4125-a513-f9abed355065",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238366Z",
+      "updated_at": "2026-08-31T01:40:20.238366Z"
+    },
+    "01_Inbox/04-AI/直播课程/05-Zilliz与Milvus社区/04-Milvus2.5全文检索与标量倒排深度整合.md": {
+      "id": "b4fbe7c4-4f88-4386-8622-2e22d117a691",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238368Z",
+      "updated_at": "2026-08-31T01:40:20.238368Z"
+    },
+    "01_Inbox/04-AI/直播课程/05-Zilliz与Milvus社区/README.md": {
+      "id": "67fb8381-379b-406e-a9ac-371382ad96aa",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238371Z",
+      "updated_at": "2026-08-31T01:40:20.238371Z"
+    },
+    "01_Inbox/04-AI/直播课程/05-Zilliz与Milvus社区/近一年历史直播与公开课全景清单.md": {
+      "id": "eaac589b-d1bb-4a5a-8990-372891158486",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238374Z",
+      "updated_at": "2026-08-31T01:40:20.238374Z"
+    },
+    "01_Inbox/04-AI/直播课程/06-OneFlow一流科技/01-异构硬件大模型推理编译从CUDA到国产NPU统一接入.md": {
+      "id": "a7b1c82f-755c-4b9d-bc1e-818bc10ab3bd",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238377Z",
+      "updated_at": "2026-08-31T01:40:20.238377Z"
+    },
+    "01_Inbox/04-AI/直播课程/06-OneFlow一流科技/02-DeepSeek极速算子重构FlashMLA与低比特量化融合实战.md": {
+      "id": "81f6ab2b-34e4-4afa-8edf-7053aa84e009",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238380Z",
+      "updated_at": "2026-08-31T01:40:20.238380Z"
+    },
+    "01_Inbox/04-AI/直播课程/06-OneFlow一流科技/README.md": {
+      "id": "67a405b9-0f99-4182-a56f-180b910b2378",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238383Z",
+      "updated_at": "2026-08-31T01:40:20.238383Z"
+    },
+    "01_Inbox/04-AI/直播课程/06-OneFlow一流科技/近一年历史直播与公开课全景清单.md": {
+      "id": "a0b5cf55-e7bb-4913-9ac6-2ad52397ec75",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238386Z",
+      "updated_at": "2026-08-31T01:40:20.238386Z"
+    },
+    "01_Inbox/04-AI/直播课程/07-FounderPark极客公园/01-AgenticWorkflow与企业级Native应用演进.md": {
+      "id": "0ba091f0-9152-447d-8327-9426c1a36838",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238389Z",
+      "updated_at": "2026-08-31T01:40:20.238389Z"
+    },
+    "01_Inbox/04-AI/直播课程/07-FounderPark极客公园/02-具身真相与机器人硬件算法解耦实战.md": {
+      "id": "91a8b3f1-d351-4789-b190-dd2545093cb5",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238391Z",
+      "updated_at": "2026-08-31T01:40:20.238391Z"
+    },
+    "01_Inbox/04-AI/直播课程/07-FounderPark极客公园/03-FDE前向部署工程师与企业大模型落地最后一公里.md": {
+      "id": "11dec832-e219-4bb2-912d-9baa56c4ee88",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238394Z",
+      "updated_at": "2026-08-31T01:40:20.238394Z"
+    },
+    "01_Inbox/04-AI/直播课程/07-FounderPark极客公园/04-因果大模型与下一代AI范式演进.md": {
+      "id": "82486dcc-90dd-4d06-9289-276bafb2f74b",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238397Z",
+      "updated_at": "2026-08-31T01:40:20.238397Z"
+    },
+    "01_Inbox/04-AI/直播课程/07-FounderPark极客公园/05-SpaceX太空算力与天基数据中心架构.md": {
+      "id": "a2bda7be-439d-4e48-9d9a-45876fd399ba",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238400Z",
+      "updated_at": "2026-08-31T01:40:20.238400Z"
+    },
+    "01_Inbox/04-AI/直播课程/07-FounderPark极客公园/06-端侧AI与苹果系统级智能体架构演进.md": {
+      "id": "f803344a-77f7-4f09-a34a-138dd47ef72d",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238404Z",
+      "updated_at": "2026-08-31T01:40:20.238404Z"
+    },
+    "01_Inbox/04-AI/直播课程/07-FounderPark极客公园/07-AICoding生产力从Copilot到自主软件工程Agent.md": {
+      "id": "d85e1220-e49e-4dab-bbe8-37d4c1c8ace4",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238407Z",
+      "updated_at": "2026-08-31T01:40:20.238407Z"
+    },
+    "01_Inbox/04-AI/直播课程/07-FounderPark极客公园/README.md": {
+      "id": "caff26b4-5a01-4d59-9260-0c3b68ba1d07",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238410Z",
+      "updated_at": "2026-08-31T01:40:20.238410Z"
+    },
+    "01_Inbox/04-AI/直播课程/07-FounderPark极客公园/近一年历史直播与公开课全景清单.md": {
+      "id": "dde77539-2f8d-4261-8425-03eab110d1bd",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238413Z",
+      "updated_at": "2026-08-31T01:40:20.238413Z"
+    },
+    "01_Inbox/04-AI/直播课程/08-Dify与Coze社区/01-企业级自动化Agent工作流编排与插件落地.md": {
+      "id": "d8e4bcd6-87b6-4fa8-b16e-ad55a645b7a5",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238416Z",
+      "updated_at": "2026-08-31T01:40:20.238416Z"
+    },
+    "01_Inbox/04-AI/直播课程/08-Dify与Coze社区/02-Dify3.0企业级多租户智能体平台架构深度演进.md": {
+      "id": "28ab1046-8b85-4b1d-aa20-af93073a0fea",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238418Z",
+      "updated_at": "2026-08-31T01:40:20.238418Z"
+    },
+    "01_Inbox/04-AI/直播课程/08-Dify与Coze社区/03-扣子Coze空间智能与多模态智能体工作流实战.md": {
+      "id": "9521d886-17d4-4e86-8c63-270cd5b2f432",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238421Z",
+      "updated_at": "2026-08-31T01:40:20.238421Z"
+    },
+    "01_Inbox/04-AI/直播课程/08-Dify与Coze社区/README.md": {
+      "id": "06255cd1-951b-42a2-99c5-facf1b966556",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238425Z",
+      "updated_at": "2026-08-31T01:40:20.238425Z"
+    },
+    "01_Inbox/04-AI/直播课程/08-Dify与Coze社区/近一年历史直播与公开课全景清单.md": {
+      "id": "82ac38d6-0384-4813-a79b-d264fb3f0fda",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238428Z",
+      "updated_at": "2026-08-31T01:40:20.238428Z"
+    },
+    "01_Inbox/04-AI/直播课程/09-亚马逊云科技AWS/01-AmazonBedrock企业级大模型调度与安全架构.md": {
+      "id": "60747827-6b1b-46dc-b876-92d3d4a8c0d8",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238431Z",
+      "updated_at": "2026-08-31T01:40:20.238431Z"
+    },
+    "01_Inbox/04-AI/直播课程/09-亚马逊云科技AWS/02-AmazonBedrockAgent生产级自动化与工具闭环.md": {
+      "id": "10e931d5-95ab-4c40-9bb6-b0e3ab4eaee0",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238434Z",
+      "updated_at": "2026-08-31T01:40:20.238434Z"
+    },
+    "01_Inbox/04-AI/直播课程/09-亚马逊云科技AWS/README.md": {
+      "id": "bc657f3f-95b0-4777-a676-718ac892d3b3",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238437Z",
+      "updated_at": "2026-08-31T01:40:20.238437Z"
+    },
+    "01_Inbox/04-AI/直播课程/09-亚马逊云科技AWS/近一年历史直播与公开课全景清单.md": {
+      "id": "c065c110-0435-4ccc-955c-4636d15f9612",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238440Z",
+      "updated_at": "2026-08-31T01:40:20.238440Z"
+    },
+    "01_Inbox/04-AI/直播课程/10-腾讯云开发者与TVP/01-腾讯云混元大模型与TVP架构实战.md": {
+      "id": "894d9fa1-f08f-4289-8c5e-cf119b4e7912",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238443Z",
+      "updated_at": "2026-08-31T01:40:20.238443Z"
+    },
+    "01_Inbox/04-AI/直播课程/10-腾讯云开发者与TVP/02-腾讯混元世界模型架构研发布局与物理空间理解.md": {
+      "id": "5ad86891-e329-46d1-9aac-98ce6c83b605",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238446Z",
+      "updated_at": "2026-08-31T01:40:20.238446Z"
+    },
+    "01_Inbox/04-AI/直播课程/10-腾讯云开发者与TVP/README.md": {
+      "id": "d82a3b45-0400-445d-b2c6-f1c8d5a06cb9",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238450Z",
+      "updated_at": "2026-08-31T01:40:20.238450Z"
+    },
+    "01_Inbox/04-AI/直播课程/10-腾讯云开发者与TVP/近一年历史直播与公开课全景清单.md": {
+      "id": "10c025e8-f715-4b1c-8e5b-114309703feb",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238453Z",
+      "updated_at": "2026-08-31T01:40:20.238453Z"
+    },
+    "01_Inbox/04-AI/直播课程/11-阿里云开发者与百炼/01-阿里云百炼平台与通义模型企业级微调.md": {
+      "id": "2c7eaa67-f3a4-46b5-bd68-c483c6a3bf7b",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238456Z",
+      "updated_at": "2026-08-31T01:40:20.238456Z"
+    },
+    "01_Inbox/04-AI/直播课程/11-阿里云开发者与百炼/02-PAI-Lingjun灵骏万卡智算集群稳定性实践.md": {
+      "id": "130a0c6b-d8f7-41ad-9816-fb20b0ec227b",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238459Z",
+      "updated_at": "2026-08-31T01:40:20.238459Z"
+    },
+    "01_Inbox/04-AI/直播课程/11-阿里云开发者与百炼/README.md": {
+      "id": "cf80d954-c41f-4c19-b069-df1c6aa69d99",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238462Z",
+      "updated_at": "2026-08-31T01:40:20.238462Z"
+    },
+    "01_Inbox/04-AI/直播课程/11-阿里云开发者与百炼/近一年历史直播与公开课全景清单.md": {
+      "id": "a970a542-8520-4d83-8446-4a0c55d5fa32",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238466Z",
+      "updated_at": "2026-08-31T01:40:20.238466Z"
+    },
+    "01_Inbox/04-AI/直播课程/12-百度智能云与千帆/01-百度千帆大模型平台与企业Agent实践.md": {
+      "id": "7190b238-f174-4eee-ae53-c18dbc52e28a",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238469Z",
+      "updated_at": "2026-08-31T01:40:20.238469Z"
+    },
+    "01_Inbox/04-AI/直播课程/12-百度智能云与千帆/02-BaiduCreate2026文心5.0与全模态智能体演进.md": {
+      "id": "ff76caa6-5837-471b-8895-4dcfe0a1c4b7",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238472Z",
+      "updated_at": "2026-08-31T01:40:20.238472Z"
+    },
+    "01_Inbox/04-AI/直播课程/12-百度智能云与千帆/README.md": {
+      "id": "24ccc019-441a-4315-a3c0-c1ccdd01d42e",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238475Z",
+      "updated_at": "2026-08-31T01:40:20.238475Z"
+    },
+    "01_Inbox/04-AI/直播课程/12-百度智能云与千帆/近一年历史直播与公开课全景清单.md": {
+      "id": "a1e5902f-a675-4055-b844-a80632330f63",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238479Z",
+      "updated_at": "2026-08-31T01:40:20.238479Z"
+    },
+    "01_Inbox/04-AI/直播课程/13-甲子光年与产业智库/01-企业级AI引入ROI评估与商业选型指南.md": {
+      "id": "b9b5caa5-5264-4b09-a645-939d24f781ad",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238482Z",
+      "updated_at": "2026-08-31T01:40:20.238482Z"
+    },
+    "01_Inbox/04-AI/直播课程/13-甲子光年与产业智库/README.md": {
+      "id": "7853d1d6-1ca3-41a0-afa3-5855d99f40f6",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238485Z",
+      "updated_at": "2026-08-31T01:40:20.238485Z"
+    },
+    "01_Inbox/04-AI/直播课程/13-甲子光年与产业智库/近一年历史直播与公开课全景清单.md": {
+      "id": "61e29163-57f5-409b-979b-d7b914028a9c",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238489Z",
+      "updated_at": "2026-08-31T01:40:20.238489Z"
+    },
+    "01_Inbox/04-AI/直播课程/14-海外独角兽与前沿研讨/01-海外顶尖AI企服架构与商业模式深度拆解.md": {
+      "id": "ee37be87-263f-4beb-b8b5-dd62c983b885",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238492Z",
+      "updated_at": "2026-08-31T01:40:20.238492Z"
+    },
+    "01_Inbox/04-AI/直播课程/14-海外独角兽与前沿研讨/README.md": {
+      "id": "ee0d0921-026b-4cfa-bf44-daf7c3ad2894",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238496Z",
+      "updated_at": "2026-08-31T01:40:20.238496Z"
+    },
+    "01_Inbox/04-AI/直播课程/14-海外独角兽与前沿研讨/近一年历史直播与公开课全景清单.md": {
+      "id": "f83e86e6-bbd9-4b9b-8161-179daad64ee1",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238499Z",
+      "updated_at": "2026-08-31T01:40:20.238499Z"
+    },
+    "01_Inbox/04-AI/直播课程/README.md": {
+      "id": "9d25b94a-7484-4d74-86b5-7c4ff5b0cad9",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238501Z",
+      "updated_at": "2026-08-31T01:40:20.238501Z"
+    },
+    "01_Inbox/04-AI/直播课程/待补充与追踪清单.md": {
+      "id": "28312143-2348-4b67-938b-137bcacc3cc2",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238504Z",
+      "updated_at": "2026-08-31T01:40:20.238504Z"
+    },
+    "01_Inbox/04-AI/综合AI后端开发学习计划与目标.md": {
+      "id": "e484e346-e10c-44eb-a620-bc4fbe60cc18",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238507Z",
+      "updated_at": "2026-08-31T01:40:20.238507Z"
+    },
+    "01_Inbox/04-AI/阶段一_基础重塑_API与FunctionCalling学习资料.md": {
+      "id": "f844729b-0da2-473a-9903-b25abe56b03e",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238510Z",
+      "updated_at": "2026-08-31T01:40:20.238510Z"
+    },
+    "01_Inbox/README.md": {
+      "id": "f68faa8b-2eab-4af0-89f2-72bc9b6da437",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238512Z",
+      "updated_at": "2026-08-31T01:40:20.238512Z"
+    },
+    "02_Notes/README.md": {
+      "id": "b66b0fe2-78cb-48fa-bfee-31bde03e9433",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238515Z",
+      "updated_at": "2026-08-31T01:40:20.238515Z"
+    },
+    "02_Notes/面试题.md": {
+      "id": "ba547cb4-ad34-44c2-909c-aa87a8a5de2a",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238517Z",
+      "updated_at": "2026-08-31T01:40:20.238517Z"
+    },
+    "03_Study_Plans/README.md": {
+      "id": "f41acaf6-fcd0-41ae-94cf-93248b1a2cac",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238519Z",
+      "updated_at": "2026-08-31T01:40:20.238519Z"
+    },
+    "04_Resources/README.md": {
+      "id": "af6e1383-5591-46f9-8b6d-bb1a8ee6f448",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238521Z",
+      "updated_at": "2026-08-31T01:40:20.238521Z"
+    },
+    "05-Install/README.md": {
+      "id": "01b44ef1-057e-4f30-a4dd-837b05752d35",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238524Z",
+      "updated_at": "2026-08-31T01:40:20.238524Z"
+    },
+    "05-Install/kubenetes/README.md": {
+      "id": "744c0794-b356-4540-b3a1-020366918776",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238526Z",
+      "updated_at": "2026-08-31T01:40:20.238526Z"
+    },
+    "05-Install/kubenetes/efk/README.md": {
+      "id": "30e0a86b-52ad-450e-9e43-71f9656e8c74",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238529Z",
+      "updated_at": "2026-08-31T01:40:20.238529Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/README.md": {
+      "id": "a27fc77b-8d1f-4cfd-86e9-94c107460cc4",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238531Z",
+      "updated_at": "2026-08-31T01:40:20.238531Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/conf/README.md": {
+      "id": "e220f44f-621e-4e70-91d3-80e97ca55003",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238534Z",
+      "updated_at": "2026-08-31T01:40:20.238534Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/image/README.md": {
+      "id": "3ada8b55-fc90-4f46-88fc-fd5ad3e801c9",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238536Z",
+      "updated_at": "2026-08-31T01:40:20.238536Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/k8s-offline-guide.md": {
+      "id": "21f726f1-fb40-40c6-a571-cb55f3e8ce97",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238538Z",
+      "updated_at": "2026-08-31T01:40:20.238538Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/k8s-troubleshooting-top100.md": {
+      "id": "0f65c714-4997-4a17-b52d-fc83dc71811b",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238541Z",
+      "updated_at": "2026-08-31T01:40:20.238541Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/nginx/README.md": {
+      "id": "c5fc49d8-32f5-46ba-85bd-6e3ad3638aa6",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238544Z",
+      "updated_at": "2026-08-31T01:40:20.238544Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/nginx/local-yum-repo/Packages/README.md": {
+      "id": "1e8cb6a2-b123-4b62-a958-af15aa1b4fce",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238547Z",
+      "updated_at": "2026-08-31T01:40:20.238547Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/nginx/local-yum-repo/README.md": {
+      "id": "267bfb09-a46f-4b22-9ed8-781a089c915b",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238550Z",
+      "updated_at": "2026-08-31T01:40:20.238550Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/nginx/local-yum-repo/repodata/README.md": {
+      "id": "6d20a83e-0a82-4c47-9c27-110eb1dfae3b",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238552Z",
+      "updated_at": "2026-08-31T01:40:20.238552Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/nginx/nginx-Packages/README.md": {
+      "id": "47834662-b83a-42fc-923d-de404a0b76d4",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238555Z",
+      "updated_at": "2026-08-31T01:40:20.238555Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/CHANGELOG.md": {
+      "id": "3257a8d2-e896-4857-a984-c5583d789f99",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238557Z",
+      "updated_at": "2026-08-31T01:40:20.238557Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/CONTRIBUTING.md": {
+      "id": "cff6cd14-79df-41d4-9d3f-534509450df4",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238560Z",
+      "updated_at": "2026-08-31T01:40:20.238560Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/README.md": {
+      "id": "d9dea762-2d7b-42e1-b77e-cd42533f5320",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238563Z",
+      "updated_at": "2026-08-31T01:40:20.238563Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/RELEASE.md": {
+      "id": "b27f44f8-cef5-4dfa-8cf8-295e92481607",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238566Z",
+      "updated_at": "2026-08-31T01:40:20.238566Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/code-of-conduct.md": {
+      "id": "4f15dd9a-a5c4-45b6-bf58-4f65f071c06a",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238569Z",
+      "updated_at": "2026-08-31T01:40:20.238569Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/examples/README.md": {
+      "id": "0104d02b-9e4e-46f5-81b9-0cf721c796f4",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238572Z",
+      "updated_at": "2026-08-31T01:40:20.238572Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/examples/basic-auth/README.md": {
+      "id": "99109efb-a7bd-4164-9a39-f3c786d35afe",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238574Z",
+      "updated_at": "2026-08-31T01:40:20.238574Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/examples/continuous-delivery/README.md": {
+      "id": "23e88536-9d19-47dc-8285-4c4c6d2f2a00",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238577Z",
+      "updated_at": "2026-08-31T01:40:20.238577Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/examples/continuous-delivery/argocd/README.md": {
+      "id": "a1397c50-075d-49ff-a17f-9dace8a05f31",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238580Z",
+      "updated_at": "2026-08-31T01:40:20.238580Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/examples/continuous-delivery/argocd/kube-prometheus/README.md": {
+      "id": "2fb88d60-3500-4b8d-abed-2966839be4ad",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238583Z",
+      "updated_at": "2026-08-31T01:40:20.238583Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/examples/example-app/README.md": {
+      "id": "e993ad82-297b-46da-bc97-76a28abf520f",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238586Z",
+      "updated_at": "2026-08-31T01:40:20.238586Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/examples/jsonnet-build-snippet/README.md": {
+      "id": "09326a38-954c-4cb9-bbf8-3a0956a83f43",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238589Z",
+      "updated_at": "2026-08-31T01:40:20.238589Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/examples/jsonnet-snippets/README.md": {
+      "id": "79edd511-9143-4583-a8e0-b1a4df9879bd",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238593Z",
+      "updated_at": "2026-08-31T01:40:20.238593Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/experimental/README.md": {
+      "id": "2c8c3d6e-428e-40fe-9028-f3d6d27b3252",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238596Z",
+      "updated_at": "2026-08-31T01:40:20.238596Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/experimental/metrics-server/README.md": {
+      "id": "0b256c94-e31a-4645-a86d-30c1b96fbc97",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238598Z",
+      "updated_at": "2026-08-31T01:40:20.238598Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/jsonnet/README.md": {
+      "id": "e9f1cb46-9f32-43c4-a4af-c3f7238c52a3",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238601Z",
+      "updated_at": "2026-08-31T01:40:20.238601Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/jsonnet/kube-prometheus/README.md": {
+      "id": "d314f33c-36f2-4718-92a1-5934b0e1f13d",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238604Z",
+      "updated_at": "2026-08-31T01:40:20.238604Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/jsonnet/kube-prometheus/addons/README.md": {
+      "id": "617dfc6f-8fdd-47d1-b49a-3d9ddeed7032",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238607Z",
+      "updated_at": "2026-08-31T01:40:20.238607Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/jsonnet/kube-prometheus/addons/weave-net/README.md": {
+      "id": "6a6ac778-28e1-412b-adf8-c882778e54b2",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238611Z",
+      "updated_at": "2026-08-31T01:40:20.238611Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/jsonnet/kube-prometheus/components/README.md": {
+      "id": "dad64767-4708-4319-9fb8-60e2912d5906",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238613Z",
+      "updated_at": "2026-08-31T01:40:20.238613Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/jsonnet/kube-prometheus/components/mixin/README.md": {
+      "id": "88c3e0b4-61b1-4b2f-8502-7529835b121d",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238617Z",
+      "updated_at": "2026-08-31T01:40:20.238617Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/jsonnet/kube-prometheus/components/mixin/alerts/README.md": {
+      "id": "76b49548-7e5d-4540-9d5d-4bb17b9550ce",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238620Z",
+      "updated_at": "2026-08-31T01:40:20.238620Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/jsonnet/kube-prometheus/components/mixin/rules/README.md": {
+      "id": "0ef9e183-8e75-4f57-ac2f-7f79ee2fb162",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238623Z",
+      "updated_at": "2026-08-31T01:40:20.238623Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/jsonnet/kube-prometheus/lib/README.md": {
+      "id": "a13b6128-1b01-4d33-a3aa-f7a72b36f214",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238626Z",
+      "updated_at": "2026-08-31T01:40:20.238626Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/jsonnet/kube-prometheus/platforms/README.md": {
+      "id": "5266de51-8449-4cbe-b27e-2ff13809f1b1",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238629Z",
+      "updated_at": "2026-08-31T01:40:20.238629Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/manifests/README.md": {
+      "id": "baa560a3-8d0d-4ad1-bf48-093488802f0b",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238632Z",
+      "updated_at": "2026-08-31T01:40:20.238632Z"
+    },
+    "05-Install/kubenetes/k8s-install-offline-centos/prometheus/manifests/setup/README.md": {
+      "id": "b4704038-d7dc-4b3c-b770-fde62a20dbcc",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238635Z",
+      "updated_at": "2026-08-31T01:40:20.238635Z"
+    },
+    "05-Install/kubenetes/k8s-resource-migrate/README.md": {
+      "id": "21d5cf8a-62ba-4c4f-a34f-087b7cf76f63",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238638Z",
+      "updated_at": "2026-08-31T01:40:20.238638Z"
+    },
+    "05-Install/kubenetes/k8s-resource-migrate/docs/MIGRATION-RUNBOOK.md": {
+      "id": "d71f5ce1-6a40-4249-96fa-1ea08a267208",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238640Z",
+      "updated_at": "2026-08-31T01:40:20.238640Z"
+    },
+    "05-Install/kubenetes/k8s-resource-migrate/docs/README.md": {
+      "id": "edb4bd0b-4bbe-46c4-9772-3c6b4d7234b4",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238643Z",
+      "updated_at": "2026-08-31T01:40:20.238643Z"
+    },
+    "05-Install/kubenetes/k8s-resource-migrate/docs/phase-1-inspection.md": {
+      "id": "e8de4005-06fe-4551-94cb-830dd8578475",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238646Z",
+      "updated_at": "2026-08-31T01:40:20.238646Z"
+    },
+    "05-Install/kubenetes/k8s-resource-migrate/docs/phase-2-infra.md": {
+      "id": "430f56f6-38d2-4bc0-9156-a1e562794495",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238649Z",
+      "updated_at": "2026-08-31T01:40:20.238649Z"
+    },
+    "05-Install/kubenetes/k8s-resource-migrate/docs/phase-3-images.md": {
+      "id": "df376a6c-07c7-4fde-87f3-2cf44762dbdc",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238652Z",
+      "updated_at": "2026-08-31T01:40:20.238652Z"
+    },
+    "05-Install/kubenetes/k8s-resource-migrate/docs/phase-4-resources.md": {
+      "id": "5d8f03b9-4fe4-4cf7-b436-0cafd46b09e2",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238654Z",
+      "updated_at": "2026-08-31T01:40:20.238654Z"
+    },
+    "05-Install/kubenetes/k8s-resource-migrate/docs/phase-5-database.md": {
+      "id": "3a82b1f3-f8d8-4dc8-acb0-7c4ad43f27e2",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238657Z",
+      "updated_at": "2026-08-31T01:40:20.238657Z"
+    },
+    "05-Install/kubenetes/k8s-resource-migrate/docs/phase-6-file-pvcs.md": {
+      "id": "77038930-94df-4806-b78c-5a658e5e1941",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238660Z",
+      "updated_at": "2026-08-31T01:40:20.238660Z"
+    },
+    "05-Install/kubenetes/k8s-resource-migrate/docs/phase-7-cutover.md": {
+      "id": "d5bf7a08-ef14-45c7-8f7e-02b2a5870de7",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238663Z",
+      "updated_at": "2026-08-31T01:40:20.238663Z"
+    },
+    "05-Install/kubenetes/k8s-resource-migrate/docs/phase-8-validation.md": {
+      "id": "d6f1fa1e-369c-4224-aad6-0e0f81c24fb3",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238666Z",
+      "updated_at": "2026-08-31T01:40:20.238666Z"
+    },
+    "05-Install/kubenetes/k8s-resource-migrate/docs/phase-9-cleanup.md": {
+      "id": "20f8d693-4468-46c1-a1e1-7a83ddaaa494",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238670Z",
+      "updated_at": "2026-08-31T01:40:20.238670Z"
+    },
+    "05-Install/kubenetes/k8s-resource-migrate/lib/README.md": {
+      "id": "656a9809-428f-4834-bd5f-19dd218ec79d",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238672Z",
+      "updated_at": "2026-08-31T01:40:20.238672Z"
+    },
+    "05-Install/kubenetes/k8s-resource-migrate/phase-1-inspection/README.md": {
+      "id": "048c5939-555a-4b1e-afb7-4a8def43d4b3",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238675Z",
+      "updated_at": "2026-08-31T01:40:20.238675Z"
+    },
+    "05-Install/kubenetes/k8s-resource-migrate/phase-2-infra/README.md": {
+      "id": "707d919f-b78a-48b2-af81-3ac5ef80b84d",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238678Z",
+      "updated_at": "2026-08-31T01:40:20.238678Z"
+    },
+    "05-Install/kubenetes/k8s-resource-migrate/phase-3-images/README.md": {
+      "id": "ffc8c6f0-2650-42f3-8ae7-74bdbc69396c",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238681Z",
+      "updated_at": "2026-08-31T01:40:20.238681Z"
+    },
+    "05-Install/kubenetes/k8s-resource-migrate/phase-4-resources/README.md": {
+      "id": "26ef10a1-9059-4ca4-9e4a-34fb50b289e0",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238684Z",
+      "updated_at": "2026-08-31T01:40:20.238684Z"
+    },
+    "05-Install/kubenetes/k8s-resource-migrate/phase-5-database/README.md": {
+      "id": "c9c17447-ae40-4d0a-b138-c741326ccd83",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238687Z",
+      "updated_at": "2026-08-31T01:40:20.238687Z"
+    },
+    "05-Install/kubenetes/k8s-resource-migrate/phase-6-file-pvcs/README.md": {
+      "id": "197bd967-fcc6-4e9c-8916-8e40ff70ffe4",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238690Z",
+      "updated_at": "2026-08-31T01:40:20.238690Z"
+    },
+    "05-Install/kubenetes/k8s-resource-migrate/phase-7-cutover/README.md": {
+      "id": "7fc272a6-0869-49d9-91a9-49b652b30ba4",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238693Z",
+      "updated_at": "2026-08-31T01:40:20.238693Z"
+    },
+    "05-Install/kubenetes/k8s-resource-migrate/phase-8-validation/README.md": {
+      "id": "51b4af18-f68b-4d91-82e0-72facefa4cfa",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238696Z",
+      "updated_at": "2026-08-31T01:40:20.238696Z"
+    },
+    "05-Install/kubenetes/k8s-resource-migrate/phase-9-cleanup/README.md": {
+      "id": "f101f02f-27c4-4ed0-8c3d-d38a8ff2df07",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238699Z",
+      "updated_at": "2026-08-31T01:40:20.238699Z"
+    },
+    "05-Install/mysql/README.md": {
+      "id": "b71a3200-00e7-4128-b78c-44497c78962d",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238701Z",
+      "updated_at": "2026-08-31T01:40:20.238701Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/README.md": {
+      "id": "f00f1720-422e-4688-8663-b85792a42135",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238704Z",
+      "updated_at": "2026-08-31T01:40:20.238704Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/audit-plugins/README.md": {
+      "id": "aedd9617-fb20-45a0-9c2c-c9beda561c66",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238706Z",
+      "updated_at": "2026-08-31T01:40:20.238706Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/expect/README.md": {
+      "id": "005fa939-4b7c-488b-8c5e-8a58a518a642",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238709Z",
+      "updated_at": "2026-08-31T01:40:20.238709Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/keepalived/README.md": {
+      "id": "1e3f9f58-b105-4953-b472-88ceacb2be51",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238712Z",
+      "updated_at": "2026-08-31T01:40:20.238712Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/keepalived/router1_keep_conf/README.md": {
+      "id": "1e64f2fb-64f9-45b9-87f5-9fa61938ec95",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238714Z",
+      "updated_at": "2026-08-31T01:40:20.238714Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/keepalived/router2_keep_conf/README.md": {
+      "id": "5f3a11e4-06cd-4042-9776-07f500977d3d",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238717Z",
+      "updated_at": "2026-08-31T01:40:20.238717Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/limits_conf/README.md": {
+      "id": "8ae88a54-d276-4216-942b-acda172f01fc",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238719Z",
+      "updated_at": "2026-08-31T01:40:20.238719Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/mycnf/README.md": {
+      "id": "d76cfde6-39bd-4898-9d1c-11254763c405",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238722Z",
+      "updated_at": "2026-08-31T01:40:20.238722Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/mycnf/mgr/README.md": {
+      "id": "32cc66e2-4af0-4f0b-91a7-eb70ede1b728",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238725Z",
+      "updated_at": "2026-08-31T01:40:20.238725Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/mycnf/mgr/mysql-node1/README.md": {
+      "id": "46534d8e-3400-43d4-b328-44834449b83f",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238728Z",
+      "updated_at": "2026-08-31T01:40:20.238728Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/mycnf/mgr/mysql-node2/README.md": {
+      "id": "b4e4fe13-5836-417a-bed7-50772cc2d007",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238731Z",
+      "updated_at": "2026-08-31T01:40:20.238731Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/mycnf/mgr/mysql-node3/README.md": {
+      "id": "21ad473c-6eed-4065-b38e-318566ae7a77",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238734Z",
+      "updated_at": "2026-08-31T01:40:20.238734Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/mycnf/single/README.md": {
+      "id": "e5adc560-7757-49b5-9ac5-4563ba5a74bb",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238736Z",
+      "updated_at": "2026-08-31T01:40:20.238736Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/mysql_add_node_README.md": {
+      "id": "9c52b6e3-f033-47a4-aa3e-9179274b4088",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238739Z",
+      "updated_at": "2026-08-31T01:40:20.238739Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/mysql_backup_3306_README.md": {
+      "id": "331b7202-4a27-460e-9632-84b47aabfca3",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238742Z",
+      "updated_at": "2026-08-31T01:40:20.238742Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/mysql_recover_README.md": {
+      "id": "2cadcc5b-c2ad-459d-aea0-e92d338fe939",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238745Z",
+      "updated_at": "2026-08-31T01:40:20.238745Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/mysql_uninstall_README.md": {
+      "id": "fb2574a7-9cae-4da9-9c50-fdc70dbc0ec7",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238748Z",
+      "updated_at": "2026-08-31T01:40:20.238748Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/mysql_verify_README.md": {
+      "id": "b93e1d1b-917b-4a67-af82-c421c1166249",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238752Z",
+      "updated_at": "2026-08-31T01:40:20.238752Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/percona-toolkit/README.md": {
+      "id": "5cda2a18-7942-458c-9578-a34a054f374b",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238755Z",
+      "updated_at": "2026-08-31T01:40:20.238755Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/sysctl_conf/README.md": {
+      "id": "813a4e24-d3f6-4f40-b7fc-b0979660524d",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238757Z",
+      "updated_at": "2026-08-31T01:40:20.238757Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/telnet/README.md": {
+      "id": "67044aae-4bb4-45fb-a7d6-c8b22ca918a3",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238761Z",
+      "updated_at": "2026-08-31T01:40:20.238761Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/xtrabackup/README.md": {
+      "id": "644285aa-ef4e-419b-a9b2-48cb4fdb5d41",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238764Z",
+      "updated_at": "2026-08-31T01:40:20.238764Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/xtrabackup/libev/README.md": {
+      "id": "e6a5ff1e-f685-41cb-bc9f-e7d6c999eb75",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238767Z",
+      "updated_at": "2026-08-31T01:40:20.238767Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/xtrabackup/lz4/README.md": {
+      "id": "e8c8e436-c2dc-49c2-ba66-9b83faa0fe24",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238770Z",
+      "updated_at": "2026-08-31T01:40:20.238770Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/xtrabackup/perl-DBD-MySQL/README.md": {
+      "id": "618b63fb-2e31-4ca3-88e8-1c857bcf98f1",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238774Z",
+      "updated_at": "2026-08-31T01:40:20.238774Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/xtrabackup/qpress/README.md": {
+      "id": "163b6c0b-87dc-46c0-bb48-a57f90564d91",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238777Z",
+      "updated_at": "2026-08-31T01:40:20.238777Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/xtrabackup/xtrabackup-80-8.0.43/README.md": {
+      "id": "c8b5fe39-85bd-4a6e-a338-8ef6314f5dcd",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238780Z",
+      "updated_at": "2026-08-31T01:40:20.238780Z"
+    },
+    "05-Install/mysql/mysql8.0.43_huazhuo_prod/xtrabackup/zstd/README.md": {
+      "id": "9bf433eb-d641-4f55-8e34-60502a96d1e2",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238782Z",
+      "updated_at": "2026-08-31T01:40:20.238782Z"
+    },
+    "05-Install/nacos/README.md": {
+      "id": "1c2314fc-8b97-47a7-bdc4-26f07ad8266b",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238785Z",
+      "updated_at": "2026-08-31T01:40:20.238785Z"
+    },
+    "06_Troubleshooting/01_MySQL_Troubleshooting_Guide/00_README_Master_Index.md": {
+      "id": "191d7ee4-ff71-45b2-a659-167b0e136ac8",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238787Z",
+      "updated_at": "2026-08-31T01:40:20.238787Z"
+    },
+    "06_Troubleshooting/01_MySQL_Troubleshooting_Guide/01_SQL_And_Index_Optimization.md": {
+      "id": "9e492a48-3925-46e5-bc25-ba1cf741be4d",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238790Z",
+      "updated_at": "2026-08-31T01:40:20.238790Z"
+    },
+    "06_Troubleshooting/01_MySQL_Troubleshooting_Guide/02_Locks_And_Concurrency.md": {
+      "id": "0a15c17b-4d78-4347-ab6a-4c7a77a06e8b",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238793Z",
+      "updated_at": "2026-08-31T01:40:20.238793Z"
+    },
+    "06_Troubleshooting/01_MySQL_Troubleshooting_Guide/03_InnoDB_Storage_And_Disk.md": {
+      "id": "77bcbec3-cd3d-455d-994c-12b1731d1d51",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238795Z",
+      "updated_at": "2026-08-31T01:40:20.238795Z"
+    },
+    "06_Troubleshooting/01_MySQL_Troubleshooting_Guide/04_System_Resource_And_Kernel.md": {
+      "id": "70ebcb64-47aa-4107-b7c1-340e1ed151a8",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238798Z",
+      "updated_at": "2026-08-31T01:40:20.238798Z"
+    },
+    "06_Troubleshooting/01_MySQL_Troubleshooting_Guide/05_Replication_And_MGR.md": {
+      "id": "458dd986-4069-4c10-971d-f493186f1bba",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238801Z",
+      "updated_at": "2026-08-31T01:40:20.238801Z"
+    },
+    "06_Troubleshooting/01_MySQL_Troubleshooting_Guide/06_Ops_Network_And_Backup.md": {
+      "id": "2ceef64e-dab8-4faa-8c34-e1157e9cf439",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238804Z",
+      "updated_at": "2026-08-31T01:40:20.238804Z"
+    },
+    "06_Troubleshooting/01_MySQL_Troubleshooting_Guide/README.md": {
+      "id": "2030c0ce-827d-408a-8bbc-0fcec0b91c1c",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238807Z",
+      "updated_at": "2026-08-31T01:40:20.238807Z"
+    },
+    "06_Troubleshooting/01_MySQL_Troubleshooting_Guide/mysql_top100_troubleshooting.md": {
+      "id": "ddd4cbc9-a0d9-4726-bb93-9701d98f5aca",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238810Z",
+      "updated_at": "2026-08-31T01:40:20.238810Z"
+    },
+    "06_Troubleshooting/01_MySQL_Troubleshooting_Guide/mysql_top20_troubleshooting.md": {
+      "id": "e51250cc-341c-4d4f-b2b9-59b8feff83f1",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238813Z",
+      "updated_at": "2026-08-31T01:40:20.238813Z"
+    },
+    "06_Troubleshooting/README.md": {
+      "id": "02dd2676-bf1c-49c6-bfcc-35e862c19b0c",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238816Z",
+      "updated_at": "2026-08-31T01:40:20.238816Z"
+    },
+    "07_Templates/01_生产事故复盘与RCA根因分析模板.md": {
+      "id": "859a78b4-fa1e-4205-9268-50c646f539c8",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238818Z",
+      "updated_at": "2026-08-31T01:40:20.238818Z"
+    },
+    "07_Templates/02_技术专题深度架构文档模板.md": {
+      "id": "f5c077fc-c088-4bdf-b582-92a3d1f4786d",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238821Z",
+      "updated_at": "2026-08-31T01:40:20.238821Z"
+    },
+    "07_Templates/03_生产环境运维SOP标准模板.md": {
+      "id": "7cdbbe50-330e-47c1-bc5d-b0fb1f9b86f9",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238824Z",
+      "updated_at": "2026-08-31T01:40:20.238824Z"
+    },
+    "07_Templates/04_技术选型与对比评估模板.md": {
+      "id": "42522e1a-ceb8-465a-b64e-ac89e7dd1670",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238827Z",
+      "updated_at": "2026-08-31T01:40:20.238827Z"
+    },
+    "07_Templates/README.md": {
+      "id": "578c4e46-a76c-482e-b23d-92400181de25",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238830Z",
+      "updated_at": "2026-08-31T01:40:20.238830Z"
+    },
+    "GEMINI.md": {
+      "id": "7793a912-eee3-48e4-b2aa-0148e872585a",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238832Z",
+      "updated_at": "2026-08-31T01:40:20.238832Z"
+    },
+    "LEARNING.md": {
+      "id": "1db5d75f-e43c-46ce-b44e-5a10842d0d7a",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238835Z",
+      "updated_at": "2026-08-31T01:40:20.238835Z"
+    },
+    "README.md": {
+      "id": "28033b4f-82ee-4e7b-83e0-5270ebf31721",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.238837Z",
+      "updated_at": "2026-08-31T01:40:20.238837Z"
+    },
+    "欢迎.md": {
+      "id": "9176a017-7525-4c6b-a9c8-09655711c9c9",
+      "format": "markdown",
+      "created_at": "2026-08-31T01:40:20.159543Z",
+      "updated_at": "2026-08-31T01:40:20.159543Z"
+    }
+  },
+  "pending_operation": null
+}

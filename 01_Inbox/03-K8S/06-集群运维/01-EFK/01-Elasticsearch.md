@@ -119,3 +119,105 @@ FROM logs-k8s-*
 | Bulk 请求大小 | 5MB ~ 15MB | 1000 ~ 3000 条/批，最高写入吞吐 |
 | JVM 堆内存 | ≤ 物理内存 50%，且 ≤ 31GB | 超 31GB 导致指针压缩失效 |
 | `translog.durability` | `async` | 配合 `sync_interval: 30s` 大幅提升写入性能 |
+
+---
+
+## 9. ES 8.18 vs 7.17 全维度对比
+
+> ES 7.17 是 7.x 系列的最终版本，也是升级至 8.x 的**唯一跳板版本**。以下从 7 个维度对比两代架构级差异。
+
+### (1) 安全模型
+
+| 维度 | 7.17 | 8.18 |
+|------|------|------|
+| TLS 加密 | **默认关闭**，需手动配置 `xpack.security` | **默认强制开启**，Transport 9300 双向 mTLS + REST 9200 HTTPS |
+| 认证方式 | 手动创建用户/角色，Basic Auth | 首次启动自动生成 `elastic` 密码 + Enrollment Token 节点自动加入 |
+| Kibana 接入 | 手动配置证书 + 用户名密码 | Enrollment Token **一键对接**，零配置安全连接 |
+| Service Account | ❌ 不支持 | ✅ 内置 Service Account Token（适用于 Fleet/Beats/采集器） |
+| API Key 管理 | 基础 API Key | 增强型 API Key，支持跨集群、细粒度权限、自动过期 |
+
+### (2) 节点角色与配置
+
+| 维度 | 7.17 | 8.18 |
+|------|------|------|
+| 配置方式 | 布尔开关：`node.master: true`，`node.data: true` | **统一数组**：`node.roles: [master, data_hot, ingest]` |
+| 数据分层 | `data` 单一角色，ILM 手动绑定 | 细粒度角色：`data_hot` / `data_warm` / `data_cold` / `data_frozen` / `data_content` |
+| Frozen 层 | 冻结索引（`_freeze` API，已 CRITICAL 级废弃） | **Searchable Snapshots**：挂载 S3/MinIO 对象存储，按需搜索，成本降低 90%+ |
+| 默认行为 | 未配置时默认所有布尔为 true | 未配置 `node.roles` 时默认分配所有角色 |
+
+### (3) 数据管理与索引
+
+| 维度 | 7.17 | 8.18 |
+|------|------|------|
+| Mapping Types | 已废弃但仍可用（`_type` 字段） | **完全移除**，`_type` 相关 API 直接报错 |
+| Data Streams | 7.9+ 引入，功能基础 | 深度优化：自动 Rollover、与 ILM/Data Tier 深度集成 |
+| Synthetic `_source` | ❌ 不支持 | ✅ 不落盘原始 JSON，从 `doc_values` 动态重建，磁盘节省 30%~50% |
+| TSDS（时序数据流） | ❌ 不支持 | ✅ 专用时序索引格式，自动排序+路由+降采样，监控指标场景性能飞跃 |
+| Logsdb 索引模式 | ❌ 不支持 | ✅ 日志专属索引模式，底层利用 Synthetic Source + 高级排序优化 |
+
+### (4) 查询与分析引擎
+
+| 维度 | 7.17 | 8.18 |
+|------|------|------|
+| 查询语言 | Query DSL（JSON 嵌套，复杂分析冗长） | **ES\|QL**：管道化语法 + 向量化执行引擎，Java 21+ SIMD 加速 |
+| kNN 向量搜索 | `script_score` 精确暴力搜索（全量扫描，不可扩展） | **原生近似 kNN**：`dense_vector` 字段 + HNSW 索引，低延迟向量召回 |
+| 执行引擎 | 传统行式处理 | 列式批量处理 + CPU SIMD 向量化，聚合性能提升数倍 |
+| Runtime Fields | 7.11+ 引入，基础支持 | 深度优化，与 ES\|QL 无缝配合 |
+
+### (5) Lucene 底层引擎
+
+| 维度 | 7.17（Lucene 8.x） | 8.18（Lucene 9.12+/10） |
+|------|---------------------|------------------------|
+| 向量索引 | 无原生支持 | 原生高维向量索引（HNSW），支持百万级向量低延迟检索 |
+| 并行执行 | 基础多线程 | 增强搜索并行，自动利用多核 CPU |
+| I/O 效率 | 标准磁盘 I/O | 优化高延迟存储（对象存储）读取 + 稀疏索引减少 I/O |
+| 硬件加速 | 通用 JVM 优化 | Panama Vector API + SIMD 自动向量化，纯计算场景提升 30%+ |
+| 分面聚合 | 标准 taxonomy 实现 | 分面聚合速度大幅提升，多维点索引优化 |
+
+### (6) 客户端 API 与兼容性
+
+| 维度 | 7.17 | 8.18 |
+|------|------|------|
+| Java 客户端 | High Level REST Client (HLRC) | **全新 Java API Client**（类型安全，HLRC 已废弃） |
+| REST API 兼容 | 标准 7.x API | 内置 **REST 兼容模式**：通过 `Accept`/`Content-Type` Header 让 7.x 客户端临时对接 8.x |
+| Python/Go/.NET | 各语言 7.x SDK | 必须升级至 8.x SDK，API 签名有破坏性变更 |
+| `action.destructive_requires_name` | 默认 `false` | 默认 `true`，`DELETE /*` 等危险操作需显式指定索引名 |
+
+### (7) 升级路径与关键注意事项
+
+```
+┌────────────────────────────────────────────────────┐
+│              升级路径（唯一推荐）                    │
+│                                                    │
+│  ES 7.x (任意) ──► ES 7.17.x (最新补丁)           │
+│       │                    │                       │
+│       │  1. 解决所有废弃警告  │                     │
+│       │  2. Kibana 升级助手   │                     │
+│       │  3. 快照备份          │                     │
+│       │                    ▼                       │
+│       └──────────────► ES 8.18.x                   │
+│                                                    │
+│  ⚠️  不支持 7.0~7.16 直接跳至 8.x                  │
+│  ⚠️  不支持 6.x 直接跳至 8.x                       │
+└────────────────────────────────────────────────────┘
+```
+
+**升级前必做检查清单**：
+
+| 序号 | 检查项 | 操作 |
+|------|--------|------|
+| 1 | 解决废弃 API 告警 | `GET /_migration/deprecations` 或 Kibana Upgrade Assistant |
+| 2 | 移除 `_type` 引用 | 检查所有索引模板、应用代码中 Mapping Type 的使用 |
+| 3 | 迁移节点配置 | `node.master: true` → `node.roles: [master]` |
+| 4 | 升级客户端 SDK | Java HLRC → Java API Client；Python/Go/.NET 升级至 8.x 版本 |
+| 5 | 解冻冻结索引 | `POST /<index>/_unfreeze`（8.18 已 CRITICAL 级废弃，9.0 将移除） |
+| 6 | 安全配置预适配 | 提前规划证书/密码/Token 方案，8.x 默认强制安全 |
+| 7 | 全量快照备份 | `PUT /_snapshot/backup/pre_upgrade_snap` |
+
+---
+
+> [!TIP] 💡 关联技术与延伸阅读
+>
+> * [Elasticsearch 8.18+ 核心原理深度指南（本文上半部分）](#1-es-818-显式节点角色机制)
+> * [Elastic 官方迁移指南](https://www.elastic.co/guide/en/elasticsearch/reference/current/migration-guide.html)
+> * [ES|QL 管道化查询引擎（本文第 4 章）](#4-esql-管道化查询引擎)

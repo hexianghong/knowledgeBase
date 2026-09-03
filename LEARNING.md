@@ -8,21 +8,28 @@
 ---
 
 ## 1. 🛡️ Security, Environment & Infrastructure
-*Record lessons related to environment variables, headers, credentials, and dangerous command execution.*
-- `[2026-XX-XX] [Auth]` *Example: Internal microservice calls must include the `X-Tenant-ID` Header to avoid 401 errors.*
+- `[2026-08-28] [MySQL/Accounts]` 物理恢复 (XtraBackup / copy-back) 会全盘覆盖 `mysql.user` 表，root 密码已变更为源库备份时的密码，且老库可能缺少 `localhost` 或 `127.0.0.1` 权限导致 `mysqlsh` 报 Error 1045 / 1396。重置账号时必须使用 `CREATE USER IF NOT EXISTS` + `GRANT` 幂等补全 `localhost`, `127.0.0.1`, `%` 三者权限。
+- `[2026-08-28] [MySQL/MGR/Router]` MGR 集群在主节点强制重建 (`dba.createCluster force`) 后，MySQL 集群元数据与 Router 账号被重建。原有 MySQL Router 启动会报超时，必须在 Router 节点上重新执行 `mysqlrouter --bootstrap root@<Node1_IP>:3306 --user=mysqlrouter --directory=/etc/mysqlrouter --force` 重新引导。
+
+---
 
 ## 2. ⚙️ Architecture, Database & API Contracts
-*Record lessons related to schema design, transaction scopes, rollbacks, and API contracts.*
-- `[2026-XX-XX] [Database]` *Example: Queries on the User table must include `is_deleted = 0` for soft-deletion filtering.*
+- `[2026-08-28] [MySQL/MGR/GIPK]` MGR / InnoDB Cluster 强制要求所有表具备 Primary Key 才能进行 WriteSet 冲突认证。老库存在无主键表时 `dba.createCluster` 会拦截报错。首选解法为添加不可见主键 (`ADD COLUMN _mgr_pk_ BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY INVISIBLE`)，对业务 `SELECT *` 和全列 `INSERT` 100% 零侵入透明；同时开启 `sql_generate_invisible_primary_key = ON`。
+- `[2026-08-28] [MySQL/Schema/AutoIncrement]` 表结构治理时，若表已有自增列（如 `increment_id int auto_increment`）但未设为主键，直接加 `_mgr_pk_ AUTO_INCREMENT` 会触发 `ERROR 1075: only one auto column`。治理脚本必须自适应分流：已有自增列直接提升为主键，无自增列加不可见主键。
+
+---
 
 ## 3. 🛠️ DevOps, Shell Scripts & Operations
-*Record lessons related to shell scripting security, Docker/K8s configs, and log diagnostics.*
-- `[2026-08-11] [Containerd/K8s]` *Containerd 误禁用 cri 插件 (disabled_plugins=["cri"]) 会导致 Kubelet 报 rpc error: unknown service runtime.v1.RuntimeService，致使集群所有节点变为 NotReady。修复方案: 重置 containerd config default 并去除 disabled_plugins 中的 cri。*
+- `[2026-08-28] [MySQL/MGR/Recovery]` MGR 集群物理灾难恢复绝对不能在 3 个节点同时执行恢复脚本。只允许在 Node1 单节点执行 `mysql_recover_optimized.sh` 并引导集群，Node2 / Node3 必须清空数据并通过 `cluster.addInstance(..., {recoveryMethod: 'clone'})` 由 MySQL 8.0 Clone 插件自动秒级同步。
+- `[2026-08-11] [Containerd/K8s]` Containerd 误禁用 cri 插件 (disabled_plugins=["cri"]) 会导致 Kubelet 报 rpc error: unknown service runtime.v1.RuntimeService，致使集群所有节点变为 NotReady。修复方案: 重置 containerd config default 并去除 disabled_plugins 中的 cri。
+
+---
 
 ## 4. 🎨 Code Style, Frontend & Unit Testing
-*Record lessons related to strict types (no TS `any`), component decomposition, styling, and TDD unit testing.*
+- `[2026-08-28] [7-Layer Architecture]` 知识库采用 7 层分层递进架构（`01_Inbox` 体系专题, `02_Notes` 提炼面试, `03_Study_Plans` 计划目标, `04_Resources` 静态素材, `05-Install` 工程交付, `06_Troubleshooting` 生产排障, `07_Templates` 规范模板），新建文档必须遵循模板并使用项目级相对路径。
 - `[2026-08-10] [Path Specification]` 项目中所有的文件路径及 Markdown 关联链接必须且只能使用项目级别的相对路径（例如 `./01_Inbox/03-K8S/...` 或相对当前文件的路径），严禁包含本机绝对路径（如 `/Users/...` 或 `file:///Users/...`）。
 
 ---
+
 > [!TIP]
 > **Token Context Hygiene**: When entries in this file exceed 50 items, the AI should prompt the developer to summarize recurring items into global rules and purge stale temporary entries.

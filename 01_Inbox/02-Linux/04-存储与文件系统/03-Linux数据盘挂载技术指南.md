@@ -467,3 +467,11 @@ xfs_growfs /data
        find /data -xdev -type d -exec sh -c 'echo "$(find "$1" -type f | wc -l) $1"' _ {} \; | sort -nr | head -30
        ```
     2. 删除不需要的临时小文件、缓存文件或历史小日志。
+
+---
+
+> [!TIP] 💡 关联技术与延伸阅读
+>
+> * [生产环境 LVM 在线无损扩容标准操作规程 (SOP)](./04-生产环境LVM在线无损扩容实战SOP.md)
+> * [Linux 文件系统 VFS 与 Ext4/XFS 底层剖析指南](./01-Linux文件系统VFS与Ext4_XFS底层剖析指南.md)
+> * [Linux 文件系统深度技术指南（权限、配额与软硬链接）](./02-Linux文件系统深度技术指南.md)

@@ -7,6 +7,7 @@ K8S 集群运维与监控。
 | 名称 | 类型 | 说明 |
 |------|------|------|
 | [./01-EFK/](./01-EFK/) | 目录 | 01-EFK 相关内容 |
+| [./02-监控告警/](./02-监控告警/) | 目录 | Prometheus 监控底座与全栈 Exporter 生产级技术专题与 SRE 调优指南 |
 | [./01-K8S集群部署安装指南.md](./01-K8S集群部署安装指南.md) | 文件 | 01-K8S集群部署安装指南.md 相关内容 |
 | [./02-MetricsServer安装与x509证书排障.md](./02-MetricsServer安装与x509证书排障.md) | 文件 | 02-MetricsServer安装与x509证书排障.md 相关内容 |
 | [./03-kube-state-metrics配置与监控架构.md](./03-kube-state-metrics配置与监控架构.md) | 文件 | 03-kube-state-metrics配置与监控架构.md 相关内容 |

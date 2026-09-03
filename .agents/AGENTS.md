@@ -40,4 +40,14 @@
   ```
 - **相对路径与有效性校验**：所有跳转链接必须精确计算相对当前文档目录的有效相对路径，严禁使用本机绝对路径（如 `/Users/...`），杜绝 404 死链。
 
+## 5. Standard Template Specification (文档标准化模板规范)
+- **模板优先原则**：编写新文章或整理文档时，必须优先使用 `./07_Templates/` 下的标准模板：
+  - 生产事故与故障复盘：使用 [`./07_Templates/01_生产事故复盘与RCA根因分析模板.md`](../07_Templates/01_生产事故复盘与RCA根因分析模板.md)
+  - 深度技术架构专题：使用 [`./07_Templates/02_技术专题深度架构文档模板.md`](../07_Templates/02_技术专题深度架构文档模板.md)
+  - 变更与运维规程：使用 [`./07_Templates/03_生产环境运维SOP标准模板.md`](../07_Templates/03_生产环境运维SOP标准模板.md)
+  - 技术选型评估：使用 [`./07_Templates/04_技术选型与对比评估模板.md`](../07_Templates/04_技术选型与对比评估模板.md)
 
+## 6. SRE & Database Disaster Recovery Rules (数据库与集群运维红线)
+- **MGR 单节点恢复原则**：MGR 集群执行物理恢复时，**严禁在多节点同时执行恢复脚本**；只需在 Node1（主节点）单机恢复后执行 `dba.createCluster('myCluster', {force: true})` 引导集群，Node2 / Node3 必须通过 `cluster.addInstance(..., {recoveryMethod: 'clone'})` 自动物理克隆入群。
+- **无主键表治理规范**：MGR 环境中所有表必须具备主键。遇到历史无主键表时，使用 `PRIMARY KEY INVISIBLE`（不可见自增主键）或执行 `./05-Install/mysql/mysql8.0.43_huazhuo_prod/mysql_mgr_fix_pks.sh` 进行治理，禁止对业务产生字段侵入。
+- **Router 重新引导规范**：集群强制重建（`createCluster force`）后，MySQL Router 必须重新执行 `--bootstrap ... --force`，方可启动服务。
