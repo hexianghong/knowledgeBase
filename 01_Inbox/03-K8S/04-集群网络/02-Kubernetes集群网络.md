@@ -301,7 +301,10 @@ Calico 在不经过任何二层封包的情况下，通过 BGP (Border Gateway P
 
 > [!TIP] 💡 关联技术与延伸阅读
 >
+> * [Kube-Proxy 底层实现机制与 Service 转发深度指南 (userspace, iptables, IPVS, conntrack)](./02-2-Kube-Proxy底层实现机制与Service转发深度指南_userspace_iptables_IPVS_conntrack.md)
+> * [CNI 规范演进与容器网络插件生态全景指南](./02-3-CNI规范演进与容器网络插件生态全景指南.md)
+> * [Linux 虚拟网络进阶与隧道技术深度指南 (tun/tap, IPIP, VXLAN, Macvlan, IPvlan)](./01-1-Linux虚拟网络进阶与隧道技术深度指南_tun-tap_IPIP_VXLAN_Macvlan_IPvlan.md)
 > * [Calico 架构与底层实现深度剖析](./02-1-Calico架构与calico-node及kube-controllers深度剖析.md)
 > * [Flannel 网络模式深度解析与对比](./07-Flannel网络模式深度解析与对比.md)
 > * [集群网络访问全链路流程](./03-集群网络访问详细流程.md)
-> * [kube-proxy 底层转发与负载均衡](../01-组件原理/05-Kube_Proxy.md)
+> * [Service Mesh 底层网络拦截与 Istio-Sidecar 流量劫持深度解密](./09-ServiceMesh底层网络拦截与Istio-Sidecar流量劫持深度解密.md)

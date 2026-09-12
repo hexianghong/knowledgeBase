@@ -12,7 +12,7 @@
 | [./02-NodeExporter宿主机全方位监控与指标基线.md](./02-NodeExporter宿主机全方位监控与指标基线.md) | 文件 | 宿主机物理指标采集、虚拟文件系统/网络设备过滤、真实内存与磁盘 IO SRE 黄金 PromQL |
 | [./03-cAdvisor容器运行时指标全景与双轨采集对比.md](./03-cAdvisor容器运行时指标全景与双轨采集对比.md) | 文件 | Kubelet 内嵌 vs 独立 DaemonSet 双轨架构、cgroup v2 适配、WorkingSet 与 Usage 内存防 OOM 辨析 |
 | [./04-KubeStateMetrics资源对象监控与大规模集群调优.md](./04-KubeStateMetrics资源对象监控与大规模集群调优.md) | 文件 | Informer 监听机制、Pod 异常退出根因 (OOMKilled/CrashLoop) 捕获、标签白名单与水平分片 |
-| [./05-MySQL-Exporter生产级监控与MGR集群多实例实战.md](./05-MySQL-Exporter生产级监控与MGR集群多实例实战.md) | 文件 | 最小化授权安全、Performance Schema 性能陷阱、MGR 3 节点集群 Multi-Target 探测模式 |
+| [./05-MySQL-Exporter生产级监控与MGR集群多实例实战.md](./05-MySQL-Exporter生产级监控与MGR集群多实例实战.md) | 文件 | MGR 组复制与 MHA 高可用深度监控、物理节点与 VIP 双轨探测、只读漂移与主从断流预警 |
 | [./06-生产级监控体系缺口评估与Operator演进选型.md](./06-生产级监控体系缺口评估与Operator演进选型.md) | 文件 | 基础 YAML 生产缺口体检（存储/高可用/配置重载）、Prometheus-Operator 与 VictoriaMetrics 演进选型 |
 | [./07-企业级实战-Rancher平台MySQL与外部节点监控全景落地指南.md](./07-企业级实战-Rancher平台MySQL与外部节点监控全景落地指南.md) | 文件 | Rancher 体系下 ServiceMonitor + Endpoints 桥接外部数据库/MHA 节点、高频告警规则与 Grafana 实战 |
 

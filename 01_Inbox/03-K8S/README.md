@@ -82,6 +82,7 @@ Kubernetes 核心架构设计与底层组件协同机制。
 *   [07-万级节点与十万级Pod大规模集群调优指南.md](./06-集群运维/07-万级节点与十万级Pod大规模集群调优指南.md) —— APF 流控参数、Kubelet 调优与 Linux sysctl 内核矩阵。
 *   [08-云原生可观测性架构Prometheus_Thanos_Tempo与eBPF链路追踪.md](./06-集群运维/08-云原生可观测性架构Prometheus_Thanos_Tempo与eBPF链路追踪.md) —— 告警与可观测性架构实战。
 *   [10-Kubernetes生产级EFK(Elasticsearch+Fluentd+Fluentbit+Kibana)企业级架构、高可用集群部署与底层原理深度实战指南.md](./06-集群运维/10-Kubernetes生产级EFK(Elasticsearch+Fluentd+Fluentbit+Kibana)企业级架构、高可用集群部署与底层原理深度实战指南.md) —— 深度整合 ES 8.18+ 显式角色与安全机制、Lucene 9/10 FST/FOR 底层原理、3 节点高可用 StatefulSet 编排、Fluent Bit 极轻量采集与 Fluentd 复杂多行堆栈熔合管道、Kibana/ES|QL 可视化及全生命周期调优排障 SOP。
+*   [13-Kubernetes容器与服务日志轮转治理与防爆盘深度实战指南.md](./06-集群运维/13-Kubernetes容器与服务日志轮转治理与防爆盘深度实战指南.md) —— 容器日志流转机理、Kubelet ContainerLogManager 轮转与固定大小配置、容器运行时 CRI 参数、Java/Go 框架级滚动与 Linux 句柄泄漏排障决策树。
 
 
 ---

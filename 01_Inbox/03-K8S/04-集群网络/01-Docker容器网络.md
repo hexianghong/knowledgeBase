@@ -231,5 +231,7 @@ graph TD
 
 > [!TIP] 💡 关联技术与延伸阅读
 >
-> * [Kubernetes 集群网络模型](./02-Kubernetes集群网络.md)
+> * [Linux 虚拟网络进阶与隧道技术深度指南 (tun/tap, IPIP, VXLAN, Macvlan, IPvlan)](./01-1-Linux虚拟网络进阶与隧道技术深度指南_tun-tap_IPIP_VXLAN_Macvlan_IPvlan.md)
+> * [Kubernetes 集群网络架构与 CNI 原理](./02-Kubernetes集群网络.md)
+> * [CNI 规范演进与容器网络插件生态全景指南](./02-3-CNI规范演进与容器网络插件生态全景指南.md)
 > * [Pause 容器与 Network Namespace 共享机制](../01-组件原理/04-Kubelet/03-Docker与Containerd底层实现及Pause通信深度解析.md)

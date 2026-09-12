@@ -255,6 +255,7 @@ data:
 
 > [!TIP] 💡 关联技术与延伸阅读
 >
+> * [Kubernetes容器与服务日志轮转治理与防爆盘深度实战指南](./13-Kubernetes容器与服务日志轮转治理与防爆盘深度实战指南.md)
 > * [生产级 EFK 企业级架构与高可用部署实战](./10-Kubernetes生产级EFK(Elasticsearch+Fluentd+Fluentbit+Kibana)企业级架构、高可用集群部署与底层原理深度实战指南.md)
 > * [Fluent Bit 轻量边缘采集器](./01-EFK/02-FluentBit.md)
 > * [Fluentd 生产级管道配置](./01-EFK/03-Fluentd.md)

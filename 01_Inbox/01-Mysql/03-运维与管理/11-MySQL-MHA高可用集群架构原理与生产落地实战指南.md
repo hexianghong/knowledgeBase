@@ -82,10 +82,10 @@ sequenceDiagram
     Note over S1,S2: 所有从库数据 100% 追平，达到完全一致！
 
     Note over Mgr,VIP: 5. 提升新主库与拓扑重组
-    Mgr->>S1: 执行 STOP SLAVE; SET GLOBAL read_only=0;
-    Mgr->>S2: CHANGE MASTER TO S1 (将从库指向新 Master)
+    Mgr->>S1: 提升主库并解除只读 (STOP SLAVE, read_only=0)
+    Mgr->>S2: 将从库指向新主库 (CHANGE MASTER TO S1)
     Mgr->>VIP: 调用 master_ip_failover 脚本将 VIP 绑定至 S1
-    Note over VIP,S1: 业务应用通过 VIP 恢复正常读写，RTO < 30s！
+    Note over VIP,S1: 业务应用通过 VIP 恢复正常读写 (RTO 30s 内)
 ```
 
 ### 2. 核心源码级工具机理解析

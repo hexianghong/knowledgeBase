@@ -20,5 +20,6 @@ K8S 集群运维与监控。
 | [./10-Kubernetes生产级EFK(Elasticsearch+Fluentd+Fluentbit+Kibana)企业级架构、高可用集群部署与底层原理深度实战指南.md](./10-Kubernetes生产级EFK(Elasticsearch+Fluentd+Fluentbit+Kibana)企业级架构、高可用集群部署与底层原理深度实战指南.md) | 文件 | 10-Kubernetes生产级EFK(Elasticsearch+Fluentd+Fluentbit+Kibana)企业级架构、高可用集群部署与底层原理深度实战指南.md 相关内容 |
 | [./11-etcd备份与恢复实战指南.md](./11-etcd备份与恢复实战指南.md) | 文件 | etcd 快照备份、自动化脚本、数据恢复流程与 Raft 高可用原理（新增） |
 | [./12-Kubernetes生产级Nacos2.x高可用集群部署与重启故障深度剖析指南.md](./12-Kubernetes生产级Nacos2.x高可用集群部署与重启故障深度剖析指南.md) | 文件 | Nacos 2.x 双协议架构、Pod重启DNS与Raft死锁深度剖析、生产级 Golden Standard 部署与 SRE 排障指南 |
+| [./13-Kubernetes容器与服务日志轮转治理与防爆盘深度实战指南.md](./13-Kubernetes容器与服务日志轮转治理与防爆盘深度实战指南.md) | 文件 | 容器与应用日志全链路流转机理、Kubelet ContainerLogManager 轮转与固定大小配置、Linux 句柄泄漏与 Inode 耗尽排障 |
 | [./assets/](./assets/) | 目录 | assets 相关内容 |
 
