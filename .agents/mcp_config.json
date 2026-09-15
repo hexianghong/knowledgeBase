@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "local-knowledge-base": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/hexianghong/code/knowledgeBase"
+      ]
+    }
+  }
+}

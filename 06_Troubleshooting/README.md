@@ -12,6 +12,7 @@
 | 名称 | 类型 | 说明 |
 | :--- | :--- | :--- |
 | [./01_MySQL_Troubleshooting_Guide/](./01_MySQL_Troubleshooting_Guide/) | 目录 | MySQL 生产级终极排障指南（含 TOP100 高频故障诊断、锁与并发、存储、复制与 MGR） |
+| [./02_K8S_Troubleshooting_Guide/](./02_K8S_Troubleshooting_Guide/) | 目录 | Kubernetes 生产实战排障指南（含核心组件、网络、FD 句柄泄漏排查与零中断恢复复盘） |
 
 ---
 

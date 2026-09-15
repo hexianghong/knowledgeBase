@@ -20,6 +20,7 @@
 | [./02-Linux/](./02-Linux/) | **Linux 系统与内核** | Linux 内核参数调优、TCP/IP 网络协议栈、VFS 虚拟文件系统、Cgroup/Namespace 隔离与系统级排障 |
 | [./03-K8S/](./03-K8S/) | **云原生与 Kubernetes** | K8s 控制面组件源码剖析、CRI 运行时、Calico/Flannel 集群网络、CSI 存储编排与大规模集群运维 |
 | [./04-AI/](./04-AI/) | **AI 与智能化运维** | 大语言模型应用、Agent 开发架构、知识库 RAG 集成与云原生智能化运维落地 |
+| [./05-Devops/](./05-Devops/) | **研发效能与持续交付** | 代码仓库版本治理、Git 标签体系、SemVer 规范、CI/CD 自动化流水线、供应链安全与不可变交付 |
 
 ---
 
