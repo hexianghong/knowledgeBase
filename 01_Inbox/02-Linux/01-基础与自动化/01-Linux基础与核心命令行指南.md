@@ -80,6 +80,7 @@ truncate -s 0 /var/log/nginx/access.log
 ### 1. `top` / `htop` 交互式监控快捷键
 
 在 `top` 运行界面中按下以下快捷键：
+
 * **`P`**：按 **CPU 使用率** 对进程降序排列（默认）。
 * **`M`**：按 **内存使用率 (RES)** 对进程降序排列。
 * **`T`**：按 **累计 CPU 运行时间** 排序。
@@ -129,6 +130,7 @@ watch -d -n 1 "ss -ant | grep ESTAB | wc -l"
 ```
 
 #### `tmux` 后台会话保持常用操作：
+
 ```bash
 # 1. 创建名为 work 的新后台会话
 tmux new -s work
@@ -148,18 +150,19 @@ tmux a -t work
 
 ### 1. 现代化 `ip` 命令替换旧版 `ifconfig` / `route`
 
-| 旧版命令 | 现代 `ip` 命令 | 功能说明 |
-| :--- | :--- | :--- |
-| `ifconfig` | `ip a` 或 `ip addr show` | 查看网卡 IP 地址与掩码 |
-| `route -n` | `ip r` 或 `ip route show` | 查看路由表 |
-| `ifconfig eth0 up/down` | `ip link set dev eth0 up/down` | 启用/禁用网卡 |
-| `route add default gw ...` | `ip route add default via 192.168.1.1` | 添加默认网关 |
+| 旧版命令                     | 现代`ip` 命令                          | 功能说明               |
+| :--------------------------- | :--------------------------------------- | :--------------------- |
+| `ifconfig`                 | `ip a` 或 `ip addr show`             | 查看网卡 IP 地址与掩码 |
+| `route -n`                 | `ip r` 或 `ip route show`            | 查看路由表             |
+| `ifconfig eth0 up/down`    | `ip link set dev eth0 up/down`         | 启用/禁用网卡          |
+| `route add default gw ...` | `ip route add default via 192.168.1.1` | 添加默认网关           |
 
 ---
 
 ### 2. `curl` 详尽诊断 HTTP 请求耗时分布
 
 创建耗时格式化文件 `curl-format.txt`：
+
 ```
   time_namelookup:  %{time_namelookup}s\n
      time_connect:  %{time_connect}s\n
@@ -175,6 +178,7 @@ time_starttransfer:  %{time_starttransfer}s\n
 # 执行 HTTP 耗时诊断
 curl -w "@curl-format.txt" -o /dev/null -s https://api.github.com
 ```
+
 *输出：可精确判断是 DNS 解析慢 (`namelookup`)、TCP 建连慢 (`connect`)，还是后端 Server 处理慢 (`starttransfer` / TTFB)*。
 
 ---
@@ -196,17 +200,18 @@ nc -zvw 3 192.168.1.50 3306
 ### 1. `vim` / `nvim` 生产必会快捷键
 
 * **多行块列选择与批量注释**：
+
   1. 按 `Ctrl + v` 进入 **VISUAL BLOCK** 模式。
   2. 使用 `j` / `k` 键上下选中多行开头。
   3. 按 `Shift + i` (即 `I`) 进入插入模式，输入注释符号 `# `。
   4. 按 `Esc` 键两次，所选所有行开会自动补全 `# `！
-
 * **全局批量替换**：
+
   ```vim
   :%s/old_text/new_text/g
   ```
-
 * **快速跳转与定位**：
+
   * `gg`：跳转到文件第一行。
   * `G`：跳转到文件最后一行。
   * `150G` 或 `:150`：跳转到第 150 行。
@@ -233,15 +238,69 @@ make 2>&1 | tee -a build.log
 
 ## 五、 用户、软件包与系统日常维护手册
 
-### 1. 给历史命令添加精确执行时间戳
+### 1. 历史命令审计增强与容量调优 (时间戳、容量扩充与防覆盖)
 
-默认 `history` 只显示行号和命令。编辑 `/etc/profile` 或 `~/.bashrc`：
+默认情况下，Linux Bash 的 `history` 仅保留 1000 条历史记录且不带时间戳，多终端会话退出时还会发生“后退出覆盖先退出”的历史命令丢失问题。
+
+#### (1) 生产级推荐配置 (Bash)
+
+编辑当前用户的 `~/.bashrc`（仅对当前用户生效）或 `/etc/profile`（全系统全局生效）：
 
 ```bash
-echo 'export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "' >> ~/.bashrc
+cat << 'EOF' >> ~/.bashrc
+
+# ==============================================================================
+# History 审计增强与容量调优
+# ==============================================================================
+# 1. 历史记录保留条数扩充 (推荐 10 万条)
+export HISTSIZE=100000        # 内存中当前 Shell 会话保留的最大命令条数
+export HISTFILESIZE=100000    # 磁盘历史文件 (~/.bash_history) 最多保留的行数
+
+# 2. 精确执行时间戳 (审计合规必备: 年-月-日 时:分:秒)
+export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
+
+# 3. 历史命令审计合规策略
+# 生产严禁使用 erasedups (会删除历史时序破坏故障复盘) 与 ignorespace (空格逃逸审计风险)
+# 仅建议保留 ignoredups (连续手抖重复合并) 或直接留空保持绝对原始记录
+export HISTCONTROL=ignoredups
+
+# 4. 多终端会话防覆盖 (以 append 增量追加模式写入历史文件)
+shopt -s histappend
+
+# 5. 每次敲击回车时立即追加写入磁盘，避免异常断开/宕机导致缓冲区命令丢失
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+EOF
+
+# 使配置立即生效
 source ~/.bashrc
 ```
-*效果：`history` 显示：`1001  2026-08-04 10:55:12  systemctl restart nginx`*
+
+*效果验证：`history | tail -n 3`*
+
+```text
+10001  2026-09-16 17:05:12  systemctl restart nginx
+10002  2026-09-16 17:06:01  ss -tulpn | grep 80
+10003  2026-09-16 17:08:45  tail -f /var/log/nginx/error.log
+```
+
+> [!NOTE]
+> **Zsh 终端环境兼容（如 macOS 默认环境）**：
+> Zsh 对应的磁盘保存变量名为 `SAVEHIST`，请写入 `~/.zshrc`：
+>
+> ```bash
+> export HISTSIZE=100000
+> export SAVEHIST=100000
+> export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
+> setopt INC_APPEND_HISTORY    # 立即增量写入
+> setopt SHARE_HISTORY         # 多终端实时共享历史
+> ```
+
+---
+
+**高并发跳板机与网络存储规避要点**：
+
+> 1. **避免全局死锁**：若用户的 Home 目录挂载于 **NFS / CephFS 等网络共享存储**，高并发追加写入 `~/.bash_history` 会触发网络文件锁开销，建议控制在 20,000 条左右；
+> 2. **PROMPT_COMMAND 优化**：生产环境推荐只写 `history -a`（增量追加写），**不要**在每次回车时盲目执行 `history -r`（全量重读磁盘），以避免高频触发 5MB+ 文件的磁盘重扫。
 
 ---
 
@@ -259,19 +318,20 @@ journalctl -k -b 0
 
 ### 3. 软件包管理常用命令对比
 
-| 操作功能 | RHEL / CentOS (`yum` / `dnf`) | Debian / Ubuntu (`apt`) |
-| :--- | :--- | :--- |
-| **安装软件** | `dnf install -y nginx` | `apt update && apt install -y nginx` |
-| **卸载软件** | `dnf remove -y nginx` | `apt purge -y nginx` |
-| **查询文件属于哪个包** | `dnf provides */bin/ss` | `dpkg -S /usr/bin/ss` |
-| **清理缓存** | `dnf clean all` | `apt clean` |
-| **查看历史操作与撤销** | `dnf history` / `dnf history undo <ID>` | `/var/log/apt/history.log` |
+| 操作功能                     | RHEL / CentOS (`yum` / `dnf`)           | Debian / Ubuntu (`apt`)              |
+| :--------------------------- | :------------------------------------------ | :------------------------------------- |
+| **安装软件**           | `dnf install -y nginx`                    | `apt update && apt install -y nginx` |
+| **卸载软件**           | `dnf remove -y nginx`                     | `apt purge -y nginx`                 |
+| **查询文件属于哪个包** | `dnf provides */bin/ss`                   | `dpkg -S /usr/bin/ss`                |
+| **清理缓存**           | `dnf clean all`                           | `apt clean`                          |
+| **查看历史操作与撤销** | `dnf history` / `dnf history undo <ID>` | `/var/log/apt/history.log`           |
 
 ---
 
 ## 六、 Linux FHS 标准与文件元数据机制
 
 Linux 遵循 **FHS 3.0** (Filesystem Hierarchy Standard) 规范，将文件系统划分为职责清晰的层级目录：
+
 * `/bin`, `/sbin`：基础系统二进制可执行文件（在现代 Systemd 系统中通常软链接至 `/usr/bin`）。
 * `/etc`：系统核心静态配置文件。
 * `/var`：动态变化数据（日志 `/var/log`、缓存 `/var/cache`、运行时锁 `/var/run`）。
@@ -343,19 +403,17 @@ lsof -i :8080 -nP
 
 现代 Linux 运维与开发生态中涌现了一批采用 Rust / Go 编写的高性能现代化 CLI 工具，可大幅提升日常诊断效率：
 
-| 经典传统命令 | 现代增强工具 | 核心优势与特色 | 安装与典型使用命令 |
-|:---|:---|:---|:---|
-| `grep` | **`ripgrep (rg)`** | 多线程并行搜索、默认自动忽略 `.gitignore`、支持正则，性能提升 5~10 倍 | `rg "ERROR_TIMEOUT" /var/log/` |
-| `find` | **`fd`** | 语法简洁、彩色高亮、默认忽略隐藏与构建文件、极速并行目录扫描 | `fd -e conf nginx /etc/` |
-| `cat` | **`bat`** | 语法高亮、Git 修改标记 (Git diff gutters)、分页自动整合 | `bat /etc/nginx/nginx.conf` |
-| `top` / `htop` | **`btop`** | 极度美观的 TUI 终端面板、CPU/内存/磁盘/网络实时图表、一键杀进程 | `btop` |
-| `df` | **`duf`** | 彩色分块呈现挂载点使用率、inode 占用率、设备类型与挂载选项 | `duf` |
+| 经典传统命令       | 现代增强工具               | 核心优势与特色                                                         | 安装与典型使用命令               |
+| :----------------- | :------------------------- | :--------------------------------------------------------------------- | :------------------------------- |
+| `grep`           | **`ripgrep (rg)`** | 多线程并行搜索、默认自动忽略`.gitignore`、支持正则，性能提升 5~10 倍 | `rg "ERROR_TIMEOUT" /var/log/` |
+| `find`           | **`fd`**           | 语法简洁、彩色高亮、默认忽略隐藏与构建文件、极速并行目录扫描           | `fd -e conf nginx /etc/`       |
+| `cat`            | **`bat`**          | 语法高亮、Git 修改标记 (Git diff gutters)、分页自动整合                | `bat /etc/nginx/nginx.conf`    |
+| `top` / `htop` | **`btop`**         | 极度美观的 TUI 终端面板、CPU/内存/磁盘/网络实时图表、一键杀进程        | `btop`                         |
+| `df`             | **`duf`**          | 彩色分块呈现挂载点使用率、inode 占用率、设备类型与挂载选项             | `duf`                          |
 
 ---
 
 > [!TIP] 💡 关联技术与延伸阅读
->
 > * [Linux Shell 脚本编程与自动化深度指南](./02-Linux_Shell脚本编程与自动化深度指南.md) —— 高级 Bash 编程、流程控制、信号捕获与自动化工程
 > * [Linux 进程与 CPU 性能调优指南](../03-系统性能与调优/01-Linux进程与CPU性能调优指南.md) —— CFS 调度算法、CPU 绑核与火焰图诊断
 > * [高级运维生产高频故障排查手册](../07-高可用与生产排错/02-高级运维生产高频故障排查手册.md) —— CPU 假死、句柄泄露、磁盘满与网络丢包紧急止损 SOP
-

@@ -95,6 +95,8 @@ flowchart TD
 > [!TIP] 💡 关联技术与延伸阅读
 >
 > * [Prometheus 与 Alertmanager 企业级架构设计与生产落地](./01-Prometheus与Alertmanager架构设计与生产落地.md)
-> * [云原生可观测性架构 Prometheus_Thanos_Tempo 与 eBPF 链路追踪](../08-云原生可观测性架构Prometheus_Thanos_Tempo与eBPF链路追踪.md)
+> * [外部节点静态采集架构-ServiceMonitor与Endpoints深度思考与落地](./08-外部节点静态采集架构-ServiceMonitor与Endpoints深度思考与落地.md)
+> * [企业级实战：Rancher 平台 MySQL 与外部节点监控全景落地指南](./07-企业级实战-Rancher平台MySQL与外部节点监控全景落地指南.md)
 > * [生产级监控安装清单与配置目录](../../../../05-Install/monitoring/README.md)
+> * [云原生可观测性架构 Prometheus_Thanos_Tempo 与 eBPF 链路追踪](../08-云原生可观测性架构Prometheus_Thanos_Tempo与eBPF链路追踪.md)
 > * [万级节点与十万级 Pod 大规模集群调优指南](../07-万级节点与十万级Pod大规模集群调优指南.md)

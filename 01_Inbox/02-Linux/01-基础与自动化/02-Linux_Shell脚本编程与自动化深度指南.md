@@ -14,16 +14,16 @@ Shell 脚本是 Linux 系统管理员与 SRE 实现自动化运维、数据采�
 
 ```mermaid
 graph TD
-    Parent["当前父 Shell 进程 (PID: 1000, ENV: A=1)"] -->|1. ./script.sh 或 bash script.sh| Fork1["fork() & execve() 派生全新子 Shell (PID: 1001) <br> 【只能继承 export 的变量，内部修改不影响父进程】"]
-    Parent -->|2. source script.sh 或 . script.sh| Direct["在当前父 Shell 内部直接运行 <br> 【共享同一内存空间，声明的变量直接修改父 Shell!】"]
-    Parent -->|3. subshell ( command )| Fork2["fork() 复制轻量级子 Shell <br> 【继承所有变量包括非 export 变量，但修改依然隔离】"]
+    Parent["当前父 Shell 进程 (PID: 1000, ENV: A=1)"] -->|"1. ./script.sh 或 bash script.sh"| Fork1["fork() & execve() 派生全新子 Shell (PID: 1001) <br> 【只能继承 export 的变量，内部修改不影响父进程】"]
+    Parent -->|"2. source script.sh 或 . script.sh"| Direct["在当前父 Shell 内部直接运行 <br> 【共享同一内存空间，声明的变量直接修改父 Shell!】"]
+    Parent -->|"3. Subshell: ( command )"| Fork2["fork() 复制轻量级子 Shell <br> 【继承所有变量包括非 export 变量，但修改依然隔离】"]
 ```
 
-| 执行方式 | 是否创建子进程 (fork) | 变量作用域与影响 | 典型应用场景 |
-| :--- | :--- | :--- | :--- |
-| **`./script.sh`** | **是**（通过 `fork()` + `execve()`） | 只能继承父 Shell 中 `export` 的环境变量；脚本内的修改**无法传回父 Shell** | 独立的自动化任务、定时任务 Cron |
-| **`source script.sh`** / **`.`** | **否**（在当前 Shell 内存中加载） | 共享同一进程内存；脚本内定义的函数和变量**直接生效在当前 Shell 环境变量中** | 加载配置文件（如 `~/.bashrc`）、初始化环境变量 |
-| **`( commands )`** (Subshell) | **是**（仅 `fork()` 不执行 `execve()`） | 继承父进程所有局部变量与全局变量；Subshell 内部变量修改**随退出而销毁** | 临时切换目录 `(cd /tmp && rm -rf *)` 避影响全局工作目录 |
+| 执行方式                                         | 是否创建子进程 (fork)                             | 变量作用域与影响                                                                  | 典型应用场景                                             |
+| :----------------------------------------------- | :------------------------------------------------ | :-------------------------------------------------------------------------------- | :------------------------------------------------------- |
+| **`./script.sh`**                        | **是**（通过 `fork()` + `execve()`）    | 只能继承父 Shell 中`export` 的环境变量；脚本内的修改**无法传回父 Shell**  | 独立的自动化任务、定时任务 Cron                          |
+| **`source script.sh`** / **`.`** | **否**（在当前 Shell 内存中加载）           | 共享同一进程内存；脚本内定义的函数和变量**直接生效在当前 Shell 环境变量中** | 加载配置文件（如`~/.bashrc`）、初始化环境变量          |
+| **`( commands )`** (Subshell)            | **是**（仅 `fork()` 不执行 `execve()`） | 继承父进程所有局部变量与全局变量；Subshell 内部变量修改**随退出而销毁**     | 临时切换目录`(cd /tmp && rm -rf *)` 避影响全局工作目录 |
 
 ---
 
@@ -55,12 +55,12 @@ echo "Outside function: $GLOBAL_VAR"
 
 ### 1. 默认值处理与判空机制
 
-| 扩展语法 | 物理含义与行为描述 | 生产典型场景 |
-| :--- | :--- | :--- |
-| **`${var:-default}`** | 若 `var` 为空或未定义，**返回 `default`**；但 `var` 本身值**保持不变** | 变量判空安全兜底：`PORT=${HTTP_PORT:-8080}` |
-| **`${var:=default}`** | 若 `var` 为空或未定义，**将 `var` 赋值为 `default`** 并返回 | 自动初始化配置变量：`LOG_DIR=${LOG_DIR:=/var/log/app}` |
-| **`${var:?error_msg}`**| 若 `var` 为空或未定义，**向 stderr 打印 `error_msg` 并立即终止脚本** | 强校验关键参数：`DIR=${1:?"Error: Directory path argument is required!"}` |
-| **`${#var}`** | 返回字符串 `var` 的字符长度 | 字符串长度校验 |
+| 扩展语法                                                                                                                                                                                      | 物理含义与行为描述           | 生产典型场景   |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------- | :------------- |
+| **`${var:-default}`** | 若 `var` 为空或未定义，**返回 `default`**；但 `var` 本身值**保持不变** | 变量判空安全兜底：`PORT=${HTTP_PORT:-8080}`                      |                              |                |
+| **`${var:=default}`** | 若 `var` 为空或未定义，**将 `var` 赋值为 `default`** 并返回 | 自动初始化配置变量：`LOG_DIR=${LOG_DIR:=/var/log/app}`                            |                              |                |
+| **`${var:?error_msg}`**| 若 `var` 为空或未定义，**向 stderr 打印 `error_msg` 并立即终止脚本** | 强校验关键参数：`DIR=${1:?"Error: Directory path argument is required!"}` |                              |                |
+| **`${#var}`**                                                                                                                                                                         | 返回字符串`var` 的字符长度 | 字符串长度校验 |
 
 ---
 
@@ -74,6 +74,7 @@ echo "Outside function: $GLOBAL_VAR"
   * **`${var%%pattern}`**：从尾开始匹配，剪掉**最长**符合 `pattern` 的部分（贪婪）。
 
 #### 生产提取文件名与扩展名范例：
+
 ```bash
 FILE_PATH="/var/log/nginx/access.log.tar.gz"
 
@@ -97,6 +98,7 @@ NEW_PATH="${FILE_PATH//log/txt}"     # 结果: /var/txt/nginx/access.txt.tar.gz
 ### 1. 文件描述符 (FD) 与 `2>&1` 内核映射解密
 
 每个 Linux 进程默认开启三个文件描述符：
+
 * **`0`**：标准输入 (stdin)
 * **`1`**：标准输出 (stdout)
 * **`2`**：标准错误 (stderr)
@@ -113,6 +115,7 @@ graph LR
         FD2["FD 2 (stderr)"] -->|2>&1 复制 FD 1 的指向| File
     end
 ```
+
 * **顺序至关重要！**：若写成 `cmd 2>&1 > file`，其含义是：FD 2 复制了当时 FD 1 的指向（屏幕终端），随后 FD 1 被重定向到文件。结果导致**标准错误依然打印在屏幕上**！
 
 ---
@@ -122,6 +125,7 @@ graph LR
 进程替换语法 **`<(command)`** 或 **`>(command)`** 在内核中会自动创建一个临时的匿名管道（或者命名为 `/dev/fd/63` 的虚拟文件），避免生成庞大的临时文件。
 
 #### 生产场景：对比两个远程服务器上同名配置文件的差异
+
 ```bash
 # 无需下载临时文件，直接将 curl 输出作为虚拟文件传递给 diff 命令
 diff -u <(curl -s http://node1/nginx.conf) <(curl -s http://node2/nginx.conf)
@@ -217,7 +221,7 @@ for host in "${HOSTS[@]}"; do
     {
         # 在子进程中执行实际任务
         do_work "$host"
-        
+      
         # 任务完成后归还令牌到管道
         echo >&6
     } &
@@ -238,6 +242,7 @@ echo "All tasks executed successfully."
 在生产定时任务（Cron）或触发式脚本中，如果前一次任务未执行完毕，下一次任务又被触发，可能引发数据损坏、IO 堵塞或资源耗尽。
 
 ### 1. `flock` 外挂式防护命令
+
 ```bash
 # -n: 非阻塞（若已锁定则立即退出返回非 0）
 # -E: 指定锁冲突时的自定义退出码
@@ -245,6 +250,7 @@ flock -n /var/lock/sync_data.lock -c "/usr/local/bin/sync_data.sh"
 ```
 
 ### 2. 脚本内部自锁代码范式 (嵌入式单例保护)
+
 ```bash
 #!/bin/bash
 set -euo pipefail
@@ -324,8 +330,6 @@ log_info "Initialization completed. Starting automation sequence..."
 ---
 
 > [!TIP] 💡 关联技术与延伸阅读
->
 > * [Linux 基础与核心命令行指南](./01-Linux基础与核心命令行指南.md) —— 基础系统架构、权限体系、文本处理与现代 CLI 工具链
 > * [Linux 编译链接与动态库原理指南](./03-Linux编译链接与动态库原理指南.md) —— ELF 结构、静态/动态链接与 `LD_PRELOAD`
 > * [高级运维生产高频故障排查手册](../07-高可用与生产排错/02-高级运维生产高频故障排查手册.md) —— 生产高频 CPU 假死、内存泄漏与紧急止损
-

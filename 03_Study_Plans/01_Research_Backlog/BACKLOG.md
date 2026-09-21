@@ -16,6 +16,7 @@
 | **B03** | Kubernetes 证书链（CA/mTLS/Kubeconfig）底层认证机制与无 Rancher 运维 | K8s 云原生 | 生产集群 9443 端口阻断时利用本地 CA 签发管理员证书 | P1 | 沉淀 K8s 离线自愈与 API Server 鉴权深度专题 | 💡 待调研 |
 | **B04** | ClickHouse 内存配额调优与高并发向量检索优化实践 | 数据库 | 生产宿主机高负载混跑业务稳定性评估 | P2 | 沉淀 ClickHouse 生产级资源隔离与压测报告 | 💡 待调研 |
 | **B05** | AI 在现代 IDE 中的交互运行机制与本地资源动态加载体系 | AI Agent / IDE 架构 | 深入探索现代 AI 编程助手（Antigravity/Cursor等）上下文组装与本地扩展体系 | P1 | 深入剖析 IDE Agentic Loop、LSP/AST 代码上下文切片与本地 Skills/Rules/MCP 加载原理 | 💡 待调研 |
+| **B06** | mksglu/context-mode 架构深度剖析与 AI Agent 上下文窗口沙箱优化 | AI Agent / 上下文工程 | 解决 Coding Agent 工具输出撑爆上下文（56KB+ 单次调用）、压缩失忆与 Prompt Cache 击穿难题 | P1 | 深入剖析 98% 压缩率沙箱机制、“Think in Code”范式与 SQLite FTS5+BM25 检索式持久化记忆方案 | 💡 待调研 |
 
 ---
 
@@ -42,6 +43,12 @@
 ---
 
 ### 4. 🤖 AI Agent、自动化 SRE 与可观测性
+- [ ] **AI Coding Agent 上下文窗口保护与沙箱隔离技术（深度参考 `mksglu/context-mode`）**：
+  - *Context 膨胀痛点*：解决工具原始输出（Playwright 快照、curl 网页、git log、大文件全量 read）撑爆上下文（40% 快速流失）与压缩导致的“失忆”问题；
+  - *“Think in Code” 编程范式变革*：让 LLM 从“数据流处理器”变为“代码生成器”（编写轻量脚本在沙箱中完成过滤/统计，仅将 stdout 结果输出到上下文，减少 100x 消耗）；
+  - *长会话连续性与轻量检索架构*：基于 SQLite FTS5 全文索引 + BM25 算法的持久化事件追踪，替代笨重的会话回填与全量重放；
+  - *多平台 Hook 拦截与透明路由*：分析 PreToolUse、SessionStart、PreCompact 在 Claude Code、Gemini CLI、Cursor 中的拦截重定向机制；
+  - *大模型 Prompt Cache（KV-Cache）保护*：避免动态时间戳、乱序工具定义造成的 Prefix Cache 击穿。
 - [ ] **AI 助手在现代 IDE 中的上下文感知与调度机制**：
   - *Context 组装*：当前活跃文件、光标上下文、编辑历史、LSP 符号表与 Repo Map 拓扑图切片算法；
   - *Agentic Loop 运行机制*：ReAct 循环、规划模式（Planning Mode）、工具调用（Tool Use）与沙箱执行拦截；
@@ -59,8 +66,8 @@
 
 > *平时在手机或终端有灵光一现的碎片想法，可直接粘贴在这里，后续再整理进上方表格：*
 
+* 2026-09-16：研读开源热门项目 [`mksglu/context-mode`](https://github.com/mksglu/context-mode)，其“沙箱隔离（98% 压缩率）+ Think in Code + SQLite FTS5/BM25 检索式记忆”思想对解决大模型上下文膨胀与保护 Prompt Cache 极具实战指导价值，已录入 B06 攻坚清单。
 * 2026-09-14：排查发现容器运行了 2 年多没重启，思考：生产环境是否有必要推行“Pod 最大存活周期（Pod TTL）”或季度滚动？
-* 
 
 ---
 

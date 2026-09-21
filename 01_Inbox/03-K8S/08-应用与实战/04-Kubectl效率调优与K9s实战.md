@@ -9,6 +9,7 @@ Kubernetes 日常运维中，频繁的手动输入 `kubectl` 全称和长参数�
 自动补全（Tab 键）能够自动列出集群中的 Namespace、Pod 名称以及命令参数。
 
 ### 1. Bash 环境下的配置
+
 在 Linux / CentOS 系统中，默认使用的是 Bash Shell。
 
 ```shell
@@ -25,6 +26,9 @@ echo "source <(kubectl completion bash)" >> ~/.bashrc
 ```
 
 ### 2. Zsh 环境下的配置
+
+
+
 在 macOS 或者安装了 Oh-My-Zsh 的服务器上：
 
 ```shell
@@ -114,6 +118,7 @@ kubens kube-system                # 将当前默认 namespace 切换为 kube-sys
 ```
 
 ### 1. 基础安装
+
 ```shell
 # macOS 安装
 brew install derailed/k9s/k9s
@@ -124,9 +129,11 @@ tar -zxvf k9s_Linux_amd64.tar.gz -C /usr/local/bin/
 ```
 
 ### 2. K9s 高频快捷键指南
+
 启动 k9s 直接在命令行输入 `k9s` 即可。
 
 #### A. 页面跳转与过滤
+
 * **`:` (冒号)**：进入命令行模式。输入资源缩写跳转到相应页面：
   * `:pod`：跳转到 Pod 视图。
   * `:svc`：跳转到 Service 视图。
@@ -135,6 +142,7 @@ tar -zxvf k9s_Linux_amd64.tar.gz -C /usr/local/bin/
 * **`/` (斜杠)**：进入搜索过滤模式。输入关键字可模糊筛选当前视图的 Pod。
 
 #### B. 核心资源操作 (光标选中 Pod 后)
+
 * **`d`**：执行 `describe`，查看对象详细定义和事件。
 * **`l`**：执行 `logs`，实时查看并滚动刷新容器日志。
 * **`e`**：执行 `edit`，使用系统默认的 vim 直接在线编辑资源的 YAML。
@@ -145,6 +153,5 @@ tar -zxvf k9s_Linux_amd64.tar.gz -C /usr/local/bin/
 ---
 
 > [!TIP] 💡 关联技术与延伸阅读
->
 > * [Kubectl 命令行客户端工作原理](../01-组件原理/06-Kubectl.md)
 > * [集群健康巡检与脚本自动化](./01-集群健康巡检与脚本自动化.md)

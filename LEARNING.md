@@ -10,6 +10,7 @@
 ## 1. 🛡️ Security, Environment & Infrastructure
 - `[2026-08-28] [MySQL/Accounts]` 物理恢复 (XtraBackup / copy-back) 会全盘覆盖 `mysql.user` 表，root 密码已变更为源库备份时的密码，且老库可能缺少 `localhost` 或 `127.0.0.1` 权限导致 `mysqlsh` 报 Error 1045 / 1396。重置账号时必须使用 `CREATE USER IF NOT EXISTS` + `GRANT` 幂等补全 `localhost`, `127.0.0.1`, `%` 三者权限。
 - `[2026-08-28] [MySQL/MGR/Router]` MGR 集群在主节点强制重建 (`dba.createCluster force`) 后，MySQL 集群元数据与 Router 账号被重建。原有 MySQL Router 启动会报超时，必须在 Router 节点上重新执行 `mysqlrouter --bootstrap root@<Node1_IP>:3306 --user=mysqlrouter --directory=/etc/mysqlrouter --force` 重新引导。
+- `[2026-09-20] [SRE/ProductionSafety]` 生产环境排障红线：严禁在未摸清底层资产、拓扑与存活状态前执行任何写操作（如强杀进程、删锁文件、改配重启）。必须全量只读取证先行，先梳理详细说明后一次性给出完整检查脚本，经双人复核审批后方可推进。
 
 ---
 
@@ -28,6 +29,8 @@
 ## 4. 🎨 Code Style, Frontend & Unit Testing
 - `[2026-08-28] [7-Layer Architecture]` 知识库采用 7 层分层递进架构（`01_Inbox` 体系专题, `02_Notes` 提炼面试, `03_Study_Plans` 计划目标, `04_Resources` 静态素材, `05-Install` 工程交付, `06_Troubleshooting` 生产排障, `07_Templates` 规范模板），新建文档必须遵循模板并使用项目级相对路径。
 - `[2026-08-10] [Path Specification]` 项目中所有的文件路径及 Markdown 关联链接必须且只能使用项目级别的相对路径（例如 `./01_Inbox/03-K8S/...` 或相对当前文件的路径），严禁包含本机绝对路径（如 `/Users/...` 或 `file:///Users/...`）。
+- `[2026-09-18] [Rule/ExternalLinkPreservation]` 当用户提供外部链接（GitHub 仓库、技术文档、博客等）要求学习整理时，整理生成的文档必须在文首（Note 提示块）与文末（参考资料章节）强制保留原始完整链接地址，确保 100% 可溯源性。
+- `[2026-09-20] [Rule/02_NotesDailySummary]` `02_Notes/` 目录专门用于记录日常工作处理总结，坚持“每日一个文件”（如 `YYYY-MM-DD.md`），全面沉淀生产故障排查、配置变更、实战调优与工作决策卡片。
 
 ---
 

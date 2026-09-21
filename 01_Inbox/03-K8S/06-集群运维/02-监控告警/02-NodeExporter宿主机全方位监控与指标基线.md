@@ -154,8 +154,8 @@ mv ${OUTPUT_FILE}.$$ ${OUTPUT_FILE}
 ---
 
 > [!TIP] 💡 关联技术与延伸阅读
->
 > * [Prometheus 与 Alertmanager 企业级架构设计与生产落地](./01-Prometheus与Alertmanager架构设计与生产落地.md)
+> * [外部节点静态采集架构-ServiceMonitor与Endpoints深度思考与落地](./08-外部节点静态采集架构-ServiceMonitor与Endpoints深度思考与落地.md)
 > * [cAdvisor 容器运行时指标全景与双轨采集对比](./03-cAdvisor容器运行时指标全景与双轨采集对比.md)
-> * [万级节点与十万级 Pod 大规模集群调优指南](../07-万级节点与十万级Pod大规模集群调优指南.md)
 > * [node-exporter 生产级 DaemonSet 部署清单](../../../../05-Install/monitoring/05-node-exporter.yaml)
+> * [万级节点与十万级 Pod 大规模集群调优指南](../07-万级节点与十万级Pod大规模集群调优指南.md)

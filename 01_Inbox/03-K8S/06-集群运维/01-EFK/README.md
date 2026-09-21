@@ -13,6 +13,7 @@ EFK（Elasticsearch + Fluent Bit / Fluentd + Kibana）在 Kubernetes 上的知�
 | [./03-Fluentd.md](./03-Fluentd.md) | 文件 | Fluentd 复杂管道：多行熔合 / Java 堆栈 / 字段裁剪 / ES 输出配置 |
 | [./04-Kibana.md](./04-Kibana.md) | 文件 | Kibana 8.18：部署 SOP / ILM 生命周期 / ES|QL 实战 / 生产避坑指南 |
 | [./05-日志告警-ElastAlert2与Kibana-Alerting深度全景对比.md](./05-日志告警-ElastAlert2与Kibana-Alerting深度全景对比.md) | 文件 | 10 轮深度推演：ElastAlert 2 vs Kibana Alerting 底层架构 / 算法模型 / 降噪 / 商业边界 / 选型决策树 |
+| [./06-ElastAlert2.md](./06-ElastAlert2.md) | 文件 | ElastAlert 2 生产级告警引擎：调度架构 / Writeback 状态机 / 10 种规则模型 / 防风暴降噪 / K8s 实战排障 |
 
 ## 相关部署文件位置
 `./05-Install/kubenetes/efk/` 目录包含：

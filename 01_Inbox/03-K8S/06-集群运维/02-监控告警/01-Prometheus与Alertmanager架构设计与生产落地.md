@@ -174,6 +174,9 @@ flowchart TB
 > [!TIP] 💡 关联技术与延伸阅读
 >
 > * [NodeExporter 宿主机全方位监控与指标基线](./02-NodeExporter宿主机全方位监控与指标基线.md)
+> * [外部节点静态采集架构-ServiceMonitor与Endpoints深度思考与落地](./08-外部节点静态采集架构-ServiceMonitor与Endpoints深度思考与落地.md)
 > * [cAdvisor 容器运行时指标全景与双轨采集对比](./03-cAdvisor容器运行时指标全景与双轨采集对比.md)
 > * [kube-state-metrics 资源对象监控与大规模集群调优](./04-KubeStateMetrics资源对象监控与大规模集群调优.md)
+> * [生产级监控体系缺口评估与 Operator 演进选型](./06-生产级监控体系缺口评估与Operator演进选型.md)
+> * [企业级实战：Rancher 平台 MySQL 与外部节点监控全景落地指南](./07-企业级实战-Rancher平台MySQL与外部节点监控全景落地指南.md)
 > * [生产级监控安装部署清单 (YAML)](../../../../05-Install/monitoring/README.md)

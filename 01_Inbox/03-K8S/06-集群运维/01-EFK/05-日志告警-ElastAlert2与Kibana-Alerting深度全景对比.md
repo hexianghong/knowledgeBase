@@ -279,4 +279,5 @@ gitGraph
 > * [Elasticsearch 8.18+ 核心原理与底层架构](./01-Elasticsearch.md)
 > * [Fluentd 复杂日志清洗与字段裁剪管道](./03-Fluentd.md)
 > * [Kibana 8.18 生产部署与 ES|QL 实战](./04-Kibana.md)
+> * [ElastAlert 2 生产级日志告警引擎深度架构与实战指南](./06-ElastAlert2.md)
 > * [Kubernetes EFK 生产部署 YAML 清单与 ElastAlert 2 配置](../../../../05-Install/kubenetes/efk/README.md)
