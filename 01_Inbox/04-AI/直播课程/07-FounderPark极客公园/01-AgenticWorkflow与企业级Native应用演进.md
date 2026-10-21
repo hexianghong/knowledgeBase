@@ -61,7 +61,7 @@ flowchart TD
     subgraph P3["模式 3: 评估优化循环 (Evaluator-Optimizer)"]
         EO_Gen[生成 Agent] -->|草稿| EO_Judge{评估 Agent}
         EO_Judge -->|评分不达标 + 反馈修改意见| EO_Gen
-        EO_Judge -->|达标 (Pass)| EO_Out[交付最终文件]
+        EO_Judge -->|"达标 (Pass)"| EO_Out[交付最终文件]
     end
 ```
 

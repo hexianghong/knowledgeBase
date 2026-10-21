@@ -29,7 +29,7 @@ flowchart TD
     end
 
     subgraph ProjectLayer["交付层 (项目经理 PM / Scrum Master)"]
-        Project -->|管理模型: Scrum/看板/瀑布| Exec["7.6 执行 (Execution / Sprint)"]
+        Project -->|"管理模型: Scrum/看板/瀑布"| Exec["7.6 执行 (Execution / Sprint)"]
         PlanRelease -.->|需求关联注入| Exec
     end
 

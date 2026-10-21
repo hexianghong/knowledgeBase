@@ -17,6 +17,8 @@
 | **B04** | ClickHouse 内存配额调优与高并发向量检索优化实践 | 数据库 | 生产宿主机高负载混跑业务稳定性评估 | P2 | 沉淀 ClickHouse 生产级资源隔离与压测报告 | 💡 待调研 |
 | **B05** | AI 在现代 IDE 中的交互运行机制与本地资源动态加载体系 | AI Agent / IDE 架构 | 深入探索现代 AI 编程助手（Antigravity/Cursor等）上下文组装与本地扩展体系 | P1 | 深入剖析 IDE Agentic Loop、LSP/AST 代码上下文切片与本地 Skills/Rules/MCP 加载原理 | 💡 待调研 |
 | **B06** | mksglu/context-mode 架构深度剖析与 AI Agent 上下文窗口沙箱优化 | AI Agent / 上下文工程 | 解决 Coding Agent 工具输出撑爆上下文（56KB+ 单次调用）、压缩失忆与 Prompt Cache 击穿难题 | P1 | 深入剖析 98% 压缩率沙箱机制、“Think in Code”范式与 SQLite FTS5+BM25 检索式持久化记忆方案 | 💡 待调研 |
+| **B07** | 基于本体管理的智能 DevOps 平台 (wpd-platform) 架构与人机协同门禁体系 | AI Agent / 研发运维协同 | 微信深度架构文《分享一个基于本体管理的智能DevOps平台(wpd-platform)设计方案》（月夜烛峰） | P1 | 剖析 SDD 规格驱动开发、EARS 句式约束、三道人工安全门禁、6/6 测试集 Agent 准入与防篡改哈希链审计对账机制 | 💡 待调研 |
+| **B08** | 全球顶级 SRE、DevOps 与 AI-Ops 核心生态深度精读与实践转化 | SRE / AIOps / 可观测性 | 跟踪 SRE Weekly、Google Cloud SRE、The New Stack、Doctor Droid、Metoro 等 9 大顶级资讯与博客源 | P1 | 持续跟踪前沿技术演进，提炼 eBPF 零侵入可观测性、Context Engine、MCP 排障与防幻觉护栏至专题库 | ✅ 已沉淀 |
 
 ---
 
@@ -58,6 +60,11 @@
   - *Skills / Plugins 机制*：按需懒加载（Lazy Load）、Prompt Frontmatter 元数据驱动激活机制；
   - *本地 MCP 通信机制*：Model Context Protocol 基于 stdio / SSE 的本地进程间通信与工具注册。
 - [ ] **Prometheus 容器句柄趋势告警（Predict/Deriv）优化**：将写死的硬阈值改为基于动态斜率与增长速率预测，提前 24 小时预警句柄泄漏。
+- [ ] **基于本体管理的智能 DevOps 平台与人机协同门禁设计（深度参考 `wpd-platform`）**：
+  - *规格驱动开发 (SDD) 范式*：EARS（Easy Approach to Requirements Syntax）标准需求句式约束与 AI 草稿人机逐条确认机制；
+  - *四阶段三门禁流转体系*：需求冻结（门禁1）$\rightarrow$ 设计文档评审（2票门禁2，同一事务内自动按二级标题派生任务）$\rightarrow$ 执行工作台（17类 SSE 事件流、单次工具调用停靠确认）$\rightarrow$ 任务完成代操作合并 PR（门禁3）；
+  - *Agent 准入门槛与评测集治理*：四步向导注册、6/6 测试集全绿通过硬门禁上架、版本克隆与防篡改追溯；
+  - *审计台账与真实财务对账*：前向指针哈希链（Hash Chain）防篡改台账设计、高精度 Token 与工具耗时开销分档计价、真实账单分歧工单对账流程。
 - [ ] **基于 eBPF 的容器系统调用异常捕获**：自动追踪未被 close 的 FD 来源于哪一行应用代码。
 
 ---
@@ -66,6 +73,8 @@
 
 > *平时在手机或终端有灵光一现的碎片想法，可直接粘贴在这里，后续再整理进上方表格：*
 
+* 2026-10-09：全面调研全球 9 大主流 SRE、DevOps 与 AI-Ops 资讯周刊与深度博客（SRE Weekly、Last Week in AWS、Google SRE Blog、The New Stack、incident.io、Doctor Droid、NeuBird、Metoro、Hyground），确认全部处于高频持续更新状态，已系统梳理各站点核心定位、2026 前沿重点与学习路线，沉淀至专题库文档：[`../../01_Inbox/05-Devops/03-SRE与智能运维/01-全球顶级SRE与AIOps前沿周刊及博客追踪指南.md`](../../01_Inbox/05-Devops/03-SRE与智能运维/01-全球顶级SRE与AIOps前沿周刊及博客追踪指南.md)。
+* 2026-09-30：研读微信公众号【月夜烛峰】架构设计好文《[分享一个基于本体管理的智能DevOps平台(wpd-platform)设计方案](https://mp.weixin.qq.com/s/XXVmaHkJIGY6taW1kTVKRg)》，其“将 AI 嵌入到有门禁、有审计、有对账、人机协同的完整工程化流程（SDD + 四阶段三门禁 + 6/6 Agent评测集 + 哈希链审计）”设计极具落地参考价值，已立项为 [B07 课题](./02-基于本体管理的智能DevOps平台架构与人机协同门禁体系.md)。
 * 2026-09-16：研读开源热门项目 [`mksglu/context-mode`](https://github.com/mksglu/context-mode)，其“沙箱隔离（98% 压缩率）+ Think in Code + SQLite FTS5/BM25 检索式记忆”思想对解决大模型上下文膨胀与保护 Prompt Cache 极具实战指导价值，已录入 B06 攻坚清单。
 * 2026-09-14：排查发现容器运行了 2 年多没重启，思考：生产环境是否有必要推行“Pod 最大存活周期（Pod TTL）”或季度滚动？
 

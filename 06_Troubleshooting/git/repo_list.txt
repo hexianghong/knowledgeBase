@@ -1,0 +1,10 @@
+ui-ocs https://gitlab-hz.rubikstack.com/clinic/ui-ocs.git ac6406d2
+ui-pss https://gitlab-hz.rubikstack.com/wowjoy/medicalization/ui-pss.git 1f82cd11
+ui-pub https://gitlab-hz.rubikstack.com/wowjoy/medicalization/ui-pub.git c3f42c22
+ui-sts https://gitlab-hz.rubikstack.com/wowjoy/wowjoy_4/ui-sts.git c9384525
+vue-cdr-dingding https://gitlab-hz.rubikstack.com/wowjoy-ext/shulan_doctor/ui-doctor-dingding.git fc40bd7c
+vue-esb-iip https://gitlab-hz.rubikstack.com/wowjoy/wowjoy_26/frontend-esb-iip.git 88717104
+vue-fms https://gitlab-hz.rubikstack.com/wowjoy/wowjoy_28/vue-fms.git 2b6c42e8
+vue-mts https://gitlab-hz.rubikstack.com/wowjoy/wowjoy_7/vue-mts.git c7872837
+vue-pcs https://gitlab-hz.rubikstack.com/wowjoy/wowjoy_15/vue-pcs.git 98015309
+vue-sis https://gitlab-hz.rubikstack.com/wowjoy/wowjoy_16/vue-sis.git e509e538

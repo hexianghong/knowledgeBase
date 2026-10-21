@@ -32,8 +32,8 @@ sysctl -p /etc/sysctl.d/99-sysctl-custom.conf
 ```mermaid
 graph LR
     A["客户端发起 SYN"] --> B["半连接队列 (SYN Queue)"]
-    B -->|内核收到 ACK 完成三次握手| C["全连接队列 (Accept Queue)"]
-    C -->|应用程序调用 accept()| D["建立完成的 Socket (ESTABLISHED)"]
+    B -->|"内核收到 ACK 完成三次握手"| C["全连接队列 (Accept Queue)"]
+    C -->|"应用程序调用 accept()"| D["建立完成的 Socket (ESTABLISHED)"]
 ```
 
 #### 全连接/半连接队列溢出内核诊断 (netstat -s)：

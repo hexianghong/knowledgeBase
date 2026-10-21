@@ -57,10 +57,10 @@ PTP (Precision Time Protocol) 通过在硬件 PHY 网卡芯片打上时间戳，
 
 ```mermaid
 graph LR
-    Master["PTP Master 主时钟"] -->|1. 发送 Sync 报文 (发出时刻 T1)| Slave["PTP Slave 从时钟 (接收时刻 T2)"]
-    Master -->|2. 发送 Follow_Up (补发 T1 精确值)| Slave
-    Slave -->|3. 发送 Delay_Req (发出时刻 T3)| Master
-    Master -->|4. 返回 Delay_Resp (接收时刻 T4)| Slave
+    Master["PTP Master 主时钟"] -->|"1. 发送 Sync 报文 (发出时刻 T1)"| Slave["PTP Slave 从时钟 (接收时刻 T2)"]
+    Master -->|"2. 发送 Follow_Up (补发 T1 精确值)"| Slave
+    Slave -->|"3. 发送 Delay_Req (发出时刻 T3)"| Master
+    Master -->|"4. 返回 Delay_Resp (接收时刻 T4)"| Slave
 ```
 
 ### PTP 双向链路时钟偏差与单向延迟求解公式：

@@ -13,10 +13,10 @@ Linux 内核在数据包离开网卡出站（Egress）或进入网卡入站（In
 ```mermaid
 graph TD
     A["Socket 数据包准备发送 (Egress)"] --> B["Root Qdisc (根队列规则)"]
-    B -->|Classless Qdisc| C1["pfifo_fast / fq_codel (先进先出/Fair Queueing)"]
-    B -->|Classful Qdisc| C2["HTB (分层令牌桶)"]
-    C2 -->|Filter 匹配| D1["Class 1:10 (给 VIP 客户 100Mbps)"]
-    C2 -->|Filter 匹配| D2["Class 1:20 (给普通用户 10Mbps)"]
+    B -->|"Classless Qdisc"| C1["pfifo_fast / fq_codel (先进先出/Fair Queueing)"]
+    B -->|"Classful Qdisc"| C2["HTB (分层令牌桶)"]
+    C2 -->|"Filter 匹配"| D1["Class 1:10 (给 VIP 客户 100Mbps)"]
+    C2 -->|"Filter 匹配"| D2["Class 1:20 (给普通用户 10Mbps)"]
     D1 --> E["物理网卡 NIC"]
     D2 --> E
 ```
@@ -79,10 +79,10 @@ tc filter add dev eth0 protocol ip parent 1:0 prio 1 u32 match ip src 192.168.1.
 
 ```mermaid
 graph TD
-    Client["外部客户端 (Client IP)"] -->|请求 VIP| Director["LVS Director 负载均衡器 (VIP)"]
-    Director -->|模式 1: DR (直接路由)| RS1["Real Server 1 (直接改写 MAC 地址, 响应直接回给 Client!)"]
-    Director -->|模式 2: NAT (网络地址转换)| RS2["Real Server 2 (改写 IP 与端口, 响应需经 Director 返回)"]
-    Director -->|模式 3: TUN (IP 隧道模式)| RS3["Real Server 3 (二次封装 IP 报头, 支持跨网段/跨机房)"]
+    Client["外部客户端 (Client IP)"] -->|"请求 VIP"| Director["LVS Director 负载均衡器 (VIP)"]
+    Director -->|"模式 1: DR (直接路由)"| RS1["Real Server 1 (直接改写 MAC 地址, 响应直接回给 Client!)"]
+    Director -->|"模式 2: NAT (网络地址转换)"| RS2["Real Server 2 (改写 IP 与端口, 响应需经 Director 返回)"]
+    Director -->|"模式 3: TUN (IP 隧道模式)"| RS3["Real Server 3 (二次封装 IP 报头, 支持跨网段/跨机房)"]
 ```
 
 ### IPVS 三大模式核心差异对比：
@@ -142,3 +142,10 @@ tc filter add dev eth0 ingress bpf da obj bpf_filter.o sec classifier
 *性能收益：比传统的 `iptables` 规则匹配提升 300% 以上的包转发吞吐量，实现真正的 eBPF 零拷贝转发。*
 
 ---
+
+> [!TIP] 💡 关联技术与延伸阅读
+>
+> * [Linux 网络协议栈与排错指南](./01-Linux网络协议栈与排错指南.md) —— NAPI 软中断收包、TCP 状态机与 Netfilter/iptables 底层机制
+> * [Linux 内核参数调优与 sysctl 实战指南](../03-系统性能与调优/04-Linux内核参数调优与sysctl实战指南.md) —— `/proc/sys/net/` 生产级网络内核参数模版
+> * [高级运维生产复杂故障深度案例集](../07-高可用与生产排错/03-高级运维生产复杂故障深度案例集(Case_Study).md) —— 跨机房丢包、连接池句柄泄漏与内核锁死排错复盘
+

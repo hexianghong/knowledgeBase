@@ -27,7 +27,7 @@ graph TD
         FS["5. ext4 文件系统 (492 GB, 84% 告警) ⚠️ 业务高危"]
     end
     
-    Disk -->|阻塞点: 未执行 pvresize| PV
+    Disk -->|"阻塞点: 未执行 pvresize"| PV
     PV --> VG
     VG --> LV
     LV --> FS

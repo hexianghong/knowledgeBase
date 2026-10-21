@@ -10,10 +10,10 @@
 
 ```mermaid
 graph LR
-    A["源代码 main.c"] -->|1. 预处理 (cpp)| B["预处理文本 main.i (宏展开, 头文件插入)"]
-    B -->|2. 编译 (cc1)| C["汇编代码 main.s (高级语言转汇编)"]
-    C -->|3. 汇编 (as)| D["可重定向目标文件 main.o (ELF 格式, 机器码)"]
-    D -->|4. 链接 (ld)| E["可执行文件 main (完整 ELF 二进制)"]
+    A["源代码 main.c"] -->|"1. 预处理 (cpp)"| B["预处理文本 main.i (宏展开, 头文件插入)"]
+    B -->|"2. 编译 (cc1)"| C["汇编代码 main.s (高级语言转汇编)"]
+    C -->|"3. 汇编 (as)"| D["可重定向目标文件 main.o (ELF 格式, 机器码)"]
+    D -->|"4. 链接 (ld)"| E["可执行文件 main (完整 ELF 二进制)"]
     Libs[".a 静态库 / .so 动态库"] --> E
 ```
 
@@ -27,16 +27,17 @@ graph LR
 
 ```mermaid
 graph TD
-    App["应用代码调用 open()"] -->|跳转到| PLT0["PLT[1] 条目 (open@plt)"]
-    PLT0 -->|读取| GOT0["GOT[open] 条目"]
-    
-    GOT0 -->|第一次调用: 尚未解析, 返回 PLT0 指令| Resolve["调用动态链接器 _dl_runtime_resolve()"]
-    Resolve -->|在内存中搜寻 libc.so 确定 open 真实地址| Rewrite["将 open 真实内存地址回写覆盖 GOT[open]"]
-    
-    GOT0 -->|第二次调用: 已解析| RealFunc["直接跳转至 libc.so 中的 open() 真实地址!"]
+    App["应用代码调用 open()"] -->|"跳转到"| PLT0["PLT[1] 条目 (open@plt)"]
+    PLT0 -->|"读取"| GOT0["GOT[open] 条目"]
+  
+    GOT0 -->|"第一次调用: 尚未解析, 返回 PLT0 指令"| Resolve["调用动态链接器 _dl_runtime_resolve()"]
+    Resolve -->|"在内存中搜寻 libc.so 确定 open 真实地址"| Rewrite["将 open 真实内存地址回写覆盖 GOT[open]"]
+  
+    GOT0 -->|"第二次调用: 已解析"| RealFunc["直接跳转至 libc.so 中的 open() 真实地址!"]
 ```
 
 #### 查看程序的 GOT 与 PLT 表：
+
 ```bash
 # 查看 GOT (Global Offset Table) 动态重定位重定位项
 readelf -r /bin/ls

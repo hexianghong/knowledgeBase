@@ -43,10 +43,10 @@ graph TD
     end
     
     subgraph "内核空间 (Kernel Space)"
-        KVM["KVM 内核模块 (kvm.ko, kvm-intel.ko)"] -->|/dev/kvm ioctl| CPU["CPU 硬件 (Intel VT-x VMX)"]
+        KVM["KVM 内核模块 (kvm.ko, kvm-intel.ko)"] -->|"/dev/kvm ioctl"| CPU["CPU 硬件 (Intel VT-x VMX)"]
     end
     
-    QEMU <-->|ioctl(vcpu_fd, KVM_RUN)| KVM
+    QEMU <-->|"ioctl(vcpu_fd, KVM_RUN)"| KVM
 ```
 
 ### 职责分工表：

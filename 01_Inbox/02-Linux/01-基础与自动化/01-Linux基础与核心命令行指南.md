@@ -304,14 +304,194 @@ source ~/.bashrc
 
 ---
 
-### 2. `journalctl` 快捷日志检索
+### 2. `journalctl` (Systemd 日志管理与排障深度指南)
+
+`systemd-journald` 是现代 Linux 系统的统一日志守护进程，它接管并集中收集内核日志 (`/dev/kmsg`)、系统调用、标准输出/标准错误 (`stdout`/`stderr`)、Syslog 协议消息 (`/dev/log`) 以及安全审计事件。
+
+#### (1) 底层架构与存储机制
+
+```
+  +-----------------------------------------------------------------------+
+  |                             日志数据源                                |
+  |  [内核 /dev/kmsg]   [服务进程 stdout/stderr]   [传统 /dev/log]  [Audit] |
+  +-----------------------------------------------------------------------+
+                                     |
+                                     v
+                 +----------------------------------------+
+                 |       systemd-journald 守护进程        |
+                 |  (字段元数据打标、二进制压缩、建立索引)   |
+                 +----------------------------------------+
+                                     |
+         +---------------------------+---------------------------+
+         |                                                       |
+         v                                                       v
+【内存模式 (Volatile)】                                 【持久化模式 (Persistent)】
+  /run/log/journal/ (重启即丢失)                         /var/log/journal/ (落盘长期留存)
+```
+
+* **二进制结构化存储**：Journal 日志以二进制格式（`.journal` 文件）存储，自带哈希索引与 zstd/lz4 压缩，查询过滤速度远超纯文本 `grep`，且内置防篡改哈希校验。
+* **双模存储策略**：
+  * 若系统存在 `/var/log/journal/` 目录，默认采用 **persistent**（持久化落盘）；
+  * 若仅存在 `/run/log/journal/`，则采用 **volatile**（仅写内存 tmpfs，机器重启即丢失）。
+
+---
+
+#### (2) 生产高频过滤与排障命令集
 
 ```bash
-# 1. 查看 nginx 服务最新的 50 行日志（不调用 less 分页）
-journalctl -u nginx.service -n 50 --no-pager
+# -------------------------------------------------------------
+# 1. 服务与 Unit 维度过滤
+# -------------------------------------------------------------
+# 实时跟踪单个服务最新日志 (-f: 类似 tail -f, -u: 指定 Unit)
+journalctl -u nginx.service -f
 
-# 2. 查看自上次重启以来的所有系统 Kernel 日志
-journalctl -k -b 0
+# 联合过滤多个服务（排查协同故障，如 Kubelet 与容器运行时）
+journalctl -u kubelet.service -u containerd.service -f
+
+# 显示最新 100 行且禁用 less 分页截断（脚本或自动化提取必备）
+journalctl -u nginx.service -n 100 --no-pager
+
+# -------------------------------------------------------------
+# 2. 精确时间范围过滤 (--since / --until)
+# -------------------------------------------------------------
+# 查询今天内的所有日志
+journalctl --since today
+
+# 查询最近 1 小时或最近 30 分钟的日志
+journalctl --since "1 hour ago"
+journalctl --since "30 min ago"
+
+# 指定绝对时间段（排查特定时段突发故障）
+journalctl --since "2026-09-28 09:00:00" --until "2026-09-28 10:30:00"
+
+# -------------------------------------------------------------
+# 3. 日志严重级别过滤 (-p / Priority)
+# -------------------------------------------------------------
+# 仅过滤 Error 级别及以上严重的日志 (emerg:0, alert:1, crit:2, err:3)
+journalctl -p err..emerg
+
+# 查看所有 Warning 及以上级别的系统警告
+journalctl -p warning
+
+# -------------------------------------------------------------
+# 4. 内核与操作系统启动引导周期过滤 (-k / -b)
+# -------------------------------------------------------------
+# 查看本次开机以来的所有 Kernel 内核环缓冲区日志（替代 dmesg）
+journalctl -k
+
+# 列出系统历史上所有记录的引导启动周期 (Boot ID 与开机时间)
+journalctl --list-boots
+
+# 查看前一次崩溃重启前 (上一个 boot 周期) 的全部日志 (排查异常掉电/内核崩溃神器)
+journalctl -b -1
+
+# 查看前一次启动中 nginx 崩溃前的最后 100 行日志
+journalctl -b -1 -u nginx.service -n 100
+
+# -------------------------------------------------------------
+# 5. 进程 PID、可执行文件与元数据字段过滤
+# -------------------------------------------------------------
+# 按进程 PID 过滤排查
+journalctl _PID=28491
+
+# 按二进制绝对路径过滤（适用于没有配置 systemd unit 的独立可执行程序）
+journalctl /usr/sbin/sshd
+
+# 按系统用户 UID 过滤 (0 为 root 用户)
+journalctl _UID=0
+```
+
+---
+
+#### (3) 结构化输出与格式化解析 (`-o`)
+
+`journalctl` 支持多种输出格式，非常适合结合 `jq` 或监控 Agent 做日志二次分析：
+
+| 输出格式参数       | 效果说明                                                                                                          | 典型适用场景                                    |
+| :----------------- | :---------------------------------------------------------------------------------------------------------------- | :---------------------------------------------- |
+| `-o short`       | 默认标准短格式（`时间 主机 进程[PID]: 消息`）                                                                   | 人工日常肉眼巡检                                |
+| `-o verbose`     | 打印条目包含的**全部底层元数据字段**（包括 `_SYSTEMD_CGROUP`、`_CMDLINE`、`_EXE`、`MESSAGE_ID` 等） | 深度溯源与排障                                  |
+| `-o json-pretty` | 格式化多行 JSON 呈现                                                                                              | 交互式调试与结构化字段分析                      |
+| `-o json`        | 单行 JSON 格式（NDJSON）                                                                                          | 管道传递给`jq`、Logstash、Vector 或 Fluentbit |
+| `-o cat`         | 仅输出日志正文`MESSAGE`，剔除时间戳与主机名前缀                                                                 | 管道对接`grep`/`awk` 处理纯内容             |
+
+```bash
+# 示例：提取 kubelet 日志并转为单行 JSON 过滤特定字段
+journalctl -u kubelet.service -n 10 -o json | jq -r '.MESSAGE'
+```
+
+---
+
+#### (4) 日志容量治理、持久化配置与空间清理
+
+长期未受控的 Journal 日志可能耗尽 `/var` 磁盘分区，需掌握容量查看与动态清理：
+
+```bash
+# 1. 查看当前 Journal 日志占用的物理磁盘容量
+journalctl --disk-usage
+
+# 2. 按保留大小清理：将日志压缩截断至最大占用 1GB
+journalctl --vacuum-size=1G
+
+# 3. 按保留时间清理：仅保留最近 7 天的日志
+journalctl --vacuum-time=7d
+
+# 4. 校验日志文件完整性（检查是否有损坏的二进制块）
+journalctl --verify
+```
+
+##### ⚙️ 生产级配置调优 (`/etc/systemd/journald.conf`)：
+
+```ini
+[Journal]
+# 强制持久化落盘到 /var/log/journal
+Storage=persistent
+
+# 启用 zstd/lz4 压缩
+Compress=yes
+
+# 限制 Journal 最多占用磁盘空间上限（防止打爆磁盘）
+SystemMaxUse=4G
+
+# 保证系统所在磁盘至少预留 10% 或 5GB 空闲空间
+SystemKeepFree=5G
+
+# 单个 .journal 文件的最大上限（达到后自动触发滚动）
+SystemMaxFileSize=256M
+
+# 日志保留的最长时间
+MaxRetentionSec=1month
+
+# 日志速率限制（防止单进程日志风暴导致 CPU 满载与刷屏）：30 秒内最多允许 20,000 条
+RateLimitIntervalSec=30s
+RateLimitBurst=20000
+```
+
+> 修改配置后平滑重启生效：`systemctl restart systemd-journald`（该操作不会中断正在运行的系统服务）。
+
+---
+
+#### (5) 生产高频排障实战场景
+
+##### 场景 1：排查 Kubernetes 节点故障与 Kubelet 崩溃
+
+```bash
+# 联合监控 Kubelet 与 CRI 容器运行时，查看最近 15 分钟内的严重错误
+journalctl -u kubelet -u containerd --since "15 min ago" -p err --no-pager
+```
+
+##### 场景 2：定位内核 OOM Killer 杀进程事件
+
+```bash
+# 检索内核中发生 Out of Memory 触发杀进程的精确记录与被杀进程 PID
+journalctl -k -b 0 | grep -i -E "oom[-_]killer|out of memory|killed process"
+```
+
+##### 场景 3：排查 SSH 暴力破解与非法登录尝试
+
+```bash
+# 查看近期所有认证失败与断开连接的 SSHD 审计记录
+journalctl -u sshd -u ssh --since yesterday | grep -E "Failed password|Invalid user"
 ```
 
 ---

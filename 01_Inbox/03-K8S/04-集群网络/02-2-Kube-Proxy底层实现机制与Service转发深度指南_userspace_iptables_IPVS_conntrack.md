@@ -68,11 +68,11 @@ graph LR
 ```mermaid
 graph TD
     PREROUTING["PREROUTING / OUTPUT 链"] --> KUBE_SERVICES["KUBE-SERVICES 规则链"]
-    KUBE_SERVICES -->|匹配到某 ClusterIP:Port| KUBE_SVC["KUBE-SVC-xxxx 链 (Service级)"]
-    KUBE_SVC -->|statistic 模块随机概率| KUBE_SEP1["KUBE-SEP-1 (Endpoint 1)"]
-    KUBE_SVC -->|statistic 模块随机概率| KUBE_SEP2["KUBE-SEP-2 (Endpoint 2)"]
-    KUBE_SVC -->|statistic 模块随机概率| KUBE_SEP3["KUBE-SEP-3 (Endpoint 3)"]
-    KUBE_SEP1 -->|DNAT 重写目标 IP:Port 为 Pod-1 IP| End1["Pod 1"]
+    KUBE_SERVICES -->|"匹配到某 ClusterIP:Port"| KUBE_SVC["KUBE-SVC-xxxx 链 (Service级)"]
+    KUBE_SVC -->|"statistic 模块随机概率"| KUBE_SEP1["KUBE-SEP-1 (Endpoint 1)"]
+    KUBE_SVC -->|"statistic 模块随机概率"| KUBE_SEP2["KUBE-SEP-2 (Endpoint 2)"]
+    KUBE_SVC -->|"statistic 模块随机概率"| KUBE_SEP3["KUBE-SEP-3 (Endpoint 3)"]
+    KUBE_SEP1 -->|"DNAT 重写目标 IP:Port 为 Pod-1 IP"| End1["Pod 1"]
 ```
 
 #### 规则执行与负载均衡实现细节

@@ -38,6 +38,7 @@ graph TD
 高并发下，若网卡所有中断均由 `CPU 0` 响应，会导致 `CPU 0` 的 `ksoftirqd/0` 达到 100%（软中断单核瓶颈），引发严重丢包。
 
 #### 绑定网卡多队列中断至不同 CPU 核心：
+
 ```bash
 # 1. 终止系统动态中断调节服务 (irqbalance)
 systemctl stop irqbalance
@@ -84,11 +85,11 @@ stateDiagram-v2
 
 ### 2. 生产高频异常 Socket 状态及根因分析
 
-| Socket 状态 | 表现特征与现象 | 产生根因 (Root Cause) | 生产处置与调优方案 |
-| :--- | :--- | :--- | :--- |
-| **`SYN_RECV` 积压** | 半连接队列 (SYN Queue) 满了 | 遭受 **SYN Flood 攻击**，或应用程序处理握手太慢 | 开启 `net.ipv4.tcp_syncookies = 1`；增大 `net.ipv4.tcp_max_syn_backlog` |
-| **`TIME_WAIT` 堆积** | 单机达到数万个 `TIME_WAIT` 连接，无法发起新连接 | 本端作为**主动关闭方**大量短连接请求（如 Nginx 未开启 upstream keepalive） | 开启 `net.ipv4.tcp_tw_reuse = 1`；调小 `net.ipv4.tcp_fin_timeout`；业务端改用 HTTP Keep-Alive / 连接池 |
-| **`CLOSE_WAIT` 堆积** | `CLOSE_WAIT` 持续激增且不自动释放，句柄耗尽 | **应用程序 Bug**。对端已发送 FIN，但本端代码没有调用 `close()` 关闭 Socket | **联系开发修复代码**；紧急情况下使用 `gdb` 或 `kill` 重启泄露句柄的服务 |
+| Socket 状态                   | 表现特征与现象                                   | 产生根因 (Root Cause)                                                              | 生产处置与调优方案                                                                                        |
+| :---------------------------- | :----------------------------------------------- | :--------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
+| **`SYN_RECV` 积压**   | 半连接队列 (SYN Queue) 满了                      | 遭受**SYN Flood 攻击**，或应用程序处理握手太慢                               | 开启`net.ipv4.tcp_syncookies = 1`；增大 `net.ipv4.tcp_max_syn_backlog`                                |
+| **`TIME_WAIT` 堆积**  | 单机达到数万个`TIME_WAIT` 连接，无法发起新连接 | 本端作为**主动关闭方**大量短连接请求（如 Nginx 未开启 upstream keepalive）   | 开启`net.ipv4.tcp_tw_reuse = 1`；调小 `net.ipv4.tcp_fin_timeout`；业务端改用 HTTP Keep-Alive / 连接池 |
+| **`CLOSE_WAIT` 堆积** | `CLOSE_WAIT` 持续激增且不自动释放，句柄耗尽    | **应用程序 Bug**。对端已发送 FIN，但本端代码没有调用 `close()` 关闭 Socket | **联系开发修复代码**；紧急情况下使用 `gdb` 或 `kill` 重启泄露句柄的服务                         |
 
 ---
 
@@ -139,6 +140,7 @@ ethtool -G eth0 rx 4096 tx 4096
 ## 四、 Linux Netfilter 与 iptables 深度原理剖析与实战
 
 在 Linux 操作系统中，**Netfilter** 与 **iptables** 构成了整个网络防火墙、NAT 转换以及容器/K8S 网络转发的基石。两者的关系是：
+
 * **Netfilter（内核态/数据面）**：嵌入在 Linux 内核网络协议栈中的框架与回调挂载点，负责真正的数据包过滤、状态跟踪与包头改写。
 * **iptables（用户态/控制面）**：提供给管理员配置策略的命令行工具，将用户定义的规则写入内核中 Netfilter 的各个表中。
 
@@ -152,22 +154,24 @@ Linux 内核协议栈在 IPv4 处理流程的 5 个关键物理位置设置了 H
 graph TD
     NIC_In["物理网卡收到数据包 (Ring Buffer -> sk_buff)"] --> Hook1["1. NF_INET_PRE_ROUTING (PREROUTING 钩子)<br/>[内核函数: ip_rcv()]"]
     Hook1 --> Route1{"路由决策 1: ip_route_input_noref()<br/>(目的 IP 是本机还是需要转发?)"}
-    
+  
     Route1 -- "目的 IP 为本机" --> Hook2["2. NF_INET_LOCAL_IN (INPUT 钩子)<br/>[内核函数: ip_local_deliver()]"]
     Hook2 --> Socket["传输层解析 & 投递至用户态 Socket (Nginx/App)"]
-    
+  
     Socket -- "用户程序发出回包/新连接" --> Route2{"路由决策 2: ip_route_output_flow()<br/>(查询路由表确定出站网卡与源 IP)"}
     Route2 --> Hook3["3. NF_INET_LOCAL_OUT (OUTPUT 钩子)<br/>[内核函数: __ip_local_out()]"]
     Hook3 --> Hook5
-    
+  
     Route1 -- "目的 IP 为非本机 (需要转发)" --> Hook4["4. NF_INET_FORWARD (FORWARD 钩子)<br/>[内核函数: ip_forward()]"]
     Hook4 --> Hook5["5. NF_INET_POST_ROUTING (POSTROUTING 钩子)<br/>[内核函数: ip_finish_output()]"]
-    
+  
     Hook5 --> NIC_Out["网卡驱动发送数据包 (TX Ring Buffer -> Wire)"]
 ```
 
 #### 内核五个 Hook 回调返回值（Verdict）：
+
 当注册在 Hook 点的规则链遍历执行时，每个规则会返回一个决议状态码：
+
 1. **`NF_ACCEPT`**：允许该数据包继续穿透协议栈。
 2. **`NF_DROP`**：直接丢弃该数据包，协议栈释放 `sk_buff` 内存，不向对端发送任何通知。
 3. **`NF_STOLEN`**：挂钩模块接管了该数据包，停止协议栈后续处理（如 IPVS 模块分流）。
@@ -197,13 +201,14 @@ Hook 关卡与表的执行优先级 (从高到低 / 从左到右)：
 ```
 
 #### 表的功能定位与设计目标：
-| 表名 (Table) | 核心功能 | 常用 Target 动作 | 挂载链 (Chains) | 优先级 |
-| :--- | :--- | :--- | :--- | :--- |
-| **`raw`** | 决定是否跳过 Conntrack 连接跟踪 | `NOTRACK`, `ACCEPT` | PREROUTING, OUTPUT | **最高 (1)** |
-| **`mangle`** | 修改 IP 报头字段 (TOS, TTL, Mark 打标) | `MARK`, `TOS`, `TTL` | 全部 5 条链 | **高 (2)** |
-| **`nat`** | 网络地址与端口转换 (DNAT / SNAT) | `DNAT`, `SNAT`, `MASQUERADE`, `REDIRECT` | PREROUTING, INPUT, OUTPUT, POSTROUTING | **中 (3)** |
-| **`filter`** | 核心防火墙包过滤 (放行/拒绝) | `ACCEPT`, `DROP`, `REJECT`, `LOG` | INPUT, FORWARD, OUTPUT | **普通 (4)** |
-| **`security`**| SELinux 强制访问控制 (MAC 安全标记) | `SECMARK`, `CONNSECMARK` | INPUT, FORWARD, OUTPUT | **最低 (5)** |
+
+| 表名 (Table)           | 核心功能                               | 常用 Target 动作                                 | 挂载链 (Chains)                        | 优先级             |
+| :--------------------- | :------------------------------------- | :----------------------------------------------- | :------------------------------------- | :----------------- |
+| **`raw`**      | 决定是否跳过 Conntrack 连接跟踪        | `NOTRACK`, `ACCEPT`                          | PREROUTING, OUTPUT                     | **最高 (1)** |
+| **`mangle`**   | 修改 IP 报头字段 (TOS, TTL, Mark 打标) | `MARK`, `TOS`, `TTL`                       | 全部 5 条链                            | **高 (2)**   |
+| **`nat`**      | 网络地址与端口转换 (DNAT / SNAT)       | `DNAT`, `SNAT`, `MASQUERADE`, `REDIRECT` | PREROUTING, INPUT, OUTPUT, POSTROUTING | **中 (3)**   |
+| **`filter`**   | 核心防火墙包过滤 (放行/拒绝)           | `ACCEPT`, `DROP`, `REJECT`, `LOG`        | INPUT, FORWARD, OUTPUT                 | **普通 (4)** |
+| **`security`** | SELinux 强制访问控制 (MAC 安全标记)    | `SECMARK`, `CONNSECMARK`                     | INPUT, FORWARD, OUTPUT                 | **最低 (5)** |
 
 ---
 
@@ -212,6 +217,7 @@ Hook 关卡与表的执行优先级 (从高到低 / 从左到右)：
 **Conntrack (Connection Tracking)** 是 Netfilter 实现“有状态防火墙”与“NAT 逆向转换”的核心引擎。它为系统内流经的每一个通信流维护状态表项（保存在 `/proc/net/nf_conntrack` 或内存中的哈希表）。
 
 #### Conntrack 四大核心状态：
+
 * **`NEW`**：连接的第一个数据包（如 TCP SYN 握手包）。
 * **`ESTABLISHED`**：连接已双向建立（收到对端的响应报文，如 TCP SYN-ACK 或 ACK）。
 * **`RELATED`**：由现存连接衍生出的关联连接（典型如 FTP 被动模式的数据传输端口协商，或 ICMP 差错报文）。
@@ -227,6 +233,7 @@ graph LR
 > [!CAUTION]
 > **生产高并发坑点：Conntrack 表满丢包**
 > 高并发短连接下，若 `/proc/sys/net/netfilter/nf_conntrack_count` 达到 `nf_conntrack_max` 阈值，内核会直接抛弃所有新连接数据包并告警 `nf_conntrack: table full, dropping packet`。必须调大容量并缩短超时：
+>
 > ```bash
 > sysctl -w net.netfilter.nf_conntrack_max=1048576
 > sysctl -w net.netfilter.nf_conntrack_tcp_timeout_established=1200
@@ -237,11 +244,13 @@ graph LR
 ### 4. DNAT、SNAT 与 MASQUERADE 底层转换全过程
 
 #### (1) DNAT (Destination NAT, 目的地址转换)
+
 * **发生位置**：`PREROUTING` 链（入站路由前）或 `OUTPUT` 链（本机发出）。
 * **典型场景**：负载均衡、Docker 端口映射 (`-p 8080:80`)、K8S ClusterIP 转发。
 * **过程**：外部客户端请求公网 IP，在到达路由前被修改目标 IP/Port 为内网 Pod/容器 IP。
 
 #### (2) SNAT 与 MASQUERADE (源地址转换与动态伪装)
+
 * **发生位置**：`POSTROUTING` 链（路由决策之后，数据包即将出网卡之前）。
 * **典型场景**：私网集群节点/容器访问互联网。
 * **过程**：
@@ -277,6 +286,7 @@ graph TD
 ### 6. 生产企业级 iptables 黄金防火墙模板与排错 SOP
 
 #### (1) 企业生产级有状态安全防御脚本：
+
 ```bash
 # 1. 清空原有所有规则与自定义链
 iptables -F
@@ -310,6 +320,7 @@ iptables -A INPUT -p icmp --icmp-type echo-request -m limit --limit 5/s -j ACCEP
 ```
 
 #### (2) iptables 生产排障与性能监控命令：
+
 ```bash
 # 1. 详细列出 filter 表规则，显示行号、匹配到的数据包数 (pkts) 与字节数 (bytes)
 iptables -nvL --line-numbers
@@ -326,7 +337,6 @@ iptables-restore < /etc/sysconfig/iptables.bak
 ```
 
 ---
-
 
 ## 五、 DNS 解析链路与高并发坑点排查
 
@@ -355,6 +365,7 @@ ss -lnt '( sport = :80 or sport = :443 )'
 # State      Recv-Q  Send-Q   Local Address:Port
 # LISTEN     129     128      0.0.0.0:80
 ```
+
 * **`Send-Q`**：全连接队列的最大允许上限（由应用 `listen(fd, backlog)` 与内核 `net.core.somaxconn` 取较小值决定）。
 * **`Recv-Q`**：当前已完成三次握手但**尚未被应用程序调用 `accept()` 取走**的连接数。
 * **溢出判据**：若 `Recv-Q > Send-Q`，说明应用程序处理能力不足，正在发生全连接队列溢出丢包！
@@ -404,8 +415,6 @@ sysctl net.ipv4.tcp_congestion_control
 ---
 
 > [!TIP] 💡 关联技术与延伸阅读
->
 > * [Linux 高级网络架构与流量控制(TC_BPF)指南](./02-Linux高级网络架构与流量控制(TC_BPF)指南.md) —— HTB 流量整形、LVS 三大模式与 XDP/TC-BPF 网络加速
 > * [Linux 内核参数调优与 sysctl 实战指南](../03-系统性能与调优/04-Linux内核参数调优与sysctl实战指南.md) —— `/proc/sys/net/` 生产级网络内核参数模版
 > * [高级运维生产复杂故障深度案例集](../07-高可用与生产排错/03-高级运维生产复杂故障深度案例集(Case_Study).md) —— 跨机房丢包、连接池句柄泄漏与内核锁死排错复盘
-

@@ -10,4 +10,5 @@ K8S 安全策略与资源管理。
 | [./02-安全认证与准入控制.md](./02-安全认证与准入控制.md) | 文件 | 02-安全认证与准入控制.md 相关内容 |
 | [./03-OPA_Kyverno策略引擎与AdmissionWebhook开发实战.md](./03-OPA_Kyverno策略引擎与AdmissionWebhook开发实战.md) | 文件 | 03-OPA_Kyverno策略引擎与AdmissionWebhook开发实战.md 相关内容 |
 | [./04-RBAC权限控制实战指南.md](./04-RBAC权限控制实战指南.md) | 文件 | K8s RBAC 四大对象（Role/ClusterRole/RoleBinding/ClusterRoleBinding）配置示例与权限检查命令（新增） |
+| [./05-Node节点镜像GC与驱逐策略深度架构与高可用实战.md](./05-Node节点镜像GC与驱逐策略深度架构与高可用实战.md) | 文件 | Kubelet 镜像垃圾回收（Image GC）、存储拓扑分层（nodefs vs imagefs）、Pod 阶梯驱逐机制与生产调优指南 |
 | [./assets/](./assets/) | 目录 | assets 相关内容 |

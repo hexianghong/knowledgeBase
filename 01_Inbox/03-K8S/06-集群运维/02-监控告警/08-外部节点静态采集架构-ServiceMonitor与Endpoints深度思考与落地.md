@@ -52,12 +52,12 @@ flowchart TD
         AM["Alertmanager Pod\n(告警抑制 / 分组 / 推送)"]
     end
 
-    SM -->|1. 监听并匹配 Labels| SVC
-    SVC -.->|2. 同名元数据隐式绑定| EP
-    PO -->|3. Watch CRD 并重写| Prom
-    PR -->|4. 加载告警规则| Prom
-    Prom -->|5. K8s SD role: endpoints 发现外部真实 IP 并并发拉取| External_Infra
-    Prom -->|6. 触发告警阈值推送| AM
+    SM -->|"1. 监听并匹配 Labels"| SVC
+    SVC -.->|"2. 同名元数据隐式绑定"| EP
+    PO -->|"3. Watch CRD 并重写"| Prom
+    PR -->|"4. 加载告警规则"| Prom
+    Prom -->|"5. K8s SD role: endpoints 发现外部真实 IP 并并发拉取"| External_Infra
+    Prom -->|"6. 触发告警阈值推送"| AM
 ```
 
 ### 2.1 四大核心组件生命周期与职责分工

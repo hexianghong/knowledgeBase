@@ -20,8 +20,8 @@ flowchart LR
     Trigger([门店巡检员拍照上传]) --> VLM_Node[多模态大模型节点: 识别货架商品摆放与缺货率]
     VLM_Node --> ConditionCheck{缺货率 > 20% ?}
     
-    ConditionCheck -->|是 (告警)| FeishuBitable[写入飞书多维表格 '紧急补货清单']
+    ConditionCheck -->|"是 (告警)"| FeishuBitable[写入飞书多维表格 '紧急补货清单']
     FeishuBitable --> FeishuBot[飞书群自动 @ 责任人发送加急补货卡片]
     
-    ConditionCheck -->|否 (合格)| RecordLog[日常归档日志]
+    ConditionCheck -->|"否 (合格)"| RecordLog[日常归档日志]
 ```

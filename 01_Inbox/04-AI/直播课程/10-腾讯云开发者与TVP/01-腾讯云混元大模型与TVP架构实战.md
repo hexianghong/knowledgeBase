@@ -22,6 +22,6 @@ flowchart LR
     
     HunyuanAgent --> IntentCheck{意图识别}
     IntentCheck -->|标准业务咨询| RAG_Knowledge[(企业私有向量知识库)]
-    IntentCheck -->|核心业务交易 (退款/查单)| InnerCRM[调用企业内部 CRM / ERP API]
+    IntentCheck -->|"核心业务交易 (退款/查单)"| InnerCRM[调用企业内部 CRM / ERP API]
     IntentCheck -->|客户情绪极度愤怒| HumanTransfer[自动无缝转接真人专家客服坐席]
 ```

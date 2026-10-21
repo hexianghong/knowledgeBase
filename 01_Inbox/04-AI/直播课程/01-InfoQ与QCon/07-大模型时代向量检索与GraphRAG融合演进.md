@@ -44,8 +44,8 @@ flowchart TB
 
     subgraph OnlinePipeline["2. 在线混合召回引擎 (Online Hybrid Retrieval)"]
         UserQuery[用户全局分析请求] --> QueryIntent{意图分流}
-        QueryIntent -->|全局宏观总结 (Global Search)| GlobalCommunitySearch[检索高层社区摘要库]
-        QueryIntent -->|局部微观事实 (Local Search)| SubgraphTraverse[向量召回核心实体 + 扩展 2-Hop 邻居子图]
+        QueryIntent -->|"全局宏观总结 (Global Search)"| GlobalCommunitySearch[检索高层社区摘要库]
+        QueryIntent -->|"局部微观事实 (Local Search)"| SubgraphTraverse[向量召回核心实体 + 扩展 2-Hop 邻居子图]
         GlobalCommunitySearch & SubgraphTraverse --> FusionAssembly[融合图谱上下文与原文 Chunk]
         FusionAssembly --> LLM_Response[生成结构化全面回答]
     end

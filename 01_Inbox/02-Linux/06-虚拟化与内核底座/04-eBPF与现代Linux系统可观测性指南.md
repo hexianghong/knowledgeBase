@@ -15,14 +15,14 @@ graph TD
     end
     
     subgraph "Linux 内核空间 (Kernel Space)"
-        B["C 语言代码 / eBPF 字节码 (Bytecode)"] -->|bpf() syscall| C["eBPF 验证器 (Verifier)"]
-        C -->|1. 有向无环图 (DAG) 死循环检查| C1["2. 寄存器与内存越界校验"]
-        C1 -->|验证通过| D["JIT 编译器 (Just-In-Time)"]
-        D -->|编译为 x86_64 本地机器码| E["内核探针 (kprobe / tracepoint / tc)"]
-        E -->|触发事件| F["eBPF Maps (高效共享内存)"]
+        B["C 语言代码 / eBPF 字节码 (Bytecode)"] -->|"bpf() syscall"| C["eBPF 验证器 (Verifier)"]
+        C -->|"1. 有向无环图 (DAG) 死循环检查"| C1["2. 寄存器与内存越界校验"]
+        C1 -->|"验证通过"| D["JIT 编译器 (Just-In-Time)"]
+        D -->|"编译为 x86_64 本地机器码"| E["内核探针 (kprobe / tracepoint / tc)"]
+        E -->|"触发事件"| F["eBPF Maps (高效共享内存)"]
     end
     
-    F -->|无拷贝读取| A
+    F -->|"无拷贝读取"| A
 ```
 
 ### 1. eBPF Verifier (验证器) 四重安全审查
